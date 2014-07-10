@@ -148,13 +148,14 @@ namespace touchvg.view
             {
                 if (!CoreView.isPlaying() && !CoreView.isUndoLoading())
                 {
+                    int changeCount = CoreView.getChangeCount();
                     if (changed
                         && CoreView.submitBackDoc(_owner.ViewAdapter, changed)
                         && CoreView.isUndoRecording())
                     {
                         CoreView.recordShapes(true,
                             CoreView.getRecordTick(true, getTick()),
-                            CoreView.acquireFrontDoc(), 0);
+                            changeCount, CoreView.acquireFrontDoc(), 0);
                     }
                     CoreView.submitDynamicShapes(_owner.ViewAdapter);
                 }

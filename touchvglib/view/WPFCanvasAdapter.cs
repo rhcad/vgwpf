@@ -72,33 +72,54 @@ namespace touchvg.view
             {
                 _pen.Thickness = width;
             }
-            switch (style)
+            if (style >= 0)
             {
-                case 0:
-                    _pen.DashStyle = DashStyles.Solid;
-                    break;
-                case 1:
-                    _pen.DashStyle = DashStyles.Dash;
-                    break;
-                case 2:
-                    _pen.DashStyle = DashStyles.Dot;
-                    break;
-                case 3:
-                    _pen.DashStyle = DashStyles.DashDot;
-                    break;
-                case 4:
-                    _pen.DashStyle = DashStyles.DashDotDot;
-                    break;
-            }
-            if (style > 0 && style < 5)
-            {
-                _pen.StartLineCap = PenLineCap.Flat;
-                _pen.EndLineCap = PenLineCap.Flat;
-            }
-            else if (style >= 0)
-            {
-                _pen.StartLineCap = PenLineCap.Round;
-                _pen.EndLineCap = PenLineCap.Round;
+                int linecap = style & kLineCapMask;
+
+                style = style & kLineDashMask;
+                switch (style)
+                {
+                    case 0:
+                        _pen.DashStyle = DashStyles.Solid;
+                        break;
+                    case 1:
+                        _pen.DashStyle = DashStyles.Dash;
+                        break;
+                    case 2:
+                        _pen.DashStyle = DashStyles.Dot;
+                        break;
+                    case 3:
+                        _pen.DashStyle = DashStyles.DashDot;
+                        break;
+                    case 4:
+                        _pen.DashStyle = DashStyles.DashDotDot;
+                        break;
+                }
+                if ((linecap & kLineCapButt) != 0)
+                {
+                    _pen.StartLineCap = PenLineCap.Flat;
+                    _pen.EndLineCap = PenLineCap.Flat;
+                }
+                else if ((linecap & kLineCapRound) != 0)
+                {
+                    _pen.StartLineCap = PenLineCap.Round;
+                    _pen.EndLineCap = PenLineCap.Round;
+                }
+                else if ((linecap & kLineCapSquare) != 0)
+                {
+                    _pen.StartLineCap = PenLineCap.Square;
+                    _pen.EndLineCap = PenLineCap.Square;
+                }
+                else if (style > 0 && style < 5)
+                {
+                    _pen.StartLineCap = PenLineCap.Flat;
+                    _pen.EndLineCap = PenLineCap.Flat;
+                }
+                else if (style >= 0)
+                {
+                    _pen.StartLineCap = PenLineCap.Round;
+                    _pen.EndLineCap = PenLineCap.Round;
+                }
             }
             _pen.Freeze();
         }

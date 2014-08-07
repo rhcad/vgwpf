@@ -169,4 +169,16 @@
   <data name="basic_actions" xml:space="preserve">
     <value>,全选,重选,绘图,取消,删除,克隆,定长,不定长,锁定,解锁,编辑,返回,闭合,不闭合,加点,删点,成组,解组,翻转</value>
   </data>
+  <data name="invalid_gridcell" xml:space="preserve">
+    <value>单元格太小或太大，请重新拖动设置</value>
+  </data>
+  <data name="shape1_deleted" xml:space="preserve">
+    <value>已删除一个图形</value>
+  </data>
+  <data name="shape_n_deleted" xml:space="preserve">
+    <value>已删除 %d 个图形</value>
+  </data>
+  <data name="shape_too_small" xml:space="preserve">
+    <value>图形太小，请重新绘制</value>
+  </data>
 </root>

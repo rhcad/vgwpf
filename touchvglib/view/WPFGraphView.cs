@@ -17,6 +17,7 @@ namespace touchvg.view
     public delegate void ContentChangedEventHandler(object sender, EventArgs e);
     public delegate void DynamicChangedEventHandler(object sender, EventArgs e);
     public delegate void GiAction();
+    public delegate void ShowMessageHandler(string text);
 
     //! WPF绘图视图类
     /*! \ingroup GROUP_WPF
@@ -33,6 +34,7 @@ namespace touchvg.view
         public event SelectionChangedEventHandler OnSelectionChanged;
         public event ContentChangedEventHandler OnContentChanged;
         public event DynamicChangedEventHandler OnDynamicChanged;
+        public ShowMessageHandler ShowMessageHandler;
 
         //! 构造普通绘图视图
         public WPFGraphView(Panel container)
@@ -202,7 +204,8 @@ namespace touchvg.view
 
             public override void showMessage(string text)
             {
-                // TODO: Add a auto-hided control to show text
+                if (_owner.ShowMessageHandler != null)
+                    _owner.ShowMessageHandler(text);
             }
 
             public override void getLocalizedString(string name, MgStringCallback result)

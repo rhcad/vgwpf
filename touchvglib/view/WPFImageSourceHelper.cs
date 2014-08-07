@@ -142,7 +142,8 @@ namespace touchvg.view
 
         public string GetLocalizedString(string name)
         {
-            return StringCallback != null ? StringCallback(name) : "";
+            string str = Resource1.ResourceManager.GetString(name, Resource1.Culture);
+            return StringCallback != null && str.Equals(name) ? StringCallback(name) : str;
         }
 
         /// <summary>

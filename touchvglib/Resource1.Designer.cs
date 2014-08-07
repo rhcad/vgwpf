@@ -69,6 +69,42 @@ namespace touchvg {
             }
         }
         
+        /// <summary>
+        ///   查找类似 单元格太小或太大，请重新拖动设置 的本地化字符串。
+        /// </summary>
+        internal static string invalid_gridcell {
+            get {
+                return ResourceManager.GetString("invalid_gridcell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 已删除 %d 个图形 的本地化字符串。
+        /// </summary>
+        internal static string shape_n_deleted {
+            get {
+                return ResourceManager.GetString("shape_n_deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 图形太小，请重新绘制 的本地化字符串。
+        /// </summary>
+        internal static string shape_too_small {
+            get {
+                return ResourceManager.GetString("shape_too_small", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 已删除一个图形 的本地化字符串。
+        /// </summary>
+        internal static string shape1_deleted {
+            get {
+                return ResourceManager.GetString("shape1_deleted", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap vg_back {
             get {
                 object obj = ResourceManager.GetObject("vg_back", resourceCulture);

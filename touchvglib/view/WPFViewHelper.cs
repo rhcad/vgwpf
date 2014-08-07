@@ -17,7 +17,7 @@ namespace touchvg.view
      */
     public class WPFViewHelper : IDisposable
     {
-        private static int LIB_RELEASE = 1; // TODO: 在本工程接口变化后增加此数
+        private static int LIB_RELEASE = 2; // TODO: 在本工程接口变化后增加此数
         private WPFGraphView View;
         private GiCoreView CoreView { get { return View.CoreView; } }
         public GiView ViewAdapter { get { return View.ViewAdapter; } }
@@ -218,6 +218,12 @@ namespace touchvg.view
             get { return CoreView.getShapeCount(); }
         }
 
+        //! 未锁定的图形的个数
+        public int UnlockedShapeCount
+        {
+            get { return CoreView.getUnlockedShapeCount(); }
+        }
+
         //! 选中的图形个数
         public int SelectedCount
         {
@@ -302,10 +308,28 @@ namespace touchvg.view
             return CoreView.zoomToExtent();
         }
 
+        //! 放缩显示全部内容到视图区域
+        public bool ZoomToExtent(float margin)
+        {
+            return CoreView.zoomToExtent(margin);
+        }
+
         //! 放缩显示指定范围到视图区域
         public bool ZoomToModel(float x, float y, float w, float h)
         {
             return CoreView.zoomToModel(x, y, w, h);
+        }
+
+        //! 放缩显示指定范围到视图区域
+        public bool ZoomToModel(float x, float y, float w, float h, float margin)
+        {
+            return CoreView.zoomToModel(x, y, w, h, margin);
+        }
+
+        //! 图形向右上平移显示，像素单位
+        public bool ZoomPan(float dxPixel, float dyPixel)
+        {
+            return CoreView.zoomPan(dxPixel, dyPixel);
         }
 
         //! 添加测试图形
@@ -322,6 +346,21 @@ namespace touchvg.view
 
             pt.X = p.get(0);
             pt.Y = p.get(1);
+            return ret;
+        }
+
+        //! 视图坐标转为模型坐标
+        public bool DisplayToModel(Rect rect)
+        {
+            Floats p = new Floats((float)rect.Left, (float)rect.Top,
+                (float)rect.Right, (float)rect.Bottom);
+            bool ret = CoreView.displayToModel(p);
+
+            rect.X = p.get(0);
+            rect.Y = p.get(1);
+            rect.Width = p.get(2) - rect.X;
+            rect.Height = p.get(3) - rect.Y;
+
             return ret;
         }
 
@@ -359,10 +398,16 @@ namespace touchvg.view
             return CoreView.saveToFile(vgfile);
         }
 
-        //! 清除所有图形
+        //! 清除所有图形，含锁定的图形
         public void Clear()
         {
             CoreView.clear();
+        }
+
+        //! 清除当前视图区域内的未锁定的图形
+        public void EraseView()
+        {
+            CoreView.setCommand("erasewnd");
         }
 
         //! 得到静态图形的快照
@@ -474,6 +519,52 @@ namespace touchvg.view
         public bool Redo()
         {
             return CoreView.redo(ViewAdapter);
+        }
+
+        //! 是否正在录屏
+        public bool IsRecording()
+        {
+            return CoreView.isRecording();
+        }
+
+        //! 返回已录制的相对毫秒数
+        public int getRecordTicks()
+        {
+            return CoreView.getRecordTick(false, WPFGraphView.getTick());
+        }
+
+        //! 开始录屏
+        public bool startRecord(String path)
+        {
+            if (CoreView.isRecording())
+                return false;
+
+            try
+            {
+                var dir = new DirectoryInfo(path);
+                if (dir.Exists)
+                    dir.Delete(true);
+                dir.Create();
+            }
+            catch (IOException)
+            {
+                return false;
+            }
+
+            return CoreView.startRecord(path, CoreView.acquireFrontDoc(),
+                false, WPFGraphView.getTick());
+        }
+
+        //! 停止录屏
+        public void stopRecord()
+        {
+            CoreView.stopRecord(false);
+        }
+
+        //! 是否允许放缩显示
+        public void setZoomEnabled(bool enabled)
+        {
+            CoreView.setZoomEnabled(ViewAdapter, enabled);
         }
     }
 }

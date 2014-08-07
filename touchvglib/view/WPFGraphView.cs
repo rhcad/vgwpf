@@ -148,18 +148,28 @@ namespace touchvg.view
 
             public override void regenAll(bool changed)
             {
-                if (!CoreView.isPlaying() && !CoreView.isUndoLoading())
+                if (!CoreView.isPlaying() && changed)
                 {
                     int changeCount = CoreView.getChangeCount();
-                    if (changed
-                        && CoreView.submitBackDoc(_owner.ViewAdapter, changed)
-                        && CoreView.isUndoRecording())
+
+                    if (!CoreView.isUndoLoading())
                     {
-                        CoreView.recordShapes(true,
-                            CoreView.getRecordTick(true, getTick()),
-                            changeCount, CoreView.acquireFrontDoc(), 0);
+                        CoreView.submitBackDoc(_owner.ViewAdapter, changed);
+                        CoreView.submitDynamicShapes(_owner.ViewAdapter);
+                        if (CoreView.isUndoRecording())
+                        {
+                            CoreView.recordShapes(true,
+                                CoreView.getRecordTick(true, getTick()),
+                                changeCount, CoreView.acquireFrontDoc(), 0);
+                        }
                     }
-                    CoreView.submitDynamicShapes(_owner.ViewAdapter);
+                    if (CoreView.isRecording())
+                    {
+                        CoreView.recordShapes(false,
+                                CoreView.getRecordTick(false, getTick()),
+                                changeCount, CoreView.acquireFrontDoc(),
+                                CoreView.acquireDynamicShapes());
+                    }
                 }
 
                 _owner.MainCanvas.InvalidateVisual();
@@ -174,7 +184,15 @@ namespace touchvg.view
             public override void redraw(bool changed)
             {
                 if (changed)
+                {
                     CoreView.submitDynamicShapes(_owner.ViewAdapter);
+                    if (CoreView.isRecording())
+                    {
+                        CoreView.recordShapes(false,
+                                CoreView.getRecordTick(false, getTick()),
+                                0, 0, CoreView.acquireDynamicShapes());
+                    }
+                }
                 _owner.TempCanvas.InvalidateVisual();
             }
 

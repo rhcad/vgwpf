@@ -244,8 +244,13 @@ namespace touchvg.view
             {
                 if (extActions == null)
                     extActions = new Dictionary<int, GiAction>();
-                if (!extActions.ContainsKey(action))
+
+                if (ActionCallback == null)
+                    extActions.Remove(action);
+                else if (!extActions.ContainsKey(action))
                     extActions.Add(action, ActionCallback);
+                else
+                    extActions[action] = ActionCallback;
             }
 
             public override bool isContextActionsVisible()

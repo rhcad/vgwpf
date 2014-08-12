@@ -13,6 +13,7 @@ swig -c++ -csharp -namespace touchvg.core \
     -I../../vgcore/core/include/cmd \
     -I../../vgcore/core/include/storage \
     -I../../vgcore/core/include/geom \
+    -I../../vgcore/core/include/gshape \
     -I../../vgcore/core/include/shape \
     -I../../vgcore/core/include/cmdobserver \
     -I../../vgcore/core/include/cmdbase \

@@ -80,8 +80,8 @@
     <Compile Include="core\GiGraphics.cs" />
     <Compile Include="core\GiHandleTypes.cs" />
     <Compile Include="core\GiMouseHelper.cs" />
-    <Compile Include="core\GiPath.cs" />
-    <Compile Include="core\GiPathNode.cs" />
+    <Compile Include="core\MgPath.cs" />
+    <Compile Include="core\MgPathNode.cs" />
     <Compile Include="core\GiPlaying.cs" />
     <Compile Include="core\GiPlayShapes.cs" />
     <Compile Include="core\GiSaveClipBox.cs" />
@@ -107,6 +107,7 @@
     <Compile Include="core\MgCommandDraw.cs" />
     <Compile Include="core\MgComposite.cs" />
     <Compile Include="core\MgContextAction.cs" />
+    <Compile Include="core\MgCoreShapeFactory.cs" />
     <Compile Include="core\MgCoreView.cs" />
     <Compile Include="core\mgcurv.cs" />
     <Compile Include="core\MgDiamond.cs" />

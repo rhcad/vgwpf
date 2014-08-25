@@ -222,7 +222,7 @@ namespace touchvg.view
             _dc.DrawGeometry(_brush, _pen, _path);
         }
 
-        public override bool drawHandle(float x, float y, int type)
+        public override bool drawHandle(float x, float y, int type, float angle)
         {
             ImageSource source = WPFImageSourceHelper.Instance.HandleImageSource(type);
             if (source != null)

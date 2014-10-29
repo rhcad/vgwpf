@@ -9,6 +9,8 @@ using System.Text;
 using touchvg.core;
 using System.Windows.Media.Imaging;
 using System.IO;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace touchvg.view
 {
@@ -17,7 +19,7 @@ namespace touchvg.view
      */
     public class WPFViewHelper : IDisposable
     {
-        private static int LIB_RELEASE = 2; // TODO: 在本工程接口变化后增加此数
+        private static int LIB_RELEASE = 3; // TODO: 在本工程接口变化后增加此数
         private WPFGraphView View;
         private GiCoreView CoreView { get { return View.CoreView; } }
         public GiView ViewAdapter { get { return View.ViewAdapter; } }
@@ -63,6 +65,12 @@ namespace touchvg.view
             return MgView.fromHandle(CmdViewHandle());
         }
 
+        //! 返回图形工厂对象
+        public MgShapeFactory ShapeFactory()
+        {
+            return CmdView().getShapeFactory();
+        }
+
         public class StringCallback : MgStringCallback
         {
             private string text;
@@ -98,7 +106,7 @@ namespace touchvg.view
         }
 
         //! 当前是否为指定名称的命令
-        public bool isCommand(string name)
+        public bool IsCommand(string name)
         {
             return CoreView.isCommand(name);
         }
@@ -212,6 +220,85 @@ namespace touchvg.view
             set { CoreView.setContextEditing(value); }
         }
 
+        private class OptionCallback : MgOptionCallback
+        {
+            public Dictionary<string, IConvertible> Options = new Dictionary<string, IConvertible>();
+
+            public override void onGetOptionBool(string name, bool value)
+            {
+                Options.Remove(name);
+                Options.Add(name, value);
+            }
+
+            public override void onGetOptionInt(string name, int value)
+            {
+                Options.Remove(name);
+                Options.Add(name, value);
+            }
+
+            public override void onGetOptionFloat(string name, float value)
+            {
+                Options.Remove(name);
+                Options.Add(name, value);
+            }
+        }
+
+        //! 绘图命令选项
+        public Dictionary<string, IConvertible> Options
+        {
+            get
+            {
+                OptionCallback c = new OptionCallback();
+                CoreView.traverseOptions(c);
+                c.onGetOptionBool("zoomEnabled", ZoomEnabled);
+                return c.Options;
+            }
+            set
+            {
+                if (value != null && value.Count > 0)
+                {
+                    foreach (KeyValuePair<string, IConvertible> kv in value)
+                    {
+                        SetOption(kv.Key, kv.Value);
+                    }
+                }
+                else
+                {
+                    CoreView.setOptionBool(null, false);
+                }
+            }
+        }
+
+        //! 设置绘图命令选项
+        public void SetOption(string key, IConvertible value)
+        {
+            if (key == "zoomEnabled")
+            {
+                ZoomEnabled = Convert.ToBoolean(value);
+                return;
+            }
+            switch (value.GetTypeCode())
+            {
+                case TypeCode.Boolean:
+                    CoreView.setOptionBool(key, Convert.ToBoolean(value));
+                    break;
+
+                case TypeCode.Int32:
+                case TypeCode.UInt32:
+                    CoreView.setOptionInt(key, Convert.ToInt32(value));
+                    break;
+
+                case TypeCode.Single:
+                case TypeCode.Double:
+                    CoreView.setOptionFloat(key, Convert.ToSingle(value));
+                    break;
+
+                default:
+                    Debug.Assert(false, key);
+                    break;
+            }
+        }
+
         //! 图形总数
         public int ShapeCount
         {
@@ -236,6 +323,12 @@ namespace touchvg.view
             get { return CoreView.getSelectedShapeID(); }
         }
 
+        //! 当前线性图形中当前控制点序号
+        public int SelectedHandle
+        {
+            get { return CoreView.getSelectedHandle(); }
+        }
+
         //! 选中的图形的类型, MgShapeType
         public int SelectedType
         {
@@ -254,34 +347,47 @@ namespace touchvg.view
             get { return CoreView.getDrawCount(); }
         }
 
-        //! 图形显示范围
+        //! 当前视图区域的模型坐标范围，模型坐标
+        public Rect ViewBox
+        {
+            get
+            {
+                Floats box = new Floats(4);
+                return ToBox(box, CoreView.getViewModelBox(box));
+            }
+        }
+
+        //! 图形显示范围，像素坐标
         public Rect DisplayExtent
         {
             get
             {
                 Floats box = new Floats(4);
-                if (CoreView.getDisplayExtent(box))
-                {
-                    return new Rect(box.get(0), box.get(1),
-                        box.get(2) - box.get(0), box.get(3) - box.get(1));
-                }
-                return new Rect();
+                return ToBox(box, CoreView.getDisplayExtent(box));
             }
         }
 
-        //! 选择包络框
+        //! 选择包络框，像素坐标
         public Rect BoundingBox
         {
             get
             {
                 Floats box = new Floats(4);
-                if (CoreView.getBoundingBox(box))
-                {
-                    return new Rect(box.get(0), box.get(1),
-                        box.get(2) - box.get(0), box.get(3) - box.get(1));
-                }
-                return new Rect();
+                return ToBox(box, CoreView.getBoundingBox(box));
             }
+        }
+
+        //! 得到指定ID的图形的包络框显示坐标
+        public Rect GetShapeBox(int sid)
+        {
+            Floats box = new Floats(4);
+            return ToBox(box, CoreView.getBoundingBox(box, sid));
+        }
+
+        private Rect ToBox(Floats box, bool ret)
+        {
+            return !ret ? new Rect() : new Rect(box.get(0), box.get(1),
+                    box.get(2) - box.get(0), box.get(3) - box.get(1));
         }
 
         //! 所有图形的JSON内容
@@ -296,10 +402,13 @@ namespace touchvg.view
             set { CoreView.setContent(value); }
         }
 
-        //! 导出静态图形到SVG文件
-        public bool ExportSVG(string filename)
+        //! 查找指定Tag的图形对象ID
+        public int FindShapeByTag(int tag)
         {
-            return CoreView.exportSVG(ViewAdapter, filename) > 0;
+            int doc = CoreView.acquireFrontDoc();
+            int sid = CoreView.findShapeByTag(doc, tag);
+            GiCoreView.releaseDoc(doc);
+            return sid;
         }
 
         //! 放缩显示全部内容到视图区域
@@ -332,10 +441,11 @@ namespace touchvg.view
             return CoreView.zoomPan(dxPixel, dyPixel);
         }
 
-        //! 添加测试图形
-        public int AddShapesForTest()
+        //! 是否允许放缩显示
+        public bool ZoomEnabled
         {
-            return CoreView.addShapesForTest();
+            get { return CoreView.isZoomEnabled(ViewAdapter); }
+            set { CoreView.setZoomEnabled(ViewAdapter, value); }
         }
 
         //! 视图坐标转为模型坐标
@@ -364,10 +474,22 @@ namespace touchvg.view
             return ret;
         }
 
-        //! 返回显示比例
-        public float GetViewScale()
+        //! 显示比例
+        public float ViewScale
         {
-            return CmdView().xform().getViewScale();
+            get {
+                return CmdView().xform().getViewScale();
+            }
+            set {
+                if (CmdView().xform().zoomScale(value))
+                    CmdView().regenAll(false);
+            }
+        }
+
+        //! 添加测试图形
+        public int AddShapesForTest()
+        {
+            return CoreView.addShapesForTest();
         }
 
         //! 从JSON文件中加载图形
@@ -421,6 +543,12 @@ namespace touchvg.view
             bmp.Render(View.MainCanvas);
 
             return bmp;
+        }
+
+        //! 导出静态图形到SVG文件
+        public bool ExportSVG(string filename)
+        {
+            return CoreView.exportSVG(ViewAdapter, filename) > 0;
         }
 
         //! 保存静态图形的快照到PNG、JPG或GIF文件，其他后缀名则自动改为.png
@@ -559,12 +687,6 @@ namespace touchvg.view
         public void stopRecord()
         {
             CoreView.stopRecord(false);
-        }
-
-        //! 是否允许放缩显示
-        public void setZoomEnabled(bool enabled)
-        {
-            CoreView.setZoomEnabled(ViewAdapter, enabled);
         }
     }
 }

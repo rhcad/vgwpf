@@ -35,6 +35,23 @@ namespace touchvg.view
         public event ContentChangedEventHandler OnContentChanged;
         public event DynamicChangedEventHandler OnDynamicChanged;
         public ShowMessageHandler ShowMessageHandler;
+        private bool _contextActionEnabled = true;
+
+        public bool ContextActionEnabled
+        {
+            get { return _contextActionEnabled; }
+            set
+            {
+                _contextActionEnabled = value;
+                _view.hideContextActions();
+            }
+        }
+
+        public bool ZoomEnabled
+        {
+            get { return CoreView.isZoomEnabled(ViewAdapter); }
+            set { CoreView.setZoomEnabled(ViewAdapter, value); }
+        }
 
         //! 构造普通绘图视图
         public WPFGraphView(Panel container)
@@ -55,6 +72,8 @@ namespace touchvg.view
 
         private void init(Panel container)
         {
+            this.ContextActionEnabled = true;
+
             MainCanvas = new WPFMainCanvas(this.CoreView, _view) { Width = container.ActualWidth, Height = container.ActualHeight };
             TempCanvas = new WPFTempCanvas(this.CoreView, _view) { Width = container.ActualWidth, Height = container.ActualHeight };
             TempCanvas.Background = new SolidColorBrush(Colors.Transparent);

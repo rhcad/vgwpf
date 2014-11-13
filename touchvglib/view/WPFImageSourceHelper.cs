@@ -93,7 +93,7 @@ namespace touchvg.view
             AddActionImage(MgContextAction.kMgActionUngroup, Resource1.vg_ungroup);
             AddActionImage(MgContextAction.kMgActionOverturn, Resource1.vg_overturn);
 
-            _handleImages = new ImageSource[7]; // GiHandleTypes
+            _handleImages = new ImageSource[15]; // GiHandleTypes
             _handleImages[0] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vgdot1);
             _handleImages[1] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vgdot2);
             _handleImages[2] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vgdot3);
@@ -101,6 +101,14 @@ namespace touchvg.view
             _handleImages[4] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vg_unlock);
             _handleImages[5] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vg_back);
             _handleImages[6] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vg_endedit);
+            _handleImages[7] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vgnode);
+            _handleImages[8] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vgcen);
+            _handleImages[9] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vgmid);
+            _handleImages[10] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vgquad);
+            _handleImages[11] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vgtangent);
+            _handleImages[12] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vgcross);
+            _handleImages[13] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vgnear);
+            _handleImages[14] = WPFImageSourceHelper.BitmapToImageSource(Resource1.vgpivot);
         }
 
         private void AddActionImage(MgContextAction key, Bitmap bitmap)

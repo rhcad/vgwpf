@@ -155,9 +155,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\vgcen.png" />
+    <Content Include="Resources\vgcross.png" />
     <Content Include="Resources\vgdot1.png" />
     <Content Include="Resources\vgdot2.png" />
     <Content Include="Resources\vgdot3.png" />
+    <Content Include="Resources\vgmid.png" />
+    <Content Include="Resources\vgnear.png" />
+    <Content Include="Resources\vgnode.png" />
+    <Content Include="Resources\vgpivot.png" />
+    <Content Include="Resources\vgquad.png" />
+    <Content Include="Resources\vgtangent.png" />
     <Content Include="Resources\vg_unlock.png" />
     <Content Include="Resources\vg_ungroup.png" />
     <Content Include="Resources\vg_selall.png" />

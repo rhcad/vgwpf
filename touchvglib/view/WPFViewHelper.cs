@@ -220,65 +220,49 @@ namespace touchvg.view
             set { CoreView.setContextEditing(value); }
         }
 
-        private class OptionCallback : MgOptionCallback
+        //! 遍历选项
+        public void GetOptions(MgOptionCallback c)
         {
-            public Dictionary<string, IConvertible> Options = new Dictionary<string, IConvertible>();
-
-            public override void onGetOptionBool(string name, bool value)
-            {
-                Options.Remove(name);
-                Options.Add(name, value);
-            }
-
-            public override void onGetOptionInt(string name, int value)
-            {
-                Options.Remove(name);
-                Options.Add(name, value);
-            }
-
-            public override void onGetOptionFloat(string name, float value)
-            {
-                Options.Remove(name);
-                Options.Add(name, value);
-            }
+            CoreView.traverseOptions(c);
+            c.onGetOptionBool("contextActionEnabled", View.ContextActionEnabled);
+            c.onGetOptionBool("zoomEnabled", ZoomEnabled);
         }
 
-        //! 绘图命令选项
-        public Dictionary<string, IConvertible> Options
+        //! 设置绘图命令选项(bool/int/float类型的值)
+        public bool SetOption(string key, IConvertible value)
         {
-            get
-            {
-                OptionCallback c = new OptionCallback();
-                CoreView.traverseOptions(c);
-                c.onGetOptionBool("zoomEnabled", ZoomEnabled);
-                return c.Options;
+            if (key == null) {
+                CoreView.setOptionBool(null, false);
+                return true;
             }
-            set
-            {
-                if (value != null && value.Count > 0)
-                {
-                    foreach (KeyValuePair<string, IConvertible> kv in value)
-                    {
-                        SetOption(kv.Key, kv.Value);
-                    }
-                }
-                else
-                {
-                    CoreView.setOptionBool(null, false);
-                }
+            if (value == null) {
+                return false;
             }
-        }
 
-        //! 设置绘图命令选项
-        public void SetOption(string key, IConvertible value)
-        {
-            if (key == "zoomEnabled")
+            if (value.GetTypeCode() == TypeCode.String)
             {
+                string str = Convert.ToString(value).ToLower();
+                int intValue;
+                double doubleValue;
+
+                if (str.CompareTo("true") == 0)
+                    return SetOption(key, true);
+                if (str.CompareTo("false") == 0)
+                    return SetOption(key, false);
+                if (int.TryParse(str, out intValue))
+                    return SetOption(key, intValue);
+                if (double.TryParse(str, out doubleValue))
+                    return SetOption(key, doubleValue);
+                return false;
+            }
+            
+            if (key == "contextActionEnabled") {
+                View.ContextActionEnabled = Convert.ToBoolean(value);
+            }
+            else if (key == "zoomEnabled") {
                 ZoomEnabled = Convert.ToBoolean(value);
-                return;
             }
-            switch (value.GetTypeCode())
-            {
+            else switch (value.GetTypeCode()) {
                 case TypeCode.Boolean:
                     CoreView.setOptionBool(key, Convert.ToBoolean(value));
                     break;
@@ -295,8 +279,10 @@ namespace touchvg.view
 
                 default:
                     Debug.Assert(false, key);
-                    break;
+                    return false;
             }
+
+            return true;
         }
 
         //! 图形总数

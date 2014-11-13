@@ -47,12 +47,6 @@ namespace touchvg.view
             }
         }
 
-        public bool ZoomEnabled
-        {
-            get { return CoreView.isZoomEnabled(ViewAdapter); }
-            set { CoreView.setZoomEnabled(ViewAdapter, value); }
-        }
-
         //! 构造普通绘图视图
         public WPFGraphView(Panel container)
         {
@@ -241,8 +235,14 @@ namespace touchvg.view
 
             public override void showMessage(string text)
             {
-                if (_owner.ShowMessageHandler != null)
+                if (_owner.ShowMessageHandler != null && text != null)
+                {
+                    if (text[0] == '@')
+                    {
+                        text = WPFImageSourceHelper.Instance.GetLocalizedString(text.Substring(1));
+                    }
                     _owner.ShowMessageHandler(text);
+                }
             }
 
             public override void getLocalizedString(string name, MgStringCallback result)

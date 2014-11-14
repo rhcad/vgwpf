@@ -220,7 +220,28 @@ namespace touchvg.view
             set { CoreView.setContextEditing(value); }
         }
 
-        //! 遍历选项
+        //! 绘图命令选项
+        public Dictionary<string, IConvertible> Options
+        {
+            get
+            {
+                OptionCallback c = new OptionCallback();
+                GetOptions(c);
+                return c.Options;
+            }
+            set
+            {
+                if (value != null && value.Count > 0)
+                {
+                    foreach (var item in value)
+                    {
+                        SetOption(item.Key, item.Value);
+                    }
+                }
+            }
+        }
+
+        //! 以自定义类型(例如Json类)遍历选项
         public void GetOptions(MgOptionCallback c)
         {
             CoreView.traverseOptions(c);
@@ -228,14 +249,17 @@ namespace touchvg.view
             c.onGetOptionBool("zoomEnabled", ZoomEnabled);
         }
 
+        //! 重置所有选项
+        public void ClearOptions()
+        {
+            CoreView.setOptionBool(null, false);
+        }
+
         //! 设置绘图命令选项(bool/int/float类型的值)
         public bool SetOption(string key, IConvertible value)
         {
-            if (key == null) {
-                CoreView.setOptionBool(null, false);
-                return true;
-            }
-            if (value == null) {
+            if (key == null || value == null)
+            {
                 return false;
             }
 
@@ -283,6 +307,29 @@ namespace touchvg.view
             }
 
             return true;
+        }
+
+        private class OptionCallback : MgOptionCallback
+        {
+            public Dictionary<string, IConvertible> Options = new Dictionary<string, IConvertible>();
+
+            public override void onGetOptionBool(string name, bool value)
+            {
+                Options.Remove(name);
+                Options.Add(name, value);
+            }
+
+            public override void onGetOptionInt(string name, int value)
+            {
+                Options.Remove(name);
+                Options.Add(name, value);
+            }
+
+            public override void onGetOptionFloat(string name, float value)
+            {
+                Options.Remove(name);
+                Options.Add(name, value);
+            }
         }
 
         //! 图形总数
@@ -340,6 +387,16 @@ namespace touchvg.view
             {
                 Floats box = new Floats(4);
                 return ToBox(box, CoreView.getViewModelBox(box));
+            }
+        }
+
+        //! 文档的模型坐标范围
+        public Rect ModelBox
+        {
+            get
+            {
+                Floats box = new Floats(4);
+                return ToBox(box, CoreView.getModelBox(box));
             }
         }
 
@@ -407,6 +464,13 @@ namespace touchvg.view
         public bool ZoomToExtent(float margin)
         {
             return CoreView.zoomToExtent(margin);
+        }
+
+        //! 放缩显示指定范围到视图区域
+        public bool ZoomToModel(Rect rect)
+        {
+            return CoreView.zoomToModel((float)rect.X, (float)rect.Y,
+                (float)rect.Width, (float)rect.Height);
         }
 
         //! 放缩显示指定范围到视图区域

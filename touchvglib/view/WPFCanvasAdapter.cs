@@ -251,7 +251,8 @@ namespace touchvg.view
             return w > 0 && h > 0;
         }
 
-        public override float drawTextAt(string text, float x, float y, float h, int align)
+        public override float drawTextAt(string text, float x, float y,
+                                         float h, int align, float angle)
         {
             if (text == null || text.Length < 1)
                 return 0;

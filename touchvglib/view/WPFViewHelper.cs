@@ -19,7 +19,7 @@ namespace touchvg.view
      */
     public class WPFViewHelper : IDisposable
     {
-        private static int LIB_RELEASE = 4; // TODO: 在本工程接口变化后增加此数
+        private static int LIB_RELEASE = 5; // TODO: 在本工程接口变化后增加此数
         private WPFGraphView View;
         private GiCoreView CoreView { get { return View.CoreView; } }
         public GiView ViewAdapter { get { return View.ViewAdapter; } }
@@ -338,10 +338,16 @@ namespace touchvg.view
             get { return CoreView.getShapeCount(); }
         }
 
-        //! 未锁定的图形的个数
+        //! 未锁定的可见图形的个数
         public int UnlockedShapeCount
         {
             get { return CoreView.getUnlockedShapeCount(); }
+        }
+
+        //! 可见图形的个数
+        public int VisibleShapeCount
+        {
+            get { return CoreView.getVisibleShapeCount(); }
         }
 
         //! 选中的图形个数

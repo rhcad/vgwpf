@@ -48,6 +48,4 @@ CppDepend*
 *.cdproj
 *.ch*
 *.hh*
-*_wrap.*
-touchvglib/core
 *.so

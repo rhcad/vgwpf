@@ -19,7 +19,7 @@ namespace touchvg.view
      */
     public class WPFViewHelper : IDisposable
     {
-        private static int LIB_RELEASE = 5; // TODO: 在本工程接口变化后增加此数
+        private static int LIB_RELEASE = 6; // TODO: 在本工程接口变化后增加此数
         private WPFGraphView View;
         private GiCoreView CoreView { get { return View.CoreView; } }
         public GiView ViewAdapter { get { return View.ViewAdapter; } }
@@ -277,7 +277,9 @@ namespace touchvg.view
                     return SetOption(key, intValue);
                 if (double.TryParse(str, out doubleValue))
                     return SetOption(key, doubleValue);
-                return false;
+
+                CoreView.setOptionString(key, Convert.ToString(value));
+                return true;
             }
             
             if (key == "contextActionEnabled") {
@@ -329,6 +331,12 @@ namespace touchvg.view
             {
                 Options.Remove(name);
                 Options.Add(name, value);
+            }
+
+            public override void onGetOptionString(string name, string text)
+            {
+                Options.Remove(name);
+                Options.Add(name, text);
             }
         }
 

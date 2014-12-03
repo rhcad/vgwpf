@@ -331,6 +331,10 @@ public class MgView : global::System.IDisposable {
     touchvgPINVOKE.MgView_setOptionFloat(swigCPtr, name, value);
   }
 
+  public virtual void setOptionString(string name, string text) {
+    touchvgPINVOKE.MgView_setOptionString(swigCPtr, name, text);
+  }
+
 }
 
 }

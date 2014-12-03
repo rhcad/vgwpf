@@ -50,6 +50,10 @@ public class MgOptionCallback : global::System.IDisposable {
     touchvgPINVOKE.MgOptionCallback_onGetOptionFloat(swigCPtr, name, value);
   }
 
+  public virtual void onGetOptionString(string name, string text) {
+    touchvgPINVOKE.MgOptionCallback_onGetOptionString(swigCPtr, name, text);
+  }
+
   public MgOptionCallback() : this(touchvgPINVOKE.new_MgOptionCallback(), true) {
     SwigDirectorConnect();
   }
@@ -61,7 +65,9 @@ public class MgOptionCallback : global::System.IDisposable {
       swigDelegate1 = new SwigDelegateMgOptionCallback_1(SwigDirectoronGetOptionInt);
     if (SwigDerivedClassHasMethod("onGetOptionFloat", swigMethodTypes2))
       swigDelegate2 = new SwigDelegateMgOptionCallback_2(SwigDirectoronGetOptionFloat);
-    touchvgPINVOKE.MgOptionCallback_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2);
+    if (SwigDerivedClassHasMethod("onGetOptionString", swigMethodTypes3))
+      swigDelegate3 = new SwigDelegateMgOptionCallback_3(SwigDirectoronGetOptionString);
+    touchvgPINVOKE.MgOptionCallback_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3);
   }
 
   private bool SwigDerivedClassHasMethod(string methodName, global::System.Type[] methodTypes) {
@@ -82,17 +88,24 @@ public class MgOptionCallback : global::System.IDisposable {
     onGetOptionFloat(name, value);
   }
 
+  private void SwigDirectoronGetOptionString(string name, string text) {
+    onGetOptionString(name, text);
+  }
+
   public delegate void SwigDelegateMgOptionCallback_0(string name, bool value);
   public delegate void SwigDelegateMgOptionCallback_1(string name, int value);
   public delegate void SwigDelegateMgOptionCallback_2(string name, float value);
+  public delegate void SwigDelegateMgOptionCallback_3(string name, string text);
 
   private SwigDelegateMgOptionCallback_0 swigDelegate0;
   private SwigDelegateMgOptionCallback_1 swigDelegate1;
   private SwigDelegateMgOptionCallback_2 swigDelegate2;
+  private SwigDelegateMgOptionCallback_3 swigDelegate3;
 
   private static global::System.Type[] swigMethodTypes0 = new global::System.Type[] { typeof(string), typeof(bool) };
   private static global::System.Type[] swigMethodTypes1 = new global::System.Type[] { typeof(string), typeof(int) };
   private static global::System.Type[] swigMethodTypes2 = new global::System.Type[] { typeof(string), typeof(float) };
+  private static global::System.Type[] swigMethodTypes3 = new global::System.Type[] { typeof(string), typeof(string) };
 }
 
 }

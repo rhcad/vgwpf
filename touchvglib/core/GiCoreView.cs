@@ -308,6 +308,10 @@ public class GiCoreView : MgCoreView {
     touchvgPINVOKE.GiCoreView_setOptionFloat(swigCPtr, name, value);
   }
 
+  public void setOptionString(string name, string value) {
+    touchvgPINVOKE.GiCoreView_setOptionString(swigCPtr, name, value);
+  }
+
   public static readonly int kNoCmdType = touchvgPINVOKE.GiCoreView_kNoCmdType_get();
   public static readonly int kTestType = touchvgPINVOKE.GiCoreView_kTestType_get();
   public static readonly int kNormalType = touchvgPINVOKE.GiCoreView_kNormalType_get();

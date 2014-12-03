@@ -143,8 +143,8 @@ public class MgShape : MgObject {
     return ret;
   }
 
-  public static bool drawShape(MgBaseShape sp, int mode, GiGraphics gs, GiContext ctx, int segment) {
-    bool ret = touchvgPINVOKE.MgShape_drawShape(MgBaseShape.getCPtr(sp), mode, GiGraphics.getCPtr(gs), GiContext.getCPtr(ctx), segment);
+  public static bool drawShape(MgShapes shapes, MgBaseShape sp, int mode, GiGraphics gs, GiContext ctx, int segment) {
+    bool ret = touchvgPINVOKE.MgShape_drawShape(MgShapes.getCPtr(shapes), MgBaseShape.getCPtr(sp), mode, GiGraphics.getCPtr(gs), GiContext.getCPtr(ctx), segment);
     if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }

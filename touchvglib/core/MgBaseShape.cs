@@ -141,6 +141,12 @@ public class MgBaseShape : MgObject {
     return ret;
   }
 
+  public virtual bool draw2(MgObject owner, int mode, GiGraphics gs, GiContext ctx, int segment) {
+    bool ret = (SwigDerivedClassHasMethod("draw2", swigMethodTypes23) ? touchvgPINVOKE.MgBaseShape_draw2SwigExplicitMgBaseShape(swigCPtr, MgObject.getCPtr(owner), mode, GiGraphics.getCPtr(gs), GiContext.getCPtr(ctx), segment) : touchvgPINVOKE.MgBaseShape_draw2(swigCPtr, MgObject.getCPtr(owner), mode, GiGraphics.getCPtr(gs), GiContext.getCPtr(ctx), segment));
+    if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
+
   public virtual void output(MgPath path) {
     touchvgPINVOKE.MgBaseShape_output(swigCPtr, MgPath.getCPtr(path));
     if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
@@ -152,43 +158,43 @@ public class MgBaseShape : MgObject {
   }
 
   public virtual bool save(MgStorage s) {
-    bool ret = (SwigDerivedClassHasMethod("save", swigMethodTypes24) ? touchvgPINVOKE.MgBaseShape_saveSwigExplicitMgBaseShape(swigCPtr, MgStorage.getCPtr(s)) : touchvgPINVOKE.MgBaseShape_save(swigCPtr, MgStorage.getCPtr(s)));
+    bool ret = (SwigDerivedClassHasMethod("save", swigMethodTypes25) ? touchvgPINVOKE.MgBaseShape_saveSwigExplicitMgBaseShape(swigCPtr, MgStorage.getCPtr(s)) : touchvgPINVOKE.MgBaseShape_save(swigCPtr, MgStorage.getCPtr(s)));
     return ret;
   }
 
   public virtual bool load(MgShapeFactory factory, MgStorage s) {
-    bool ret = (SwigDerivedClassHasMethod("load", swigMethodTypes25) ? touchvgPINVOKE.MgBaseShape_loadSwigExplicitMgBaseShape(swigCPtr, MgShapeFactory.getCPtr(factory), MgStorage.getCPtr(s)) : touchvgPINVOKE.MgBaseShape_load(swigCPtr, MgShapeFactory.getCPtr(factory), MgStorage.getCPtr(s)));
+    bool ret = (SwigDerivedClassHasMethod("load", swigMethodTypes26) ? touchvgPINVOKE.MgBaseShape_loadSwigExplicitMgBaseShape(swigCPtr, MgShapeFactory.getCPtr(factory), MgStorage.getCPtr(s)) : touchvgPINVOKE.MgBaseShape_load(swigCPtr, MgShapeFactory.getCPtr(factory), MgStorage.getCPtr(s)));
     return ret;
   }
 
   public virtual int getHandleCount() {
-    int ret = (SwigDerivedClassHasMethod("getHandleCount", swigMethodTypes26) ? touchvgPINVOKE.MgBaseShape_getHandleCountSwigExplicitMgBaseShape(swigCPtr) : touchvgPINVOKE.MgBaseShape_getHandleCount(swigCPtr));
+    int ret = (SwigDerivedClassHasMethod("getHandleCount", swigMethodTypes27) ? touchvgPINVOKE.MgBaseShape_getHandleCountSwigExplicitMgBaseShape(swigCPtr) : touchvgPINVOKE.MgBaseShape_getHandleCount(swigCPtr));
     return ret;
   }
 
   public virtual Point2d getHandlePoint(int index) {
-    Point2d ret = new Point2d((SwigDerivedClassHasMethod("getHandlePoint", swigMethodTypes27) ? touchvgPINVOKE.MgBaseShape_getHandlePointSwigExplicitMgBaseShape(swigCPtr, index) : touchvgPINVOKE.MgBaseShape_getHandlePoint(swigCPtr, index)), true);
+    Point2d ret = new Point2d((SwigDerivedClassHasMethod("getHandlePoint", swigMethodTypes28) ? touchvgPINVOKE.MgBaseShape_getHandlePointSwigExplicitMgBaseShape(swigCPtr, index) : touchvgPINVOKE.MgBaseShape_getHandlePoint(swigCPtr, index)), true);
     return ret;
   }
 
   public virtual bool setHandlePoint(int index, Point2d pt, float tol) {
-    bool ret = (SwigDerivedClassHasMethod("setHandlePoint", swigMethodTypes28) ? touchvgPINVOKE.MgBaseShape_setHandlePointSwigExplicitMgBaseShape(swigCPtr, index, Point2d.getCPtr(pt), tol) : touchvgPINVOKE.MgBaseShape_setHandlePoint(swigCPtr, index, Point2d.getCPtr(pt), tol));
+    bool ret = (SwigDerivedClassHasMethod("setHandlePoint", swigMethodTypes29) ? touchvgPINVOKE.MgBaseShape_setHandlePointSwigExplicitMgBaseShape(swigCPtr, index, Point2d.getCPtr(pt), tol) : touchvgPINVOKE.MgBaseShape_setHandlePoint(swigCPtr, index, Point2d.getCPtr(pt), tol));
     if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 
   public virtual bool isHandleFixed(int index) {
-    bool ret = (SwigDerivedClassHasMethod("isHandleFixed", swigMethodTypes29) ? touchvgPINVOKE.MgBaseShape_isHandleFixedSwigExplicitMgBaseShape(swigCPtr, index) : touchvgPINVOKE.MgBaseShape_isHandleFixed(swigCPtr, index));
+    bool ret = (SwigDerivedClassHasMethod("isHandleFixed", swigMethodTypes30) ? touchvgPINVOKE.MgBaseShape_isHandleFixedSwigExplicitMgBaseShape(swigCPtr, index) : touchvgPINVOKE.MgBaseShape_isHandleFixed(swigCPtr, index));
     return ret;
   }
 
   public virtual int getHandleType(int index) {
-    int ret = (SwigDerivedClassHasMethod("getHandleType", swigMethodTypes30) ? touchvgPINVOKE.MgBaseShape_getHandleTypeSwigExplicitMgBaseShape(swigCPtr, index) : touchvgPINVOKE.MgBaseShape_getHandleType(swigCPtr, index));
+    int ret = (SwigDerivedClassHasMethod("getHandleType", swigMethodTypes31) ? touchvgPINVOKE.MgBaseShape_getHandleTypeSwigExplicitMgBaseShape(swigCPtr, index) : touchvgPINVOKE.MgBaseShape_getHandleType(swigCPtr, index));
     return ret;
   }
 
   public virtual bool offset(Vector2d vec, int segment) {
-    bool ret = (SwigDerivedClassHasMethod("offset", swigMethodTypes31) ? touchvgPINVOKE.MgBaseShape_offsetSwigExplicitMgBaseShape(swigCPtr, Vector2d.getCPtr(vec), segment) : touchvgPINVOKE.MgBaseShape_offset(swigCPtr, Vector2d.getCPtr(vec), segment));
+    bool ret = (SwigDerivedClassHasMethod("offset", swigMethodTypes32) ? touchvgPINVOKE.MgBaseShape_offsetSwigExplicitMgBaseShape(swigCPtr, Vector2d.getCPtr(vec), segment) : touchvgPINVOKE.MgBaseShape_offset(swigCPtr, Vector2d.getCPtr(vec), segment));
     if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
@@ -199,7 +205,7 @@ public class MgBaseShape : MgObject {
   }
 
   public virtual void setFlag(MgShapeBit bit, bool on) {
-    if (SwigDerivedClassHasMethod("setFlag", swigMethodTypes32)) touchvgPINVOKE.MgBaseShape_setFlagSwigExplicitMgBaseShape(swigCPtr, (int)bit, on); else touchvgPINVOKE.MgBaseShape_setFlag(swigCPtr, (int)bit, on);
+    if (SwigDerivedClassHasMethod("setFlag", swigMethodTypes33)) touchvgPINVOKE.MgBaseShape_setFlagSwigExplicitMgBaseShape(swigCPtr, (int)bit, on); else touchvgPINVOKE.MgBaseShape_setFlag(swigCPtr, (int)bit, on);
   }
 
   public override void copy(MgObject src) {
@@ -228,11 +234,11 @@ public class MgBaseShape : MgObject {
   }
 
   public virtual void setOwner(MgObject owner) {
-    if (SwigDerivedClassHasMethod("setOwner", swigMethodTypes33)) touchvgPINVOKE.MgBaseShape_setOwnerSwigExplicitMgBaseShape(swigCPtr, MgObject.getCPtr(owner)); else touchvgPINVOKE.MgBaseShape_setOwner(swigCPtr, MgObject.getCPtr(owner));
+    if (SwigDerivedClassHasMethod("setOwner", swigMethodTypes34)) touchvgPINVOKE.MgBaseShape_setOwnerSwigExplicitMgBaseShape(swigCPtr, MgObject.getCPtr(owner)); else touchvgPINVOKE.MgBaseShape_setOwner(swigCPtr, MgObject.getCPtr(owner));
   }
 
   public virtual int getSubType() {
-    int ret = (SwigDerivedClassHasMethod("getSubType", swigMethodTypes34) ? touchvgPINVOKE.MgBaseShape_getSubTypeSwigExplicitMgBaseShape(swigCPtr) : touchvgPINVOKE.MgBaseShape_getSubType(swigCPtr));
+    int ret = (SwigDerivedClassHasMethod("getSubType", swigMethodTypes35) ? touchvgPINVOKE.MgBaseShape_getSubTypeSwigExplicitMgBaseShape(swigCPtr) : touchvgPINVOKE.MgBaseShape_getSubType(swigCPtr));
     return ret;
   }
 
@@ -299,31 +305,33 @@ public class MgBaseShape : MgObject {
       swigDelegate21 = new SwigDelegateMgBaseShape_21(SwigDirectorhitTestBox);
     if (SwigDerivedClassHasMethod("draw", swigMethodTypes22))
       swigDelegate22 = new SwigDelegateMgBaseShape_22(SwigDirectordraw);
-    if (SwigDerivedClassHasMethod("output", swigMethodTypes23))
-      swigDelegate23 = new SwigDelegateMgBaseShape_23(SwigDirectoroutput);
-    if (SwigDerivedClassHasMethod("save", swigMethodTypes24))
-      swigDelegate24 = new SwigDelegateMgBaseShape_24(SwigDirectorsave);
-    if (SwigDerivedClassHasMethod("load", swigMethodTypes25))
-      swigDelegate25 = new SwigDelegateMgBaseShape_25(SwigDirectorload);
-    if (SwigDerivedClassHasMethod("getHandleCount", swigMethodTypes26))
-      swigDelegate26 = new SwigDelegateMgBaseShape_26(SwigDirectorgetHandleCount);
-    if (SwigDerivedClassHasMethod("getHandlePoint", swigMethodTypes27))
-      swigDelegate27 = new SwigDelegateMgBaseShape_27(SwigDirectorgetHandlePoint);
-    if (SwigDerivedClassHasMethod("setHandlePoint", swigMethodTypes28))
-      swigDelegate28 = new SwigDelegateMgBaseShape_28(SwigDirectorsetHandlePoint);
-    if (SwigDerivedClassHasMethod("isHandleFixed", swigMethodTypes29))
-      swigDelegate29 = new SwigDelegateMgBaseShape_29(SwigDirectorisHandleFixed);
-    if (SwigDerivedClassHasMethod("getHandleType", swigMethodTypes30))
-      swigDelegate30 = new SwigDelegateMgBaseShape_30(SwigDirectorgetHandleType);
-    if (SwigDerivedClassHasMethod("offset", swigMethodTypes31))
-      swigDelegate31 = new SwigDelegateMgBaseShape_31(SwigDirectoroffset);
-    if (SwigDerivedClassHasMethod("setFlag", swigMethodTypes32))
-      swigDelegate32 = new SwigDelegateMgBaseShape_32(SwigDirectorsetFlag);
-    if (SwigDerivedClassHasMethod("setOwner", swigMethodTypes33))
-      swigDelegate33 = new SwigDelegateMgBaseShape_33(SwigDirectorsetOwner);
-    if (SwigDerivedClassHasMethod("getSubType", swigMethodTypes34))
-      swigDelegate34 = new SwigDelegateMgBaseShape_34(SwigDirectorgetSubType);
-    touchvgPINVOKE.MgBaseShape_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20, swigDelegate21, swigDelegate22, swigDelegate23, swigDelegate24, swigDelegate25, swigDelegate26, swigDelegate27, swigDelegate28, swigDelegate29, swigDelegate30, swigDelegate31, swigDelegate32, swigDelegate33, swigDelegate34);
+    if (SwigDerivedClassHasMethod("draw2", swigMethodTypes23))
+      swigDelegate23 = new SwigDelegateMgBaseShape_23(SwigDirectordraw2);
+    if (SwigDerivedClassHasMethod("output", swigMethodTypes24))
+      swigDelegate24 = new SwigDelegateMgBaseShape_24(SwigDirectoroutput);
+    if (SwigDerivedClassHasMethod("save", swigMethodTypes25))
+      swigDelegate25 = new SwigDelegateMgBaseShape_25(SwigDirectorsave);
+    if (SwigDerivedClassHasMethod("load", swigMethodTypes26))
+      swigDelegate26 = new SwigDelegateMgBaseShape_26(SwigDirectorload);
+    if (SwigDerivedClassHasMethod("getHandleCount", swigMethodTypes27))
+      swigDelegate27 = new SwigDelegateMgBaseShape_27(SwigDirectorgetHandleCount);
+    if (SwigDerivedClassHasMethod("getHandlePoint", swigMethodTypes28))
+      swigDelegate28 = new SwigDelegateMgBaseShape_28(SwigDirectorgetHandlePoint);
+    if (SwigDerivedClassHasMethod("setHandlePoint", swigMethodTypes29))
+      swigDelegate29 = new SwigDelegateMgBaseShape_29(SwigDirectorsetHandlePoint);
+    if (SwigDerivedClassHasMethod("isHandleFixed", swigMethodTypes30))
+      swigDelegate30 = new SwigDelegateMgBaseShape_30(SwigDirectorisHandleFixed);
+    if (SwigDerivedClassHasMethod("getHandleType", swigMethodTypes31))
+      swigDelegate31 = new SwigDelegateMgBaseShape_31(SwigDirectorgetHandleType);
+    if (SwigDerivedClassHasMethod("offset", swigMethodTypes32))
+      swigDelegate32 = new SwigDelegateMgBaseShape_32(SwigDirectoroffset);
+    if (SwigDerivedClassHasMethod("setFlag", swigMethodTypes33))
+      swigDelegate33 = new SwigDelegateMgBaseShape_33(SwigDirectorsetFlag);
+    if (SwigDerivedClassHasMethod("setOwner", swigMethodTypes34))
+      swigDelegate34 = new SwigDelegateMgBaseShape_34(SwigDirectorsetOwner);
+    if (SwigDerivedClassHasMethod("getSubType", swigMethodTypes35))
+      swigDelegate35 = new SwigDelegateMgBaseShape_35(SwigDirectorgetSubType);
+    touchvgPINVOKE.MgBaseShape_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20, swigDelegate21, swigDelegate22, swigDelegate23, swigDelegate24, swigDelegate25, swigDelegate26, swigDelegate27, swigDelegate28, swigDelegate29, swigDelegate30, swigDelegate31, swigDelegate32, swigDelegate33, swigDelegate34, swigDelegate35);
   }
 
   private bool SwigDerivedClassHasMethod(string methodName, global::System.Type[] methodTypes) {
@@ -424,6 +432,10 @@ public class MgBaseShape : MgObject {
     return draw(mode, new GiGraphics(gs, false), new GiContext(ctx, false), segment);
   }
 
+  private bool SwigDirectordraw2(global::System.IntPtr owner, int mode, global::System.IntPtr gs, global::System.IntPtr ctx, int segment) {
+    return draw2((owner == global::System.IntPtr.Zero) ? null : new MgObject(owner, false), mode, new GiGraphics(gs, false), new GiContext(ctx, false), segment);
+  }
+
   private void SwigDirectoroutput(global::System.IntPtr path) {
     output(new MgPath(path, false));
   }
@@ -495,18 +507,19 @@ public class MgBaseShape : MgObject {
   public delegate float SwigDelegateMgBaseShape_20(global::System.IntPtr pt, float tol, global::System.IntPtr res);
   public delegate bool SwigDelegateMgBaseShape_21(global::System.IntPtr rect);
   public delegate bool SwigDelegateMgBaseShape_22(int mode, global::System.IntPtr gs, global::System.IntPtr ctx, int segment);
-  public delegate void SwigDelegateMgBaseShape_23(global::System.IntPtr path);
-  public delegate bool SwigDelegateMgBaseShape_24(global::System.IntPtr s);
-  public delegate bool SwigDelegateMgBaseShape_25(global::System.IntPtr factory, global::System.IntPtr s);
-  public delegate int SwigDelegateMgBaseShape_26();
-  public delegate global::System.IntPtr SwigDelegateMgBaseShape_27(int index);
-  public delegate bool SwigDelegateMgBaseShape_28(int index, global::System.IntPtr pt, float tol);
-  public delegate bool SwigDelegateMgBaseShape_29(int index);
-  public delegate int SwigDelegateMgBaseShape_30(int index);
-  public delegate bool SwigDelegateMgBaseShape_31(global::System.IntPtr vec, int segment);
-  public delegate void SwigDelegateMgBaseShape_32(int bit, bool on);
-  public delegate void SwigDelegateMgBaseShape_33(global::System.IntPtr owner);
-  public delegate int SwigDelegateMgBaseShape_34();
+  public delegate bool SwigDelegateMgBaseShape_23(global::System.IntPtr owner, int mode, global::System.IntPtr gs, global::System.IntPtr ctx, int segment);
+  public delegate void SwigDelegateMgBaseShape_24(global::System.IntPtr path);
+  public delegate bool SwigDelegateMgBaseShape_25(global::System.IntPtr s);
+  public delegate bool SwigDelegateMgBaseShape_26(global::System.IntPtr factory, global::System.IntPtr s);
+  public delegate int SwigDelegateMgBaseShape_27();
+  public delegate global::System.IntPtr SwigDelegateMgBaseShape_28(int index);
+  public delegate bool SwigDelegateMgBaseShape_29(int index, global::System.IntPtr pt, float tol);
+  public delegate bool SwigDelegateMgBaseShape_30(int index);
+  public delegate int SwigDelegateMgBaseShape_31(int index);
+  public delegate bool SwigDelegateMgBaseShape_32(global::System.IntPtr vec, int segment);
+  public delegate void SwigDelegateMgBaseShape_33(int bit, bool on);
+  public delegate void SwigDelegateMgBaseShape_34(global::System.IntPtr owner);
+  public delegate int SwigDelegateMgBaseShape_35();
 
   private SwigDelegateMgBaseShape_0 swigDelegate0;
   private SwigDelegateMgBaseShape_1 swigDelegate1;
@@ -543,6 +556,7 @@ public class MgBaseShape : MgObject {
   private SwigDelegateMgBaseShape_32 swigDelegate32;
   private SwigDelegateMgBaseShape_33 swigDelegate33;
   private SwigDelegateMgBaseShape_34 swigDelegate34;
+  private SwigDelegateMgBaseShape_35 swigDelegate35;
 
   private static global::System.Type[] swigMethodTypes0 = new global::System.Type[] {  };
   private static global::System.Type[] swigMethodTypes1 = new global::System.Type[] { typeof(MgObject) };
@@ -567,18 +581,19 @@ public class MgBaseShape : MgObject {
   private static global::System.Type[] swigMethodTypes20 = new global::System.Type[] { typeof(Point2d), typeof(float), typeof(MgHitResult) };
   private static global::System.Type[] swigMethodTypes21 = new global::System.Type[] { typeof(Box2d) };
   private static global::System.Type[] swigMethodTypes22 = new global::System.Type[] { typeof(int), typeof(GiGraphics), typeof(GiContext), typeof(int) };
-  private static global::System.Type[] swigMethodTypes23 = new global::System.Type[] { typeof(MgPath) };
-  private static global::System.Type[] swigMethodTypes24 = new global::System.Type[] { typeof(MgStorage) };
-  private static global::System.Type[] swigMethodTypes25 = new global::System.Type[] { typeof(MgShapeFactory), typeof(MgStorage) };
-  private static global::System.Type[] swigMethodTypes26 = new global::System.Type[] {  };
-  private static global::System.Type[] swigMethodTypes27 = new global::System.Type[] { typeof(int) };
-  private static global::System.Type[] swigMethodTypes28 = new global::System.Type[] { typeof(int), typeof(Point2d), typeof(float) };
-  private static global::System.Type[] swigMethodTypes29 = new global::System.Type[] { typeof(int) };
+  private static global::System.Type[] swigMethodTypes23 = new global::System.Type[] { typeof(MgObject), typeof(int), typeof(GiGraphics), typeof(GiContext), typeof(int) };
+  private static global::System.Type[] swigMethodTypes24 = new global::System.Type[] { typeof(MgPath) };
+  private static global::System.Type[] swigMethodTypes25 = new global::System.Type[] { typeof(MgStorage) };
+  private static global::System.Type[] swigMethodTypes26 = new global::System.Type[] { typeof(MgShapeFactory), typeof(MgStorage) };
+  private static global::System.Type[] swigMethodTypes27 = new global::System.Type[] {  };
+  private static global::System.Type[] swigMethodTypes28 = new global::System.Type[] { typeof(int) };
+  private static global::System.Type[] swigMethodTypes29 = new global::System.Type[] { typeof(int), typeof(Point2d), typeof(float) };
   private static global::System.Type[] swigMethodTypes30 = new global::System.Type[] { typeof(int) };
-  private static global::System.Type[] swigMethodTypes31 = new global::System.Type[] { typeof(Vector2d), typeof(int) };
-  private static global::System.Type[] swigMethodTypes32 = new global::System.Type[] { typeof(MgShapeBit), typeof(bool) };
-  private static global::System.Type[] swigMethodTypes33 = new global::System.Type[] { typeof(MgObject) };
-  private static global::System.Type[] swigMethodTypes34 = new global::System.Type[] {  };
+  private static global::System.Type[] swigMethodTypes31 = new global::System.Type[] { typeof(int) };
+  private static global::System.Type[] swigMethodTypes32 = new global::System.Type[] { typeof(Vector2d), typeof(int) };
+  private static global::System.Type[] swigMethodTypes33 = new global::System.Type[] { typeof(MgShapeBit), typeof(bool) };
+  private static global::System.Type[] swigMethodTypes34 = new global::System.Type[] { typeof(MgObject) };
+  private static global::System.Type[] swigMethodTypes35 = new global::System.Type[] {  };
 }
 
 }

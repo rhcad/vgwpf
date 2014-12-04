@@ -753,6 +753,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_Matrix2d_shearing__SWIG_1")]
   public static extern global::System.IntPtr Matrix2d_shearing__SWIG_1(float jarg1, float jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_Matrix2d_transformWith2P")]
+  public static extern global::System.IntPtr Matrix2d_transformWith2P(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, global::System.Runtime.InteropServices.HandleRef jarg4);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_Matrix2d")]
   public static extern void delete_Matrix2d(global::System.Runtime.InteropServices.HandleRef jarg1);
 
@@ -2861,6 +2864,9 @@ class touchvgPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgBaseRect_setRect4P")]
   public static extern void MgBaseRect_setRect4P(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgBaseRect_transformWith2P")]
+  public static extern bool MgBaseRect_transformWith2P(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3, global::System.Runtime.InteropServices.HandleRef jarg4, int jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgBaseRect_setCenter")]
   public static extern void MgBaseRect_setCenter(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);

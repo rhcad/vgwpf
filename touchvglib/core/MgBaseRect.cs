@@ -96,6 +96,12 @@ public class MgBaseRect : MgBaseShape {
     touchvgPINVOKE.MgBaseRect_setRect4P(swigCPtr, Point2d.getCPtr(points));
   }
 
+  public bool transformWith2P(Point2d pt1, int i1, Point2d pt2, int i2) {
+    bool ret = touchvgPINVOKE.MgBaseRect_transformWith2P(swigCPtr, Point2d.getCPtr(pt1), i1, Point2d.getCPtr(pt2), i2);
+    if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
+
   public void setCenter(Point2d pt) {
     touchvgPINVOKE.MgBaseRect_setCenter(swigCPtr, Point2d.getCPtr(pt));
     if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();

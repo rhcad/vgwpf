@@ -8124,6 +8124,40 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Matrix2d_shearing__SWIG_1(float jarg1, floa
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_Matrix2d_transformWith2P(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+  void * jresult ;
+  Point2d *arg1 = 0 ;
+  Point2d *arg2 = 0 ;
+  Point2d *arg3 = 0 ;
+  Point2d *arg4 = 0 ;
+  Matrix2d result;
+  
+  arg1 = (Point2d *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
+    return 0;
+  } 
+  arg2 = (Point2d *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
+    return 0;
+  } 
+  arg3 = (Point2d *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
+    return 0;
+  } 
+  arg4 = (Point2d *)jarg4;
+  if (!arg4) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
+    return 0;
+  } 
+  result = Matrix2d::transformWith2P((Point2d const &)*arg1,(Point2d const &)*arg2,(Point2d const &)*arg3,(Point2d const &)*arg4);
+  jresult = new Matrix2d((const Matrix2d &)result); 
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_delete_Matrix2d(void * jarg1) {
   Matrix2d *arg1 = (Matrix2d *) 0 ;
   
@@ -18972,6 +19006,34 @@ SWIGEXPORT void SWIGSTDCALL CSharp_MgBaseRect_setRect4P(void * jarg1, void * jar
   arg1 = (MgBaseRect *)jarg1; 
   arg2 = (Point2d *)jarg2; 
   (arg1)->setRect4P((Point2d const (*))arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgBaseRect_transformWith2P(void * jarg1, void * jarg2, int jarg3, void * jarg4, int jarg5) {
+  unsigned int jresult ;
+  MgBaseRect *arg1 = (MgBaseRect *) 0 ;
+  Point2d *arg2 = 0 ;
+  int arg3 ;
+  Point2d *arg4 = 0 ;
+  int arg5 ;
+  bool result;
+  
+  arg1 = (MgBaseRect *)jarg1; 
+  arg2 = (Point2d *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
+    return 0;
+  } 
+  arg3 = (int)jarg3; 
+  arg4 = (Point2d *)jarg4;
+  if (!arg4) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
+    return 0;
+  } 
+  arg5 = (int)jarg5; 
+  result = (bool)(arg1)->transformWith2P((Point2d const &)*arg2,arg3,(Point2d const &)*arg4,arg5);
+  jresult = result; 
+  return jresult;
 }
 
 

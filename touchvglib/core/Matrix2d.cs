@@ -400,6 +400,12 @@ public class Matrix2d : global::System.IDisposable {
     return ret;
   }
 
+  public static Matrix2d transformWith2P(Point2d from1, Point2d from2, Point2d to1, Point2d to2) {
+    Matrix2d ret = new Matrix2d(touchvgPINVOKE.Matrix2d_transformWith2P(Point2d.getCPtr(from1), Point2d.getCPtr(from2), Point2d.getCPtr(to1), Point2d.getCPtr(to2)), true);
+    if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
+
 }
 
 }

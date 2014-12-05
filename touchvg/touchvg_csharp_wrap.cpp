@@ -5072,39 +5072,43 @@ void SwigDirector_GiView::shapeDeleted(int sid) {
   }
 }
 
-bool SwigDirector_GiView::shapeDblClick(int type, int sid) {
+bool SwigDirector_GiView::shapeDblClick(int type, int sid, int tag) {
   bool c_result = SwigValueInit< bool >() ;
   unsigned int jresult = 0 ;
   int jtype  ;
   int jsid  ;
+  int jtag  ;
   
   if (!swig_callbackshapeDblClick) {
-    return GiView::shapeDblClick(type,sid);
+    return GiView::shapeDblClick(type,sid,tag);
   } else {
     jtype = type;
     jsid = sid;
-    jresult = (unsigned int) swig_callbackshapeDblClick(jtype, jsid);
+    jtag = tag;
+    jresult = (unsigned int) swig_callbackshapeDblClick(jtype, jsid, jtag);
     c_result = jresult ? true : false; 
   }
   return c_result;
 }
 
-bool SwigDirector_GiView::shapeClicked(int sid, int tag, float x, float y) {
+bool SwigDirector_GiView::shapeClicked(int type, int sid, int tag, float x, float y) {
   bool c_result = SwigValueInit< bool >() ;
   unsigned int jresult = 0 ;
+  int jtype  ;
   int jsid  ;
   int jtag  ;
   float jx  ;
   float jy  ;
   
   if (!swig_callbackshapeClicked) {
-    return GiView::shapeClicked(sid,tag,x,y);
+    return GiView::shapeClicked(type,sid,tag,x,y);
   } else {
+    jtype = type;
     jsid = sid;
     jtag = tag;
     jx = x;
     jy = y;
-    jresult = (unsigned int) swig_callbackshapeClicked(jsid, jtag, jx, jy);
+    jresult = (unsigned int) swig_callbackshapeClicked(jtype, jsid, jtag, jx, jy);
     c_result = jresult ? true : false; 
   }
   return c_result;
@@ -28892,21 +28896,19 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgView_shapeDblClick(void * jarg1, vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgView_shapeClicked(void * jarg1, int jarg2, int jarg3, float jarg4, float jarg5) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgView_shapeClicked(void * jarg1, void * jarg2, float jarg3, float jarg4) {
   unsigned int jresult ;
   MgView *arg1 = (MgView *) 0 ;
-  int arg2 ;
-  int arg3 ;
+  MgShape *arg2 = (MgShape *) 0 ;
+  float arg3 ;
   float arg4 ;
-  float arg5 ;
   bool result;
   
   arg1 = (MgView *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
+  arg2 = (MgShape *)jarg2; 
+  arg3 = (float)jarg3; 
   arg4 = (float)jarg4; 
-  arg5 = (float)jarg5; 
-  result = (bool)(arg1)->shapeClicked(arg2,arg3,arg4,arg5);
+  result = (bool)(arg1)->shapeClicked((MgShape const *)arg2,arg3,arg4);
   jresult = result; 
   return jresult;
 }
@@ -33854,73 +33856,81 @@ SWIGEXPORT void SWIGSTDCALL CSharp_GiView_shapeDeletedSwigExplicitGiView(void * 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GiView_shapeDblClick(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GiView_shapeDblClick(void * jarg1, int jarg2, int jarg3, int jarg4) {
   unsigned int jresult ;
   GiView *arg1 = (GiView *) 0 ;
   int arg2 ;
   int arg3 ;
+  int arg4 ;
   bool result;
   
   arg1 = (GiView *)jarg1; 
   arg2 = (int)jarg2; 
   arg3 = (int)jarg3; 
-  result = (bool)(arg1)->shapeDblClick(arg2,arg3);
+  arg4 = (int)jarg4; 
+  result = (bool)(arg1)->shapeDblClick(arg2,arg3,arg4);
   jresult = result; 
   return jresult;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GiView_shapeDblClickSwigExplicitGiView(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GiView_shapeDblClickSwigExplicitGiView(void * jarg1, int jarg2, int jarg3, int jarg4) {
   unsigned int jresult ;
   GiView *arg1 = (GiView *) 0 ;
   int arg2 ;
   int arg3 ;
+  int arg4 ;
   bool result;
   
   arg1 = (GiView *)jarg1; 
   arg2 = (int)jarg2; 
   arg3 = (int)jarg3; 
-  result = (bool)(arg1)->GiView::shapeDblClick(arg2,arg3);
+  arg4 = (int)jarg4; 
+  result = (bool)(arg1)->GiView::shapeDblClick(arg2,arg3,arg4);
   jresult = result; 
   return jresult;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GiView_shapeClicked(void * jarg1, int jarg2, int jarg3, float jarg4, float jarg5) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GiView_shapeClicked(void * jarg1, int jarg2, int jarg3, int jarg4, float jarg5, float jarg6) {
   unsigned int jresult ;
   GiView *arg1 = (GiView *) 0 ;
   int arg2 ;
   int arg3 ;
-  float arg4 ;
+  int arg4 ;
   float arg5 ;
+  float arg6 ;
   bool result;
   
   arg1 = (GiView *)jarg1; 
   arg2 = (int)jarg2; 
   arg3 = (int)jarg3; 
-  arg4 = (float)jarg4; 
+  arg4 = (int)jarg4; 
   arg5 = (float)jarg5; 
-  result = (bool)(arg1)->shapeClicked(arg2,arg3,arg4,arg5);
+  arg6 = (float)jarg6; 
+  result = (bool)(arg1)->shapeClicked(arg2,arg3,arg4,arg5,arg6);
   jresult = result; 
   return jresult;
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GiView_shapeClickedSwigExplicitGiView(void * jarg1, int jarg2, int jarg3, float jarg4, float jarg5) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GiView_shapeClickedSwigExplicitGiView(void * jarg1, int jarg2, int jarg3, int jarg4, float jarg5, float jarg6) {
   unsigned int jresult ;
   GiView *arg1 = (GiView *) 0 ;
   int arg2 ;
   int arg3 ;
-  float arg4 ;
+  int arg4 ;
   float arg5 ;
+  float arg6 ;
   bool result;
   
   arg1 = (GiView *)jarg1; 
   arg2 = (int)jarg2; 
   arg3 = (int)jarg3; 
-  arg4 = (float)jarg4; 
+  arg4 = (int)jarg4; 
   arg5 = (float)jarg5; 
-  result = (bool)(arg1)->GiView::shapeClicked(arg2,arg3,arg4,arg5);
+  arg6 = (float)jarg6; 
+  result = (bool)(arg1)->GiView::shapeClicked(arg2,arg3,arg4,arg5,arg6);
   jresult = result; 
   return jresult;
 }

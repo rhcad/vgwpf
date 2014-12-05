@@ -954,8 +954,8 @@ public:
     virtual void viewChanged(GiView *oldview);
     virtual void shapeWillDelete(int sid);
     virtual void shapeDeleted(int sid);
-    virtual bool shapeDblClick(int type, int sid);
-    virtual bool shapeClicked(int sid, int tag, float x, float y);
+    virtual bool shapeDblClick(int type, int sid, int tag);
+    virtual bool shapeClicked(int type, int sid, int tag, float x, float y);
     virtual void showMessage(char const *text);
     virtual void getLocalizedString(char const *name, MgStringCallback *result);
 
@@ -973,8 +973,8 @@ public:
     typedef void (SWIGSTDCALL* SWIG_Callback11_t)(void *);
     typedef void (SWIGSTDCALL* SWIG_Callback12_t)(int);
     typedef void (SWIGSTDCALL* SWIG_Callback13_t)(int);
-    typedef unsigned int (SWIGSTDCALL* SWIG_Callback14_t)(int, int);
-    typedef unsigned int (SWIGSTDCALL* SWIG_Callback15_t)(int, int, float, float);
+    typedef unsigned int (SWIGSTDCALL* SWIG_Callback14_t)(int, int, int);
+    typedef unsigned int (SWIGSTDCALL* SWIG_Callback15_t)(int, int, int, float, float);
     typedef void (SWIGSTDCALL* SWIG_Callback16_t)(char *);
     typedef void (SWIGSTDCALL* SWIG_Callback17_t)(char *, void *);
     void swig_connect_director(SWIG_Callback0_t callbackregenAll, SWIG_Callback1_t callbackregenAppend, SWIG_Callback2_t callbackredraw, SWIG_Callback3_t callbackuseFinger, SWIG_Callback4_t callbackisContextActionsVisible, SWIG_Callback5_t callbackshowContextActions, SWIG_Callback6_t callbackhideContextActions, SWIG_Callback7_t callbackcommandChanged, SWIG_Callback8_t callbackselectionChanged, SWIG_Callback9_t callbackcontentChanged, SWIG_Callback10_t callbackdynamicChanged, SWIG_Callback11_t callbackviewChanged, SWIG_Callback12_t callbackshapeWillDelete, SWIG_Callback13_t callbackshapeDeleted, SWIG_Callback14_t callbackshapeDblClick, SWIG_Callback15_t callbackshapeClicked, SWIG_Callback16_t callbackshowMessage, SWIG_Callback17_t callbackgetLocalizedString);

@@ -282,8 +282,8 @@ public class MgView : global::System.IDisposable {
     return ret;
   }
 
-  public virtual bool shapeClicked(int sid, int tag, float x, float y) {
-    bool ret = touchvgPINVOKE.MgView_shapeClicked(swigCPtr, sid, tag, x, y);
+  public virtual bool shapeClicked(MgShape shape, float x, float y) {
+    bool ret = touchvgPINVOKE.MgView_shapeClicked(swigCPtr, MgShape.getCPtr(shape), x, y);
     return ret;
   }
 

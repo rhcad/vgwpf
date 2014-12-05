@@ -98,13 +98,13 @@ public class GiView : global::System.IDisposable {
     if (SwigDerivedClassHasMethod("shapeDeleted", swigMethodTypes13)) touchvgPINVOKE.GiView_shapeDeletedSwigExplicitGiView(swigCPtr, sid); else touchvgPINVOKE.GiView_shapeDeleted(swigCPtr, sid);
   }
 
-  public virtual bool shapeDblClick(int type, int sid) {
-    bool ret = (SwigDerivedClassHasMethod("shapeDblClick", swigMethodTypes14) ? touchvgPINVOKE.GiView_shapeDblClickSwigExplicitGiView(swigCPtr, type, sid) : touchvgPINVOKE.GiView_shapeDblClick(swigCPtr, type, sid));
+  public virtual bool shapeDblClick(int type, int sid, int tag) {
+    bool ret = (SwigDerivedClassHasMethod("shapeDblClick", swigMethodTypes14) ? touchvgPINVOKE.GiView_shapeDblClickSwigExplicitGiView(swigCPtr, type, sid, tag) : touchvgPINVOKE.GiView_shapeDblClick(swigCPtr, type, sid, tag));
     return ret;
   }
 
-  public virtual bool shapeClicked(int sid, int tag, float x, float y) {
-    bool ret = (SwigDerivedClassHasMethod("shapeClicked", swigMethodTypes15) ? touchvgPINVOKE.GiView_shapeClickedSwigExplicitGiView(swigCPtr, sid, tag, x, y) : touchvgPINVOKE.GiView_shapeClicked(swigCPtr, sid, tag, x, y));
+  public virtual bool shapeClicked(int type, int sid, int tag, float x, float y) {
+    bool ret = (SwigDerivedClassHasMethod("shapeClicked", swigMethodTypes15) ? touchvgPINVOKE.GiView_shapeClickedSwigExplicitGiView(swigCPtr, type, sid, tag, x, y) : touchvgPINVOKE.GiView_shapeClicked(swigCPtr, type, sid, tag, x, y));
     return ret;
   }
 
@@ -222,12 +222,12 @@ public class GiView : global::System.IDisposable {
     shapeDeleted(sid);
   }
 
-  private bool SwigDirectorshapeDblClick(int type, int sid) {
-    return shapeDblClick(type, sid);
+  private bool SwigDirectorshapeDblClick(int type, int sid, int tag) {
+    return shapeDblClick(type, sid, tag);
   }
 
-  private bool SwigDirectorshapeClicked(int sid, int tag, float x, float y) {
-    return shapeClicked(sid, tag, x, y);
+  private bool SwigDirectorshapeClicked(int type, int sid, int tag, float x, float y) {
+    return shapeClicked(type, sid, tag, x, y);
   }
 
   private void SwigDirectorshowMessage(string text) {
@@ -252,8 +252,8 @@ public class GiView : global::System.IDisposable {
   public delegate void SwigDelegateGiView_11(global::System.IntPtr oldview);
   public delegate void SwigDelegateGiView_12(int sid);
   public delegate void SwigDelegateGiView_13(int sid);
-  public delegate bool SwigDelegateGiView_14(int type, int sid);
-  public delegate bool SwigDelegateGiView_15(int sid, int tag, float x, float y);
+  public delegate bool SwigDelegateGiView_14(int type, int sid, int tag);
+  public delegate bool SwigDelegateGiView_15(int type, int sid, int tag, float x, float y);
   public delegate void SwigDelegateGiView_16(string text);
   public delegate void SwigDelegateGiView_17(string name, global::System.IntPtr result);
 
@@ -290,8 +290,8 @@ public class GiView : global::System.IDisposable {
   private static global::System.Type[] swigMethodTypes11 = new global::System.Type[] { typeof(GiView) };
   private static global::System.Type[] swigMethodTypes12 = new global::System.Type[] { typeof(int) };
   private static global::System.Type[] swigMethodTypes13 = new global::System.Type[] { typeof(int) };
-  private static global::System.Type[] swigMethodTypes14 = new global::System.Type[] { typeof(int), typeof(int) };
-  private static global::System.Type[] swigMethodTypes15 = new global::System.Type[] { typeof(int), typeof(int), typeof(float), typeof(float) };
+  private static global::System.Type[] swigMethodTypes14 = new global::System.Type[] { typeof(int), typeof(int), typeof(int) };
+  private static global::System.Type[] swigMethodTypes15 = new global::System.Type[] { typeof(int), typeof(int), typeof(int), typeof(float), typeof(float) };
   private static global::System.Type[] swigMethodTypes16 = new global::System.Type[] { typeof(string) };
   private static global::System.Type[] swigMethodTypes17 = new global::System.Type[] { typeof(string), typeof(MgStringCallback) };
 }

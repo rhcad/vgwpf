@@ -4996,7 +4996,7 @@ class touchvgPINVOKE {
   public static extern bool MgView_shapeDblClick(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgView_shapeClicked")]
-  public static extern bool MgView_shapeClicked(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, float jarg4, float jarg5);
+  public static extern bool MgView_shapeClicked(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, float jarg3, float jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgView_showMessage")]
   public static extern void MgView_showMessage(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
@@ -6133,16 +6133,16 @@ class touchvgPINVOKE {
   public static extern void GiView_shapeDeletedSwigExplicitGiView(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiView_shapeDblClick")]
-  public static extern bool GiView_shapeDblClick(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  public static extern bool GiView_shapeDblClick(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, int jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiView_shapeDblClickSwigExplicitGiView")]
-  public static extern bool GiView_shapeDblClickSwigExplicitGiView(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  public static extern bool GiView_shapeDblClickSwigExplicitGiView(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, int jarg4);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiView_shapeClicked")]
-  public static extern bool GiView_shapeClicked(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, float jarg4, float jarg5);
+  public static extern bool GiView_shapeClicked(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, int jarg4, float jarg5, float jarg6);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiView_shapeClickedSwigExplicitGiView")]
-  public static extern bool GiView_shapeClickedSwigExplicitGiView(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, float jarg4, float jarg5);
+  public static extern bool GiView_shapeClickedSwigExplicitGiView(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, int jarg4, float jarg5, float jarg6);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiView_showMessage")]
   public static extern void GiView_showMessage(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);

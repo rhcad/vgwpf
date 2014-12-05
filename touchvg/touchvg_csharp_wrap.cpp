@@ -31332,6 +31332,36 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CmdSubject_unregisterObserver(void * jarg1, v
 }
 
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_CmdSubject_registerNamedObserver(void * jarg1, char * jarg2, void * jarg3) {
+  unsigned int jresult ;
+  CmdSubject *arg1 = (CmdSubject *) 0 ;
+  char *arg2 = (char *) 0 ;
+  CmdObserver *arg3 = (CmdObserver *) 0 ;
+  bool result;
+  
+  arg1 = (CmdSubject *)jarg1; 
+  arg2 = (char *)jarg2; 
+  arg3 = (CmdObserver *)jarg3; 
+  result = (bool)(arg1)->registerNamedObserver((char const *)arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_CmdSubject_findNamedObserver(void * jarg1, char * jarg2) {
+  void * jresult ;
+  CmdSubject *arg1 = (CmdSubject *) 0 ;
+  char *arg2 = (char *) 0 ;
+  CmdObserver *result = 0 ;
+  
+  arg1 = (CmdSubject *)jarg1; 
+  arg2 = (char *)jarg2; 
+  result = (CmdObserver *)(arg1)->findNamedObserver((char const *)arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_delete_CmdSubject(void * jarg1) {
   CmdSubject *arg1 = (CmdSubject *) 0 ;
   

@@ -5544,6 +5544,12 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_CmdSubject_unregisterObserver")]
   public static extern void CmdSubject_unregisterObserver(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_CmdSubject_registerNamedObserver")]
+  public static extern bool CmdSubject_registerNamedObserver(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_CmdSubject_findNamedObserver")]
+  public static extern global::System.IntPtr CmdSubject_findNamedObserver(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_CmdSubject")]
   public static extern void delete_CmdSubject(global::System.Runtime.InteropServices.HandleRef jarg1);
 

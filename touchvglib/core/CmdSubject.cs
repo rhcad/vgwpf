@@ -45,6 +45,17 @@ public class CmdSubject : CmdObserver {
     touchvgPINVOKE.CmdSubject_unregisterObserver(swigCPtr, CmdObserver.getCPtr(observer));
   }
 
+  public virtual bool registerNamedObserver(string name, CmdObserver observer) {
+    bool ret = touchvgPINVOKE.CmdSubject_registerNamedObserver(swigCPtr, name, CmdObserver.getCPtr(observer));
+    return ret;
+  }
+
+  public virtual CmdObserver findNamedObserver(string name) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.CmdSubject_findNamedObserver(swigCPtr, name);
+    CmdObserver ret = (cPtr == global::System.IntPtr.Zero) ? null : new CmdObserver(cPtr, false);
+    return ret;
+  }
+
 }
 
 }

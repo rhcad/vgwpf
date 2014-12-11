@@ -1080,8 +1080,11 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_mgcurv_splitBezier")]
   public static extern void mgcurv_splitBezier(global::System.Runtime.InteropServices.HandleRef jarg1, float jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, global::System.Runtime.InteropServices.HandleRef jarg4);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_mgcurv_bezierIsStraight")]
+  public static extern bool mgcurv_bezierIsStraight(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_mgcurv_lengthOfBezier")]
-  public static extern float mgcurv_lengthOfBezier(global::System.Runtime.InteropServices.HandleRef jarg1, float jarg2);
+  public static extern float mgcurv_lengthOfBezier(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_mgcurv_bezier4P")]
   public static extern void mgcurv_bezier4P(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, global::System.Runtime.InteropServices.HandleRef jarg4, global::System.Runtime.InteropServices.HandleRef jarg5, global::System.Runtime.InteropServices.HandleRef jarg6);
@@ -1509,11 +1512,35 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_kFillARGB_get")]
   public static extern int GiContext_kFillARGB_get();
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_kLineArrayHead_get")]
+  public static extern int GiContext_kLineArrayHead_get();
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_kCopyAll_get")]
   public static extern int GiContext_kCopyAll_get();
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_kLineDashMask_get")]
   public static extern int GiContext_kLineDashMask_get();
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_kArrowNone_get")]
+  public static extern int GiContext_kArrowNone_get();
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_kArrowSharpClosed_get")]
+  public static extern int GiContext_kArrowSharpClosed_get();
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_kArrowSharpLine_get")]
+  public static extern int GiContext_kArrowSharpLine_get();
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_kArrowTLine_get")]
+  public static extern int GiContext_kArrowTLine_get();
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_kArrowSlashLine_get")]
+  public static extern int GiContext_kArrowSlashLine_get();
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_kArrowClosedCircle_get")]
+  public static extern int GiContext_kArrowClosedCircle_get();
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_kArrowOpenedCircle_get")]
+  public static extern int GiContext_kArrowOpenedCircle_get();
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_new_GiContext__SWIG_0")]
   public static extern global::System.IntPtr new_GiContext__SWIG_0();
@@ -1631,6 +1658,21 @@ class touchvgPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_setFillAlpha")]
   public static extern void GiContext_setFillAlpha(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_hasArrayHead")]
+  public static extern bool GiContext_hasArrayHead(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_getStartArrayHead")]
+  public static extern int GiContext_getStartArrayHead(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_setStartArrayHead")]
+  public static extern void GiContext_setStartArrayHead(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_getEndArrayHead")]
+  public static extern int GiContext_getEndArrayHead(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiContext_setEndArrayHead")]
+  public static extern void GiContext_setEndArrayHead(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_GiContext")]
   public static extern void delete_GiContext(global::System.Runtime.InteropServices.HandleRef jarg1);
@@ -1815,6 +1857,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_new_MgPath__SWIG_2")]
   public static extern global::System.IntPtr new_MgPath__SWIG_2(int jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, string jarg3);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_new_MgPath__SWIG_3")]
+  public static extern global::System.IntPtr new_MgPath__SWIG_3(string jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgPath")]
   public static extern void delete_MgPath(global::System.Runtime.InteropServices.HandleRef jarg1);
 
@@ -1827,6 +1872,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_addSVGPath")]
   public static extern global::System.IntPtr MgPath_addSVGPath(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_reverse")]
+  public static extern global::System.IntPtr MgPath_reverse(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_genericRoundLines__SWIG_0")]
   public static extern bool MgPath_genericRoundLines__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, float jarg4, bool jarg5);
 
@@ -1835,6 +1883,9 @@ class touchvgPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_getCount")]
   public static extern int MgPath_getCount(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_getSubPathCount")]
+  public static extern int MgPath_getSubPathCount(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_getStartPoint")]
   public static extern global::System.IntPtr MgPath_getStartPoint(global::System.Runtime.InteropServices.HandleRef jarg1);
@@ -1854,8 +1905,14 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_isLines")]
   public static extern bool MgPath_isLines(global::System.Runtime.InteropServices.HandleRef jarg1);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_isCurve")]
+  public static extern bool MgPath_isCurve(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_isClosed")]
   public static extern bool MgPath_isClosed(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_getLength")]
+  public static extern float MgPath_getLength(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_getNodeType")]
   public static extern int MgPath_getNodeType(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
@@ -1958,6 +2015,9 @@ class touchvgPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_closeFigure")]
   public static extern bool MgPath_closeFigure(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_trimStart")]
+  public static extern bool MgPath_trimStart(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, float jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgPath_crossWithPath")]
   public static extern bool MgPath_crossWithPath(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, global::System.Runtime.InteropServices.HandleRef jarg4);

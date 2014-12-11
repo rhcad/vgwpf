@@ -154,6 +154,28 @@ namespace touchvg.view
             }
         }
 
+        //! 起端箭头, 0-6:无箭头,实心尖头,简单线条尖头,T型,斜线,实圆头,空圆头
+        public int StartArrayHead
+        {
+            get { return CoreView.getContext(false).getStartArrayHead(); }
+            set
+            {
+                CoreView.getContext(true).setStartArrayHead(value);
+                CoreView.setContext(GiContext.kLineArrayHead);
+            }
+        }
+
+        //! 起端箭头, 0-6:无箭头,实心尖头,简单线条尖头,T型,斜线,实圆头,空圆头
+        public int EndArrayHead
+        {
+            get { return CoreView.getContext(false).getEndArrayHead(); }
+            set
+            {
+                CoreView.getContext(true).setEndArrayHead(value);
+                CoreView.setContext(GiContext.kLineArrayHead);
+            }
+        }
+
         //! 线条颜色，忽略透明度，Colors.Transparent不画线条
         public Color LineColor
         {

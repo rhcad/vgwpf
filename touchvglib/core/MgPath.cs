@@ -48,6 +48,9 @@ public class MgPath : global::System.IDisposable {
   public MgPath(int count, Point2d points, string types) : this(touchvgPINVOKE.new_MgPath__SWIG_2(count, Point2d.getCPtr(points), types), true) {
   }
 
+  public MgPath(string svgd) : this(touchvgPINVOKE.new_MgPath__SWIG_3(svgd), true) {
+  }
+
   public MgPath copy(MgPath src) {
     MgPath ret = new MgPath(touchvgPINVOKE.MgPath_copy(swigCPtr, MgPath.getCPtr(src)), false);
     if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
@@ -65,6 +68,11 @@ public class MgPath : global::System.IDisposable {
     return ret;
   }
 
+  public MgPath reverse() {
+    MgPath ret = new MgPath(touchvgPINVOKE.MgPath_reverse(swigCPtr), false);
+    return ret;
+  }
+
   public bool genericRoundLines(int count, Point2d points, float radius, bool closed) {
     bool ret = touchvgPINVOKE.MgPath_genericRoundLines__SWIG_0(swigCPtr, count, Point2d.getCPtr(points), radius, closed);
     return ret;
@@ -77,6 +85,11 @@ public class MgPath : global::System.IDisposable {
 
   public int getCount() {
     int ret = touchvgPINVOKE.MgPath_getCount(swigCPtr);
+    return ret;
+  }
+
+  public int getSubPathCount() {
+    int ret = touchvgPINVOKE.MgPath_getSubPathCount(swigCPtr);
     return ret;
   }
 
@@ -110,8 +123,18 @@ public class MgPath : global::System.IDisposable {
     return ret;
   }
 
+  public bool isCurve() {
+    bool ret = touchvgPINVOKE.MgPath_isCurve(swigCPtr);
+    return ret;
+  }
+
   public bool isClosed() {
     bool ret = touchvgPINVOKE.MgPath_isClosed(swigCPtr);
+    return ret;
+  }
+
+  public float getLength() {
+    float ret = touchvgPINVOKE.MgPath_getLength(swigCPtr);
     return ret;
   }
 
@@ -296,6 +319,12 @@ public class MgPath : global::System.IDisposable {
 
   public bool closeFigure() {
     bool ret = touchvgPINVOKE.MgPath_closeFigure(swigCPtr);
+    return ret;
+  }
+
+  public bool trimStart(Point2d pt, float dist) {
+    bool ret = touchvgPINVOKE.MgPath_trimStart(swigCPtr, Point2d.getCPtr(pt), dist);
+    if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }
 

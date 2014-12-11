@@ -52,8 +52,13 @@ public class mgcurv : global::System.IDisposable {
     touchvgPINVOKE.mgcurv_splitBezier(Point2d.getCPtr(pts), t, Point2d.getCPtr(pts1), Point2d.getCPtr(pts2));
   }
 
-  public static float lengthOfBezier(Point2d pts, float tol) {
-    float ret = touchvgPINVOKE.mgcurv_lengthOfBezier(Point2d.getCPtr(pts), tol);
+  public static bool bezierIsStraight(Point2d pts) {
+    bool ret = touchvgPINVOKE.mgcurv_bezierIsStraight(Point2d.getCPtr(pts));
+    return ret;
+  }
+
+  public static float lengthOfBezier(Point2d pts) {
+    float ret = touchvgPINVOKE.mgcurv_lengthOfBezier(Point2d.getCPtr(pts));
     return ret;
   }
 

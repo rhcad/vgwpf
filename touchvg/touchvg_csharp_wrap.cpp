@@ -9818,15 +9818,25 @@ SWIGEXPORT void SWIGSTDCALL CSharp_mgcurv_splitBezier(void * jarg1, float jarg2,
 }
 
 
-SWIGEXPORT float SWIGSTDCALL CSharp_mgcurv_lengthOfBezier(void * jarg1, float jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_mgcurv_bezierIsStraight(void * jarg1) {
+  unsigned int jresult ;
+  Point2d *arg1 = (Point2d *) 0 ;
+  bool result;
+  
+  arg1 = (Point2d *)jarg1; 
+  result = (bool)mgcurv::bezierIsStraight((Point2d const *)arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_mgcurv_lengthOfBezier(void * jarg1) {
   float jresult ;
   Point2d *arg1 = (Point2d *) 0 ;
-  float arg2 ;
   float result;
   
   arg1 = (Point2d *)jarg1; 
-  arg2 = (float)jarg2; 
-  result = (float)mgcurv::lengthOfBezier((Point2d const *)arg1,arg2);
+  result = (float)mgcurv::lengthOfBezier((Point2d const *)arg1);
   jresult = result; 
   return jresult;
 }
@@ -12305,6 +12315,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_kFillARGB_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_kLineArrayHead_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)GiContext::kLineArrayHead;
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_kCopyAll_get() {
   int jresult ;
   int result;
@@ -12320,6 +12340,76 @@ SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_kLineDashMask_get() {
   int result;
   
   result = (int)GiContext::kLineDashMask;
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_kArrowNone_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)GiContext::kArrowNone;
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_kArrowSharpClosed_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)GiContext::kArrowSharpClosed;
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_kArrowSharpLine_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)GiContext::kArrowSharpLine;
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_kArrowTLine_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)GiContext::kArrowTLine;
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_kArrowSlashLine_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)GiContext::kArrowSlashLine;
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_kArrowClosedCircle_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)GiContext::kArrowClosedCircle;
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_kArrowOpenedCircle_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)GiContext::kArrowOpenedCircle;
   jresult = (int)result; 
   return jresult;
 }
@@ -12860,6 +12950,62 @@ SWIGEXPORT void SWIGSTDCALL CSharp_GiContext_setFillAlpha(void * jarg1, int jarg
   arg1 = (GiContext *)jarg1; 
   arg2 = (int)jarg2; 
   (arg1)->setFillAlpha(arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GiContext_hasArrayHead(void * jarg1) {
+  unsigned int jresult ;
+  GiContext *arg1 = (GiContext *) 0 ;
+  bool result;
+  
+  arg1 = (GiContext *)jarg1; 
+  result = (bool)((GiContext const *)arg1)->hasArrayHead();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_getStartArrayHead(void * jarg1) {
+  int jresult ;
+  GiContext *arg1 = (GiContext *) 0 ;
+  int result;
+  
+  arg1 = (GiContext *)jarg1; 
+  result = (int)((GiContext const *)arg1)->getStartArrayHead();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_GiContext_setStartArrayHead(void * jarg1, int jarg2) {
+  GiContext *arg1 = (GiContext *) 0 ;
+  int arg2 ;
+  
+  arg1 = (GiContext *)jarg1; 
+  arg2 = (int)jarg2; 
+  (arg1)->setStartArrayHead(arg2);
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_GiContext_getEndArrayHead(void * jarg1) {
+  int jresult ;
+  GiContext *arg1 = (GiContext *) 0 ;
+  int result;
+  
+  arg1 = (GiContext *)jarg1; 
+  result = (int)((GiContext const *)arg1)->getEndArrayHead();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_GiContext_setEndArrayHead(void * jarg1, int jarg2) {
+  GiContext *arg1 = (GiContext *) 0 ;
+  int arg2 ;
+  
+  arg1 = (GiContext *)jarg1; 
+  arg2 = (int)jarg2; 
+  (arg1)->setEndArrayHead(arg2);
 }
 
 
@@ -13753,6 +13899,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_MgPath__SWIG_2(int jarg1, void * jarg2,
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_MgPath__SWIG_3(char * jarg1) {
+  void * jresult ;
+  char *arg1 = (char *) 0 ;
+  MgPath *result = 0 ;
+  
+  arg1 = (char *)jarg1; 
+  result = (MgPath *)new MgPath((char const *)arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgPath(void * jarg1) {
   MgPath *arg1 = (MgPath *) 0 ;
   
@@ -13811,6 +13969,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_MgPath_addSVGPath(void * jarg1, char * jarg
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgPath_reverse(void * jarg1) {
+  void * jresult ;
+  MgPath *arg1 = (MgPath *) 0 ;
+  MgPath *result = 0 ;
+  
+  arg1 = (MgPath *)jarg1; 
+  result = (MgPath *) &(arg1)->reverse();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgPath_genericRoundLines__SWIG_0(void * jarg1, int jarg2, void * jarg3, float jarg4, unsigned int jarg5) {
   unsigned int jresult ;
   MgPath *arg1 = (MgPath *) 0 ;
@@ -13856,6 +14026,18 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgPath_getCount(void * jarg1) {
   
   arg1 = (MgPath *)jarg1; 
   result = (int)((MgPath const *)arg1)->getCount();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_MgPath_getSubPathCount(void * jarg1) {
+  int jresult ;
+  MgPath *arg1 = (MgPath *) 0 ;
+  int result;
+  
+  arg1 = (MgPath *)jarg1; 
+  result = (int)((MgPath const *)arg1)->getSubPathCount();
   jresult = result; 
   return jresult;
 }
@@ -13933,6 +14115,18 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgPath_isLines(void * jarg1) {
 }
 
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgPath_isCurve(void * jarg1) {
+  unsigned int jresult ;
+  MgPath *arg1 = (MgPath *) 0 ;
+  bool result;
+  
+  arg1 = (MgPath *)jarg1; 
+  result = (bool)((MgPath const *)arg1)->isCurve();
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgPath_isClosed(void * jarg1) {
   unsigned int jresult ;
   MgPath *arg1 = (MgPath *) 0 ;
@@ -13940,6 +14134,18 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgPath_isClosed(void * jarg1) {
   
   arg1 = (MgPath *)jarg1; 
   result = (bool)((MgPath const *)arg1)->isClosed();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT float SWIGSTDCALL CSharp_MgPath_getLength(void * jarg1) {
+  float jresult ;
+  MgPath *arg1 = (MgPath *) 0 ;
+  float result;
+  
+  arg1 = (MgPath *)jarg1; 
+  result = (float)((MgPath const *)arg1)->getLength();
   jresult = result; 
   return jresult;
 }
@@ -14572,6 +14778,26 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgPath_closeFigure(void * jarg1) {
   
   arg1 = (MgPath *)jarg1; 
   result = (bool)(arg1)->closeFigure();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgPath_trimStart(void * jarg1, void * jarg2, float jarg3) {
+  unsigned int jresult ;
+  MgPath *arg1 = (MgPath *) 0 ;
+  Point2d *arg2 = 0 ;
+  float arg3 ;
+  bool result;
+  
+  arg1 = (MgPath *)jarg1; 
+  arg2 = (Point2d *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
+    return 0;
+  } 
+  arg3 = (float)jarg3; 
+  result = (bool)(arg1)->trimStart((Point2d const &)*arg2,arg3);
   jresult = result; 
   return jresult;
 }

@@ -213,6 +213,29 @@ public class GiContext : global::System.IDisposable {
     touchvgPINVOKE.GiContext_setFillAlpha(swigCPtr, alpha);
   }
 
+  public bool hasArrayHead() {
+    bool ret = touchvgPINVOKE.GiContext_hasArrayHead(swigCPtr);
+    return ret;
+  }
+
+  public int getStartArrayHead() {
+    int ret = touchvgPINVOKE.GiContext_getStartArrayHead(swigCPtr);
+    return ret;
+  }
+
+  public void setStartArrayHead(int type) {
+    touchvgPINVOKE.GiContext_setStartArrayHead(swigCPtr, type);
+  }
+
+  public int getEndArrayHead() {
+    int ret = touchvgPINVOKE.GiContext_getEndArrayHead(swigCPtr);
+    return ret;
+  }
+
+  public void setEndArrayHead(int type) {
+    touchvgPINVOKE.GiContext_setEndArrayHead(swigCPtr, type);
+  }
+
   public static readonly int kSolidLine = touchvgPINVOKE.GiContext_kSolidLine_get();
   public static readonly int kDashLine = touchvgPINVOKE.GiContext_kDashLine_get();
   public static readonly int kDotLine = touchvgPINVOKE.GiContext_kDotLine_get();
@@ -228,8 +251,16 @@ public class GiContext : global::System.IDisposable {
   public static readonly int kFillRGB = touchvgPINVOKE.GiContext_kFillRGB_get();
   public static readonly int kFillAlpha = touchvgPINVOKE.GiContext_kFillAlpha_get();
   public static readonly int kFillARGB = touchvgPINVOKE.GiContext_kFillARGB_get();
+  public static readonly int kLineArrayHead = touchvgPINVOKE.GiContext_kLineArrayHead_get();
   public static readonly int kCopyAll = touchvgPINVOKE.GiContext_kCopyAll_get();
   public static readonly int kLineDashMask = touchvgPINVOKE.GiContext_kLineDashMask_get();
+  public static readonly int kArrowNone = touchvgPINVOKE.GiContext_kArrowNone_get();
+  public static readonly int kArrowSharpClosed = touchvgPINVOKE.GiContext_kArrowSharpClosed_get();
+  public static readonly int kArrowSharpLine = touchvgPINVOKE.GiContext_kArrowSharpLine_get();
+  public static readonly int kArrowTLine = touchvgPINVOKE.GiContext_kArrowTLine_get();
+  public static readonly int kArrowSlashLine = touchvgPINVOKE.GiContext_kArrowSlashLine_get();
+  public static readonly int kArrowClosedCircle = touchvgPINVOKE.GiContext_kArrowClosedCircle_get();
+  public static readonly int kArrowOpenedCircle = touchvgPINVOKE.GiContext_kArrowOpenedCircle_get();
 
 }
 

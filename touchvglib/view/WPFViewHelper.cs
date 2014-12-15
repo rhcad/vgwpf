@@ -742,13 +742,13 @@ namespace touchvg.view
         }
 
         //! 返回已录制的相对毫秒数
-        public int getRecordTicks()
+        public int GetRecordTicks()
         {
             return CoreView.getRecordTick(false, WPFGraphView.getTick());
         }
 
         //! 开始录屏
-        public bool startRecord(String path)
+        public bool StartRecord(String path)
         {
             if (CoreView.isRecording())
                 return false;
@@ -770,9 +770,21 @@ namespace touchvg.view
         }
 
         //! 停止录屏
-        public void stopRecord()
+        public void StopRecord()
         {
             CoreView.stopRecord(false);
+        }
+
+        //! 显示消息文字
+        public void ShowMessage(string text)
+        {
+            ViewAdapter.showMessage(text);
+        }
+
+        //! 得到本地化文字
+        public string GetLocalizedString(string name)
+        {
+            return WPFImageSourceHelper.Instance.GetLocalizedString(name);
         }
     }
 }

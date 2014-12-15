@@ -62,6 +62,11 @@ public class mgcurv : global::System.IDisposable {
     return ret;
   }
 
+  public static float bezierPointLengthFromStart(Point2d pts, float len) {
+    float ret = touchvgPINVOKE.mgcurv_bezierPointLengthFromStart(Point2d.getCPtr(pts), len);
+    return ret;
+  }
+
   public static void bezier4P(Point2d pt1, Point2d pt2, Point2d pt3, Point2d pt4, Point2d ctrpt1, Point2d ctrpt2) {
     touchvgPINVOKE.mgcurv_bezier4P(Point2d.getCPtr(pt1), Point2d.getCPtr(pt2), Point2d.getCPtr(pt3), Point2d.getCPtr(pt4), Point2d.getCPtr(ctrpt1), Point2d.getCPtr(ctrpt2));
     if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();

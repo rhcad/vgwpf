@@ -1086,6 +1086,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_mgcurv_lengthOfBezier")]
   public static extern float mgcurv_lengthOfBezier(global::System.Runtime.InteropServices.HandleRef jarg1);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_mgcurv_bezierPointLengthFromStart")]
+  public static extern float mgcurv_bezierPointLengthFromStart(global::System.Runtime.InteropServices.HandleRef jarg1, float jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_mgcurv_bezier4P")]
   public static extern void mgcurv_bezier4P(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, global::System.Runtime.InteropServices.HandleRef jarg4, global::System.Runtime.InteropServices.HandleRef jarg5, global::System.Runtime.InteropServices.HandleRef jarg6);
 

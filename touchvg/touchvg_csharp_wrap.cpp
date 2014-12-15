@@ -9842,6 +9842,20 @@ SWIGEXPORT float SWIGSTDCALL CSharp_mgcurv_lengthOfBezier(void * jarg1) {
 }
 
 
+SWIGEXPORT float SWIGSTDCALL CSharp_mgcurv_bezierPointLengthFromStart(void * jarg1, float jarg2) {
+  float jresult ;
+  Point2d *arg1 = (Point2d *) 0 ;
+  float arg2 ;
+  float result;
+  
+  arg1 = (Point2d *)jarg1; 
+  arg2 = (float)jarg2; 
+  result = (float)mgcurv::bezierPointLengthFromStart((Point2d const *)arg1,arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_mgcurv_bezier4P(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5, void * jarg6) {
   Point2d *arg1 = 0 ;
   Point2d *arg2 = 0 ;

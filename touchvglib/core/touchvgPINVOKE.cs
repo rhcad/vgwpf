@@ -6177,6 +6177,12 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiView_dynamicChangedSwigExplicitGiView")]
   public static extern void GiView_dynamicChangedSwigExplicitGiView(global::System.Runtime.InteropServices.HandleRef jarg1);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiView_zoomChanged")]
+  public static extern void GiView_zoomChanged(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiView_zoomChangedSwigExplicitGiView")]
+  public static extern void GiView_zoomChangedSwigExplicitGiView(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiView_viewChanged")]
   public static extern void GiView_viewChanged(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
@@ -6223,7 +6229,7 @@ class touchvgPINVOKE {
   public static extern global::System.IntPtr new_GiView();
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiView_director_connect")]
-  public static extern void GiView_director_connect(global::System.Runtime.InteropServices.HandleRef jarg1, GiView.SwigDelegateGiView_0 delegate0, GiView.SwigDelegateGiView_1 delegate1, GiView.SwigDelegateGiView_2 delegate2, GiView.SwigDelegateGiView_3 delegate3, GiView.SwigDelegateGiView_4 delegate4, GiView.SwigDelegateGiView_5 delegate5, GiView.SwigDelegateGiView_6 delegate6, GiView.SwigDelegateGiView_7 delegate7, GiView.SwigDelegateGiView_8 delegate8, GiView.SwigDelegateGiView_9 delegate9, GiView.SwigDelegateGiView_10 delegate10, GiView.SwigDelegateGiView_11 delegate11, GiView.SwigDelegateGiView_12 delegate12, GiView.SwigDelegateGiView_13 delegate13, GiView.SwigDelegateGiView_14 delegate14, GiView.SwigDelegateGiView_15 delegate15, GiView.SwigDelegateGiView_16 delegate16, GiView.SwigDelegateGiView_17 delegate17);
+  public static extern void GiView_director_connect(global::System.Runtime.InteropServices.HandleRef jarg1, GiView.SwigDelegateGiView_0 delegate0, GiView.SwigDelegateGiView_1 delegate1, GiView.SwigDelegateGiView_2 delegate2, GiView.SwigDelegateGiView_3 delegate3, GiView.SwigDelegateGiView_4 delegate4, GiView.SwigDelegateGiView_5 delegate5, GiView.SwigDelegateGiView_6 delegate6, GiView.SwigDelegateGiView_7 delegate7, GiView.SwigDelegateGiView_8 delegate8, GiView.SwigDelegateGiView_9 delegate9, GiView.SwigDelegateGiView_10 delegate10, GiView.SwigDelegateGiView_11 delegate11, GiView.SwigDelegateGiView_12 delegate12, GiView.SwigDelegateGiView_13 delegate13, GiView.SwigDelegateGiView_14 delegate14, GiView.SwigDelegateGiView_15 delegate15, GiView.SwigDelegateGiView_16 delegate16, GiView.SwigDelegateGiView_17 delegate17, GiView.SwigDelegateGiView_18 delegate18);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgStringCallback")]
   public static extern void delete_MgStringCallback(global::System.Runtime.InteropServices.HandleRef jarg1);

@@ -86,34 +86,38 @@ public class GiView : global::System.IDisposable {
     if (SwigDerivedClassHasMethod("dynamicChanged", swigMethodTypes10)) touchvgPINVOKE.GiView_dynamicChangedSwigExplicitGiView(swigCPtr); else touchvgPINVOKE.GiView_dynamicChanged(swigCPtr);
   }
 
+  public virtual void zoomChanged() {
+    if (SwigDerivedClassHasMethod("zoomChanged", swigMethodTypes11)) touchvgPINVOKE.GiView_zoomChangedSwigExplicitGiView(swigCPtr); else touchvgPINVOKE.GiView_zoomChanged(swigCPtr);
+  }
+
   public virtual void viewChanged(GiView oldview) {
-    if (SwigDerivedClassHasMethod("viewChanged", swigMethodTypes11)) touchvgPINVOKE.GiView_viewChangedSwigExplicitGiView(swigCPtr, GiView.getCPtr(oldview)); else touchvgPINVOKE.GiView_viewChanged(swigCPtr, GiView.getCPtr(oldview));
+    if (SwigDerivedClassHasMethod("viewChanged", swigMethodTypes12)) touchvgPINVOKE.GiView_viewChangedSwigExplicitGiView(swigCPtr, GiView.getCPtr(oldview)); else touchvgPINVOKE.GiView_viewChanged(swigCPtr, GiView.getCPtr(oldview));
   }
 
   public virtual void shapeWillDelete(int sid) {
-    if (SwigDerivedClassHasMethod("shapeWillDelete", swigMethodTypes12)) touchvgPINVOKE.GiView_shapeWillDeleteSwigExplicitGiView(swigCPtr, sid); else touchvgPINVOKE.GiView_shapeWillDelete(swigCPtr, sid);
+    if (SwigDerivedClassHasMethod("shapeWillDelete", swigMethodTypes13)) touchvgPINVOKE.GiView_shapeWillDeleteSwigExplicitGiView(swigCPtr, sid); else touchvgPINVOKE.GiView_shapeWillDelete(swigCPtr, sid);
   }
 
   public virtual void shapeDeleted(int sid) {
-    if (SwigDerivedClassHasMethod("shapeDeleted", swigMethodTypes13)) touchvgPINVOKE.GiView_shapeDeletedSwigExplicitGiView(swigCPtr, sid); else touchvgPINVOKE.GiView_shapeDeleted(swigCPtr, sid);
+    if (SwigDerivedClassHasMethod("shapeDeleted", swigMethodTypes14)) touchvgPINVOKE.GiView_shapeDeletedSwigExplicitGiView(swigCPtr, sid); else touchvgPINVOKE.GiView_shapeDeleted(swigCPtr, sid);
   }
 
   public virtual bool shapeDblClick(int type, int sid, int tag) {
-    bool ret = (SwigDerivedClassHasMethod("shapeDblClick", swigMethodTypes14) ? touchvgPINVOKE.GiView_shapeDblClickSwigExplicitGiView(swigCPtr, type, sid, tag) : touchvgPINVOKE.GiView_shapeDblClick(swigCPtr, type, sid, tag));
+    bool ret = (SwigDerivedClassHasMethod("shapeDblClick", swigMethodTypes15) ? touchvgPINVOKE.GiView_shapeDblClickSwigExplicitGiView(swigCPtr, type, sid, tag) : touchvgPINVOKE.GiView_shapeDblClick(swigCPtr, type, sid, tag));
     return ret;
   }
 
   public virtual bool shapeClicked(int type, int sid, int tag, float x, float y) {
-    bool ret = (SwigDerivedClassHasMethod("shapeClicked", swigMethodTypes15) ? touchvgPINVOKE.GiView_shapeClickedSwigExplicitGiView(swigCPtr, type, sid, tag, x, y) : touchvgPINVOKE.GiView_shapeClicked(swigCPtr, type, sid, tag, x, y));
+    bool ret = (SwigDerivedClassHasMethod("shapeClicked", swigMethodTypes16) ? touchvgPINVOKE.GiView_shapeClickedSwigExplicitGiView(swigCPtr, type, sid, tag, x, y) : touchvgPINVOKE.GiView_shapeClicked(swigCPtr, type, sid, tag, x, y));
     return ret;
   }
 
   public virtual void showMessage(string text) {
-    if (SwigDerivedClassHasMethod("showMessage", swigMethodTypes16)) touchvgPINVOKE.GiView_showMessageSwigExplicitGiView(swigCPtr, text); else touchvgPINVOKE.GiView_showMessage(swigCPtr, text);
+    if (SwigDerivedClassHasMethod("showMessage", swigMethodTypes17)) touchvgPINVOKE.GiView_showMessageSwigExplicitGiView(swigCPtr, text); else touchvgPINVOKE.GiView_showMessage(swigCPtr, text);
   }
 
   public virtual void getLocalizedString(string name, MgStringCallback result) {
-    if (SwigDerivedClassHasMethod("getLocalizedString", swigMethodTypes17)) touchvgPINVOKE.GiView_getLocalizedStringSwigExplicitGiView(swigCPtr, name, MgStringCallback.getCPtr(result)); else touchvgPINVOKE.GiView_getLocalizedString(swigCPtr, name, MgStringCallback.getCPtr(result));
+    if (SwigDerivedClassHasMethod("getLocalizedString", swigMethodTypes18)) touchvgPINVOKE.GiView_getLocalizedStringSwigExplicitGiView(swigCPtr, name, MgStringCallback.getCPtr(result)); else touchvgPINVOKE.GiView_getLocalizedString(swigCPtr, name, MgStringCallback.getCPtr(result));
   }
 
   public GiView() : this(touchvgPINVOKE.new_GiView(), true) {
@@ -143,21 +147,23 @@ public class GiView : global::System.IDisposable {
       swigDelegate9 = new SwigDelegateGiView_9(SwigDirectorcontentChanged);
     if (SwigDerivedClassHasMethod("dynamicChanged", swigMethodTypes10))
       swigDelegate10 = new SwigDelegateGiView_10(SwigDirectordynamicChanged);
-    if (SwigDerivedClassHasMethod("viewChanged", swigMethodTypes11))
-      swigDelegate11 = new SwigDelegateGiView_11(SwigDirectorviewChanged);
-    if (SwigDerivedClassHasMethod("shapeWillDelete", swigMethodTypes12))
-      swigDelegate12 = new SwigDelegateGiView_12(SwigDirectorshapeWillDelete);
-    if (SwigDerivedClassHasMethod("shapeDeleted", swigMethodTypes13))
-      swigDelegate13 = new SwigDelegateGiView_13(SwigDirectorshapeDeleted);
-    if (SwigDerivedClassHasMethod("shapeDblClick", swigMethodTypes14))
-      swigDelegate14 = new SwigDelegateGiView_14(SwigDirectorshapeDblClick);
-    if (SwigDerivedClassHasMethod("shapeClicked", swigMethodTypes15))
-      swigDelegate15 = new SwigDelegateGiView_15(SwigDirectorshapeClicked);
-    if (SwigDerivedClassHasMethod("showMessage", swigMethodTypes16))
-      swigDelegate16 = new SwigDelegateGiView_16(SwigDirectorshowMessage);
-    if (SwigDerivedClassHasMethod("getLocalizedString", swigMethodTypes17))
-      swigDelegate17 = new SwigDelegateGiView_17(SwigDirectorgetLocalizedString);
-    touchvgPINVOKE.GiView_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17);
+    if (SwigDerivedClassHasMethod("zoomChanged", swigMethodTypes11))
+      swigDelegate11 = new SwigDelegateGiView_11(SwigDirectorzoomChanged);
+    if (SwigDerivedClassHasMethod("viewChanged", swigMethodTypes12))
+      swigDelegate12 = new SwigDelegateGiView_12(SwigDirectorviewChanged);
+    if (SwigDerivedClassHasMethod("shapeWillDelete", swigMethodTypes13))
+      swigDelegate13 = new SwigDelegateGiView_13(SwigDirectorshapeWillDelete);
+    if (SwigDerivedClassHasMethod("shapeDeleted", swigMethodTypes14))
+      swigDelegate14 = new SwigDelegateGiView_14(SwigDirectorshapeDeleted);
+    if (SwigDerivedClassHasMethod("shapeDblClick", swigMethodTypes15))
+      swigDelegate15 = new SwigDelegateGiView_15(SwigDirectorshapeDblClick);
+    if (SwigDerivedClassHasMethod("shapeClicked", swigMethodTypes16))
+      swigDelegate16 = new SwigDelegateGiView_16(SwigDirectorshapeClicked);
+    if (SwigDerivedClassHasMethod("showMessage", swigMethodTypes17))
+      swigDelegate17 = new SwigDelegateGiView_17(SwigDirectorshowMessage);
+    if (SwigDerivedClassHasMethod("getLocalizedString", swigMethodTypes18))
+      swigDelegate18 = new SwigDelegateGiView_18(SwigDirectorgetLocalizedString);
+    touchvgPINVOKE.GiView_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18);
   }
 
   private bool SwigDerivedClassHasMethod(string methodName, global::System.Type[] methodTypes) {
@@ -210,6 +216,10 @@ public class GiView : global::System.IDisposable {
     dynamicChanged();
   }
 
+  private void SwigDirectorzoomChanged() {
+    zoomChanged();
+  }
+
   private void SwigDirectorviewChanged(global::System.IntPtr oldview) {
     viewChanged((oldview == global::System.IntPtr.Zero) ? null : new GiView(oldview, false));
   }
@@ -249,13 +259,14 @@ public class GiView : global::System.IDisposable {
   public delegate void SwigDelegateGiView_8();
   public delegate void SwigDelegateGiView_9();
   public delegate void SwigDelegateGiView_10();
-  public delegate void SwigDelegateGiView_11(global::System.IntPtr oldview);
-  public delegate void SwigDelegateGiView_12(int sid);
+  public delegate void SwigDelegateGiView_11();
+  public delegate void SwigDelegateGiView_12(global::System.IntPtr oldview);
   public delegate void SwigDelegateGiView_13(int sid);
-  public delegate bool SwigDelegateGiView_14(int type, int sid, int tag);
-  public delegate bool SwigDelegateGiView_15(int type, int sid, int tag, float x, float y);
-  public delegate void SwigDelegateGiView_16(string text);
-  public delegate void SwigDelegateGiView_17(string name, global::System.IntPtr result);
+  public delegate void SwigDelegateGiView_14(int sid);
+  public delegate bool SwigDelegateGiView_15(int type, int sid, int tag);
+  public delegate bool SwigDelegateGiView_16(int type, int sid, int tag, float x, float y);
+  public delegate void SwigDelegateGiView_17(string text);
+  public delegate void SwigDelegateGiView_18(string name, global::System.IntPtr result);
 
   private SwigDelegateGiView_0 swigDelegate0;
   private SwigDelegateGiView_1 swigDelegate1;
@@ -275,6 +286,7 @@ public class GiView : global::System.IDisposable {
   private SwigDelegateGiView_15 swigDelegate15;
   private SwigDelegateGiView_16 swigDelegate16;
   private SwigDelegateGiView_17 swigDelegate17;
+  private SwigDelegateGiView_18 swigDelegate18;
 
   private static global::System.Type[] swigMethodTypes0 = new global::System.Type[] { typeof(bool) };
   private static global::System.Type[] swigMethodTypes1 = new global::System.Type[] { typeof(int), typeof(int) };
@@ -287,13 +299,14 @@ public class GiView : global::System.IDisposable {
   private static global::System.Type[] swigMethodTypes8 = new global::System.Type[] {  };
   private static global::System.Type[] swigMethodTypes9 = new global::System.Type[] {  };
   private static global::System.Type[] swigMethodTypes10 = new global::System.Type[] {  };
-  private static global::System.Type[] swigMethodTypes11 = new global::System.Type[] { typeof(GiView) };
-  private static global::System.Type[] swigMethodTypes12 = new global::System.Type[] { typeof(int) };
+  private static global::System.Type[] swigMethodTypes11 = new global::System.Type[] {  };
+  private static global::System.Type[] swigMethodTypes12 = new global::System.Type[] { typeof(GiView) };
   private static global::System.Type[] swigMethodTypes13 = new global::System.Type[] { typeof(int) };
-  private static global::System.Type[] swigMethodTypes14 = new global::System.Type[] { typeof(int), typeof(int), typeof(int) };
-  private static global::System.Type[] swigMethodTypes15 = new global::System.Type[] { typeof(int), typeof(int), typeof(int), typeof(float), typeof(float) };
-  private static global::System.Type[] swigMethodTypes16 = new global::System.Type[] { typeof(string) };
-  private static global::System.Type[] swigMethodTypes17 = new global::System.Type[] { typeof(string), typeof(MgStringCallback) };
+  private static global::System.Type[] swigMethodTypes14 = new global::System.Type[] { typeof(int) };
+  private static global::System.Type[] swigMethodTypes15 = new global::System.Type[] { typeof(int), typeof(int), typeof(int) };
+  private static global::System.Type[] swigMethodTypes16 = new global::System.Type[] { typeof(int), typeof(int), typeof(int), typeof(float), typeof(float) };
+  private static global::System.Type[] swigMethodTypes17 = new global::System.Type[] { typeof(string) };
+  private static global::System.Type[] swigMethodTypes18 = new global::System.Type[] { typeof(string), typeof(MgStringCallback) };
 }
 
 }

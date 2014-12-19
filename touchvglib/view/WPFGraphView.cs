@@ -16,6 +16,7 @@ namespace touchvg.view
     public delegate void SelectionChangedEventHandler(object sender, EventArgs e);
     public delegate void ContentChangedEventHandler(object sender, EventArgs e);
     public delegate void DynamicChangedEventHandler(object sender, EventArgs e);
+    public delegate void ZoomChangedEventHandler(object sender, EventArgs e);
     public delegate void GiAction();
     public delegate void ShowMessageHandler(string text);
 
@@ -34,6 +35,7 @@ namespace touchvg.view
         public event SelectionChangedEventHandler OnSelectionChanged;
         public event ContentChangedEventHandler OnContentChanged;
         public event DynamicChangedEventHandler OnDynamicChanged;
+        public event ZoomChangedEventHandler OnZoomChanged;
         public ShowMessageHandler ShowMessageHandler;
         private bool _contextActionEnabled = true;
 
@@ -231,6 +233,12 @@ namespace touchvg.view
             {
                 if (_owner.OnDynamicChanged != null)
                     _owner.OnDynamicChanged.Invoke(_owner, null);
+            }
+
+            public override void zoomChanged()
+            {
+                if (_owner.OnZoomChanged != null)
+                    _owner.OnZoomChanged.Invoke(_owner, null);
             }
 
             public override void showMessage(string text)

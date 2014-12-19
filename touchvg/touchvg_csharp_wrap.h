@@ -951,6 +951,7 @@ public:
     virtual void selectionChanged();
     virtual void contentChanged();
     virtual void dynamicChanged();
+    virtual void zoomChanged();
     virtual void viewChanged(GiView *oldview);
     virtual void shapeWillDelete(int sid);
     virtual void shapeDeleted(int sid);
@@ -970,14 +971,15 @@ public:
     typedef void (SWIGSTDCALL* SWIG_Callback8_t)();
     typedef void (SWIGSTDCALL* SWIG_Callback9_t)();
     typedef void (SWIGSTDCALL* SWIG_Callback10_t)();
-    typedef void (SWIGSTDCALL* SWIG_Callback11_t)(void *);
-    typedef void (SWIGSTDCALL* SWIG_Callback12_t)(int);
+    typedef void (SWIGSTDCALL* SWIG_Callback11_t)();
+    typedef void (SWIGSTDCALL* SWIG_Callback12_t)(void *);
     typedef void (SWIGSTDCALL* SWIG_Callback13_t)(int);
-    typedef unsigned int (SWIGSTDCALL* SWIG_Callback14_t)(int, int, int);
-    typedef unsigned int (SWIGSTDCALL* SWIG_Callback15_t)(int, int, int, float, float);
-    typedef void (SWIGSTDCALL* SWIG_Callback16_t)(char *);
-    typedef void (SWIGSTDCALL* SWIG_Callback17_t)(char *, void *);
-    void swig_connect_director(SWIG_Callback0_t callbackregenAll, SWIG_Callback1_t callbackregenAppend, SWIG_Callback2_t callbackredraw, SWIG_Callback3_t callbackuseFinger, SWIG_Callback4_t callbackisContextActionsVisible, SWIG_Callback5_t callbackshowContextActions, SWIG_Callback6_t callbackhideContextActions, SWIG_Callback7_t callbackcommandChanged, SWIG_Callback8_t callbackselectionChanged, SWIG_Callback9_t callbackcontentChanged, SWIG_Callback10_t callbackdynamicChanged, SWIG_Callback11_t callbackviewChanged, SWIG_Callback12_t callbackshapeWillDelete, SWIG_Callback13_t callbackshapeDeleted, SWIG_Callback14_t callbackshapeDblClick, SWIG_Callback15_t callbackshapeClicked, SWIG_Callback16_t callbackshowMessage, SWIG_Callback17_t callbackgetLocalizedString);
+    typedef void (SWIGSTDCALL* SWIG_Callback14_t)(int);
+    typedef unsigned int (SWIGSTDCALL* SWIG_Callback15_t)(int, int, int);
+    typedef unsigned int (SWIGSTDCALL* SWIG_Callback16_t)(int, int, int, float, float);
+    typedef void (SWIGSTDCALL* SWIG_Callback17_t)(char *);
+    typedef void (SWIGSTDCALL* SWIG_Callback18_t)(char *, void *);
+    void swig_connect_director(SWIG_Callback0_t callbackregenAll, SWIG_Callback1_t callbackregenAppend, SWIG_Callback2_t callbackredraw, SWIG_Callback3_t callbackuseFinger, SWIG_Callback4_t callbackisContextActionsVisible, SWIG_Callback5_t callbackshowContextActions, SWIG_Callback6_t callbackhideContextActions, SWIG_Callback7_t callbackcommandChanged, SWIG_Callback8_t callbackselectionChanged, SWIG_Callback9_t callbackcontentChanged, SWIG_Callback10_t callbackdynamicChanged, SWIG_Callback11_t callbackzoomChanged, SWIG_Callback12_t callbackviewChanged, SWIG_Callback13_t callbackshapeWillDelete, SWIG_Callback14_t callbackshapeDeleted, SWIG_Callback15_t callbackshapeDblClick, SWIG_Callback16_t callbackshapeClicked, SWIG_Callback17_t callbackshowMessage, SWIG_Callback18_t callbackgetLocalizedString);
 
 private:
     SWIG_Callback0_t swig_callbackregenAll;
@@ -991,13 +993,14 @@ private:
     SWIG_Callback8_t swig_callbackselectionChanged;
     SWIG_Callback9_t swig_callbackcontentChanged;
     SWIG_Callback10_t swig_callbackdynamicChanged;
-    SWIG_Callback11_t swig_callbackviewChanged;
-    SWIG_Callback12_t swig_callbackshapeWillDelete;
-    SWIG_Callback13_t swig_callbackshapeDeleted;
-    SWIG_Callback14_t swig_callbackshapeDblClick;
-    SWIG_Callback15_t swig_callbackshapeClicked;
-    SWIG_Callback16_t swig_callbackshowMessage;
-    SWIG_Callback17_t swig_callbackgetLocalizedString;
+    SWIG_Callback11_t swig_callbackzoomChanged;
+    SWIG_Callback12_t swig_callbackviewChanged;
+    SWIG_Callback13_t swig_callbackshapeWillDelete;
+    SWIG_Callback14_t swig_callbackshapeDeleted;
+    SWIG_Callback15_t swig_callbackshapeDblClick;
+    SWIG_Callback16_t swig_callbackshapeClicked;
+    SWIG_Callback17_t swig_callbackshowMessage;
+    SWIG_Callback18_t swig_callbackgetLocalizedString;
     void swig_init_callbacks();
 };
 

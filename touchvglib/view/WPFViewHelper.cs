@@ -390,6 +390,32 @@ namespace touchvg.view
         public int SelectedShapeID
         {
             get { return CoreView.getSelectedShapeID(); }
+            set {
+                Ints ids = new Ints(value, 0);
+                CoreView.setSelectedShapeIDs(ids);
+            }
+        }
+
+        //! 当前选中的多个图形的ID
+        public int[] SelectedID
+        {
+            get
+            {
+                Ints ids = new Ints();
+                CoreView.getSelectedShapeIDs(ids);
+                int[] ret = new int[ids.count()];
+                for (int i = 0; i < ret.Length; i++)
+                    ret[i] = ids.get(i);
+                return ret;
+            }
+            set
+            {
+                int n = value != null ? value.Length : 0;
+                Ints ids = new Ints(n);
+                while (--n >= 0)
+                    ids.set(n, value[n]);
+                CoreView.setSelectedShapeIDs(ids);
+            }
         }
 
         //! 当前线性图形中当前控制点序号

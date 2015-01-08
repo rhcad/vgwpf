@@ -308,6 +308,16 @@ public class MgCoreView : global::System.IDisposable {
     return ret;
   }
 
+  public virtual void getSelectedShapeIDs(Ints ids) {
+    touchvgPINVOKE.MgCoreView_getSelectedShapeIDs(swigCPtr, Ints.getCPtr(ids));
+    if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
+  }
+
+  public virtual void setSelectedShapeIDs(Ints ids) {
+    touchvgPINVOKE.MgCoreView_setSelectedShapeIDs(swigCPtr, Ints.getCPtr(ids));
+    if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
+  }
+
   public virtual void clear() {
     touchvgPINVOKE.MgCoreView_clear(swigCPtr);
   }

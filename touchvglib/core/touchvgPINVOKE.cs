@@ -1056,6 +1056,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_mgbase_getMidAngle")]
   public static extern float mgbase_getMidAngle(float jarg1, float jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_mgbase_getMidAngle2")]
+  public static extern float mgbase_getMidAngle2(float jarg1, float jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_mgbase_getDiffAngle")]
   public static extern float mgbase_getDiffAngle(float jarg1, float jarg2);
 
@@ -4362,6 +4365,21 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgShape_drawShape")]
   public static extern bool MgShape_drawShape(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3, global::System.Runtime.InteropServices.HandleRef jarg4, global::System.Runtime.InteropServices.HandleRef jarg5, int jarg6);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgShape_getPointCount")]
+  public static extern int MgShape_getPointCount(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgShape_getPoint")]
+  public static extern global::System.IntPtr MgShape_getPoint(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgShape_getHandleCount")]
+  public static extern int MgShape_getHandleCount(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgShape_getHandlePoint")]
+  public static extern global::System.IntPtr MgShape_getHandlePoint(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgShape_getHandleType")]
+  public static extern int MgShape_getHandleType(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgShapeFactory_createShape")]
   public static extern global::System.IntPtr MgShapeFactory_createShape(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
@@ -4818,8 +4836,11 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSnap_getSnappedType")]
   public static extern int MgSnap_getSnappedType(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSnap_getSnappedPoint")]
-  public static extern int MgSnap_getSnappedPoint(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSnap_getSnappedPoint__SWIG_0")]
+  public static extern int MgSnap_getSnappedPoint__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSnap_getSnappedPoint__SWIG_1")]
+  public static extern int MgSnap_getSnappedPoint__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, global::System.Runtime.InteropServices.HandleRef jarg4, global::System.Runtime.InteropServices.HandleRef jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSnap_setIgnoreStartPoint")]
   public static extern void MgSnap_setIgnoreStartPoint(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
@@ -6458,6 +6479,12 @@ class touchvgPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_getSelectedHandle")]
   public static extern int MgCoreView_getSelectedHandle(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_getSelectedShapeIDs")]
+  public static extern void MgCoreView_getSelectedShapeIDs(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_setSelectedShapeIDs")]
+  public static extern void MgCoreView_setSelectedShapeIDs(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_clear")]
   public static extern void MgCoreView_clear(global::System.Runtime.InteropServices.HandleRef jarg1);

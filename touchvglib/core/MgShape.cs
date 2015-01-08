@@ -149,6 +149,31 @@ public class MgShape : MgObject {
     return ret;
   }
 
+  public virtual int getPointCount() {
+    int ret = touchvgPINVOKE.MgShape_getPointCount(swigCPtr);
+    return ret;
+  }
+
+  public virtual Point2d getPoint(int index) {
+    Point2d ret = new Point2d(touchvgPINVOKE.MgShape_getPoint(swigCPtr, index), true);
+    return ret;
+  }
+
+  public int getHandleCount() {
+    int ret = touchvgPINVOKE.MgShape_getHandleCount(swigCPtr);
+    return ret;
+  }
+
+  public Point2d getHandlePoint(int index) {
+    Point2d ret = new Point2d(touchvgPINVOKE.MgShape_getHandlePoint(swigCPtr, index), true);
+    return ret;
+  }
+
+  public int getHandleType(int index) {
+    int ret = touchvgPINVOKE.MgShape_getHandleType(swigCPtr, index);
+    return ret;
+  }
+
 }
 
 }

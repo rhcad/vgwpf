@@ -78,6 +78,11 @@ public class mgbase : global::System.IDisposable {
     return ret;
   }
 
+  public static float getMidAngle2(float angle1, float angle2) {
+    float ret = touchvgPINVOKE.mgbase_getMidAngle2(angle1, angle2);
+    return ret;
+  }
+
   public static float getDiffAngle(float fromAngle, float toAngle) {
     float ret = touchvgPINVOKE.mgbase_getDiffAngle(fromAngle, toAngle);
     return ret;

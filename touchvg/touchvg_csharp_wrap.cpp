@@ -9723,6 +9723,20 @@ SWIGEXPORT float SWIGSTDCALL CSharp_mgbase_getMidAngle(float jarg1, float jarg2)
 }
 
 
+SWIGEXPORT float SWIGSTDCALL CSharp_mgbase_getMidAngle2(float jarg1, float jarg2) {
+  float jresult ;
+  float arg1 ;
+  float arg2 ;
+  float result;
+  
+  arg1 = (float)jarg1; 
+  arg2 = (float)jarg2; 
+  result = (float)mgbase::getMidAngle2(arg1,arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT float SWIGSTDCALL CSharp_mgbase_getDiffAngle(float jarg1, float jarg2) {
   float jresult ;
   float arg1 ;
@@ -10693,8 +10707,9 @@ SWIGEXPORT float SWIGSTDCALL CSharp_mglnrel_ptToBeeline2(void * jarg1, void * ja
   float jresult ;
   Point2d *arg1 = 0 ;
   Point2d *arg2 = 0 ;
-  Point2d *arg3 = 0 ;
+  Point2d arg3 ;
   Point2d *arg4 = 0 ;
+  Point2d *argp3 ;
   float result;
   
   arg1 = (Point2d *)jarg1;
@@ -10707,17 +10722,18 @@ SWIGEXPORT float SWIGSTDCALL CSharp_mglnrel_ptToBeeline2(void * jarg1, void * ja
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
     return 0;
   } 
-  arg3 = (Point2d *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
+  argp3 = (Point2d *)jarg3; 
+  if (!argp3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Point2d", 0);
     return 0;
-  } 
+  }
+  arg3 = *argp3; 
   arg4 = (Point2d *)jarg4;
   if (!arg4) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d & type is null", 0);
     return 0;
   } 
-  result = (float)mglnrel::ptToBeeline2((Point2d const &)*arg1,(Point2d const &)*arg2,(Point2d const &)*arg3,*arg4);
+  result = (float)mglnrel::ptToBeeline2((Point2d const &)*arg1,(Point2d const &)*arg2,arg3,*arg4);
   jresult = result; 
   return jresult;
 }
@@ -10727,8 +10743,9 @@ SWIGEXPORT float SWIGSTDCALL CSharp_mglnrel_ptToLine(void * jarg1, void * jarg2,
   float jresult ;
   Point2d *arg1 = 0 ;
   Point2d *arg2 = 0 ;
-  Point2d *arg3 = 0 ;
+  Point2d arg3 ;
   Point2d *arg4 = 0 ;
+  Point2d *argp3 ;
   float result;
   
   arg1 = (Point2d *)jarg1;
@@ -10741,17 +10758,18 @@ SWIGEXPORT float SWIGSTDCALL CSharp_mglnrel_ptToLine(void * jarg1, void * jarg2,
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
     return 0;
   } 
-  arg3 = (Point2d *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
+  argp3 = (Point2d *)jarg3; 
+  if (!argp3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null Point2d", 0);
     return 0;
-  } 
+  }
+  arg3 = *argp3; 
   arg4 = (Point2d *)jarg4;
   if (!arg4) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d & type is null", 0);
     return 0;
   } 
-  result = (float)mglnrel::ptToLine((Point2d const &)*arg1,(Point2d const &)*arg2,(Point2d const &)*arg3,*arg4);
+  result = (float)mglnrel::ptToLine((Point2d const &)*arg1,(Point2d const &)*arg2,arg3,*arg4);
   jresult = result; 
   return jresult;
 }
@@ -25996,6 +26014,72 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgShape_drawShape(void * jarg1, void 
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_MgShape_getPointCount(void * jarg1) {
+  int jresult ;
+  MgShape *arg1 = (MgShape *) 0 ;
+  int result;
+  
+  arg1 = (MgShape *)jarg1; 
+  result = (int)((MgShape const *)arg1)->getPointCount();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgShape_getPoint(void * jarg1, int jarg2) {
+  void * jresult ;
+  MgShape *arg1 = (MgShape *) 0 ;
+  int arg2 ;
+  Point2d result;
+  
+  arg1 = (MgShape *)jarg1; 
+  arg2 = (int)jarg2; 
+  result = ((MgShape const *)arg1)->getPoint(arg2);
+  jresult = new Point2d((const Point2d &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_MgShape_getHandleCount(void * jarg1) {
+  int jresult ;
+  MgShape *arg1 = (MgShape *) 0 ;
+  int result;
+  
+  arg1 = (MgShape *)jarg1; 
+  result = (int)((MgShape const *)arg1)->getHandleCount();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgShape_getHandlePoint(void * jarg1, int jarg2) {
+  void * jresult ;
+  MgShape *arg1 = (MgShape *) 0 ;
+  int arg2 ;
+  Point2d result;
+  
+  arg1 = (MgShape *)jarg1; 
+  arg2 = (int)jarg2; 
+  result = ((MgShape const *)arg1)->getHandlePoint(arg2);
+  jresult = new Point2d((const Point2d &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_MgShape_getHandleType(void * jarg1, int jarg2) {
+  int jresult ;
+  MgShape *arg1 = (MgShape *) 0 ;
+  int arg2 ;
+  int result;
+  
+  arg1 = (MgShape *)jarg1; 
+  arg2 = (int)jarg2; 
+  result = (int)((MgShape const *)arg1)->getHandleType(arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_MgShapeFactory_createShape(void * jarg1, int jarg2) {
   void * jresult ;
   MgShapeFactory *arg1 = (MgShapeFactory *) 0 ;
@@ -28093,7 +28177,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgSnap_getSnappedType(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_MgSnap_getSnappedPoint(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_MgSnap_getSnappedPoint__SWIG_0(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   MgSnap *arg1 = (MgSnap *) 0 ;
   Point2d *arg2 = 0 ;
@@ -28112,6 +28196,42 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgSnap_getSnappedPoint(void * jarg1, void * ja
     return 0;
   } 
   result = (int)((MgSnap const *)arg1)->getSnappedPoint(*arg2,*arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_MgSnap_getSnappedPoint__SWIG_1(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
+  int jresult ;
+  MgSnap *arg1 = (MgSnap *) 0 ;
+  Point2d *arg2 = 0 ;
+  Point2d *arg3 = 0 ;
+  Point2d *arg4 = 0 ;
+  Point2d *arg5 = 0 ;
+  int result;
+  
+  arg1 = (MgSnap *)jarg1; 
+  arg2 = (Point2d *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d & type is null", 0);
+    return 0;
+  } 
+  arg3 = (Point2d *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d & type is null", 0);
+    return 0;
+  } 
+  arg4 = (Point2d *)jarg4;
+  if (!arg4) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d & type is null", 0);
+    return 0;
+  } 
+  arg5 = (Point2d *)jarg5;
+  if (!arg5) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d & type is null", 0);
+    return 0;
+  } 
+  result = (int)((MgSnap const *)arg1)->getSnappedPoint(*arg2,*arg3,*arg4,*arg5);
   jresult = result; 
   return jresult;
 }
@@ -35133,6 +35253,34 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgCoreView_getSelectedHandle(void * jarg1) {
   result = (int)(arg1)->getSelectedHandle();
   jresult = result; 
   return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_MgCoreView_getSelectedShapeIDs(void * jarg1, void * jarg2) {
+  MgCoreView *arg1 = (MgCoreView *) 0 ;
+  mgvector< int > *arg2 = 0 ;
+  
+  arg1 = (MgCoreView *)jarg1; 
+  arg2 = (mgvector< int > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "mgvector< int > & type is null", 0);
+    return ;
+  } 
+  (arg1)->getSelectedShapeIDs(*arg2);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_MgCoreView_setSelectedShapeIDs(void * jarg1, void * jarg2) {
+  MgCoreView *arg1 = (MgCoreView *) 0 ;
+  mgvector< int > *arg2 = 0 ;
+  
+  arg1 = (MgCoreView *)jarg1; 
+  arg2 = (mgvector< int > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "mgvector< int > const & type is null", 0);
+    return ;
+  } 
+  (arg1)->setSelectedShapeIDs((mgvector< int > const &)*arg2);
 }
 
 

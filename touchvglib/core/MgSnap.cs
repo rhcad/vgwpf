@@ -59,7 +59,13 @@ public class MgSnap : global::System.IDisposable {
   }
 
   public virtual int getSnappedPoint(Point2d fromPt, Point2d toPt) {
-    int ret = touchvgPINVOKE.MgSnap_getSnappedPoint(swigCPtr, Point2d.getCPtr(fromPt), Point2d.getCPtr(toPt));
+    int ret = touchvgPINVOKE.MgSnap_getSnappedPoint__SWIG_0(swigCPtr, Point2d.getCPtr(fromPt), Point2d.getCPtr(toPt));
+    if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
+
+  public virtual int getSnappedPoint(Point2d fromPt, Point2d toPt, Point2d startPt, Point2d guildPt) {
+    int ret = touchvgPINVOKE.MgSnap_getSnappedPoint__SWIG_1(swigCPtr, Point2d.getCPtr(fromPt), Point2d.getCPtr(toPt), Point2d.getCPtr(startPt), Point2d.getCPtr(guildPt));
     if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }

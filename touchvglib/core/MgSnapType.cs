@@ -24,7 +24,8 @@ public enum MgSnapType {
   kMgSnapIntersect,
   kMgSnapPerp,
   kMgSnapPerpNear,
-  kMgSnapNearPt
+  kMgSnapNearPt,
+  kMgSnapExtendPt
 }
 
 }

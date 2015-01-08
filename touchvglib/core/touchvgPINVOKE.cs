@@ -5115,6 +5115,12 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgView_setOptionString")]
   public static extern void MgView_setOptionString(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2, string jarg3);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_new_MgRegenLocker")]
+  public static extern global::System.IntPtr new_MgRegenLocker(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgRegenLocker")]
+  public static extern void delete_MgRegenLocker(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgMotion_view_set")]
   public static extern void MgMotion_view_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 

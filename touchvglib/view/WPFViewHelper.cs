@@ -19,7 +19,8 @@ namespace touchvg.view
      */
     public class WPFViewHelper : IDisposable
     {
-        private static int LIB_RELEASE = 6; // TODO: 在本工程接口变化后增加此数
+        private static int LIB_RELEASE = 7; // TODO: 在本工程接口变化后增加此数
+        public delegate void GiAction();
         private WPFGraphView View;
         private GiCoreView CoreView { get { return View.CoreView; } }
         public GiView ViewAdapter { get { return View.ViewAdapter; } }
@@ -759,6 +760,15 @@ namespace touchvg.view
         public bool Redo()
         {
             return CoreView.redo(ViewAdapter);
+        }
+
+        //! 在块中批量操作，最后才重新生成.
+        //! 例: hlp.CombineRegen(delegate(){ .... });
+        public void CombineRegen(GiAction action)
+        {
+            MgRegenLocker locker = new MgRegenLocker(this.CmdView());
+            action();
+            locker.Dispose();
         }
 
         //! 是否正在录屏

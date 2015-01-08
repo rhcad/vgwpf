@@ -29423,6 +29423,26 @@ SWIGEXPORT void SWIGSTDCALL CSharp_MgView_setOptionString(void * jarg1, char * j
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_MgRegenLocker(void * jarg1) {
+  void * jresult ;
+  MgView *arg1 = (MgView *) 0 ;
+  MgRegenLocker *result = 0 ;
+  
+  arg1 = (MgView *)jarg1; 
+  result = (MgRegenLocker *)new MgRegenLocker(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgRegenLocker(void * jarg1) {
+  MgRegenLocker *arg1 = (MgRegenLocker *) 0 ;
+  
+  arg1 = (MgRegenLocker *)jarg1; 
+  delete arg1;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_MgMotion_view_set(void * jarg1, void * jarg2) {
   MgMotion *arg1 = (MgMotion *) 0 ;
   MgView *arg2 = (MgView *) 0 ;

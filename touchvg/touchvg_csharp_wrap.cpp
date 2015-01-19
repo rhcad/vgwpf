@@ -4483,7 +4483,41 @@ void SwigDirector_MgCommandDraw::setStepPoint(MgMotion const *sender, int step, 
   }
 }
 
-void SwigDirector_MgCommandDraw::swig_connect_director(SWIG_Callback0_t callbackrelease, SWIG_Callback1_t callbackcancel, SWIG_Callback2_t callbackinitialize, SWIG_Callback3_t callbackbackStep, SWIG_Callback4_t callbackdraw, SWIG_Callback5_t callbackgatherShapes, SWIG_Callback6_t callbackclick, SWIG_Callback7_t callbackdoubleClick, SWIG_Callback8_t callbacklongPress, SWIG_Callback9_t callbacktouchBegan, SWIG_Callback10_t callbacktouchMoved, SWIG_Callback11_t callbacktouchEnded, SWIG_Callback12_t callbackmouseHover, SWIG_Callback13_t callbacktwoFingersMove, SWIG_Callback14_t callbackisDrawingCommand, SWIG_Callback15_t callbackisFloatingCommand, SWIG_Callback16_t callbackdoContextAction, SWIG_Callback17_t callbackgetShapeType, SWIG_Callback18_t callbackgetMaxStep, SWIG_Callback19_t callbacksetStepPoint) {
+bool SwigDirector_MgCommandDraw::isStepPointAccepted(MgMotion const *sender, Point2d const &pt) {
+  bool c_result = SwigValueInit< bool >() ;
+  unsigned int jresult = 0 ;
+  void * jsender = 0 ;
+  void * jpt = 0 ;
+  
+  if (!swig_callbackisStepPointAccepted) {
+    return MgCommandDraw::isStepPointAccepted(sender,pt);
+  } else {
+    jsender = (void *) sender; 
+    jpt = (Point2d *) &pt; 
+    jresult = (unsigned int) swig_callbackisStepPointAccepted(jsender, jpt);
+    c_result = jresult ? true : false; 
+  }
+  return c_result;
+}
+
+int SwigDirector_MgCommandDraw::snapOptionsForStep(MgMotion const *sender, int step) {
+  int c_result = SwigValueInit< int >() ;
+  int jresult = 0 ;
+  void * jsender = 0 ;
+  int jstep  ;
+  
+  if (!swig_callbacksnapOptionsForStep) {
+    return MgCommandDraw::snapOptionsForStep(sender,step);
+  } else {
+    jsender = (void *) sender; 
+    jstep = step;
+    jresult = (int) swig_callbacksnapOptionsForStep(jsender, jstep);
+    c_result = (int)jresult; 
+  }
+  return c_result;
+}
+
+void SwigDirector_MgCommandDraw::swig_connect_director(SWIG_Callback0_t callbackrelease, SWIG_Callback1_t callbackcancel, SWIG_Callback2_t callbackinitialize, SWIG_Callback3_t callbackbackStep, SWIG_Callback4_t callbackdraw, SWIG_Callback5_t callbackgatherShapes, SWIG_Callback6_t callbackclick, SWIG_Callback7_t callbackdoubleClick, SWIG_Callback8_t callbacklongPress, SWIG_Callback9_t callbacktouchBegan, SWIG_Callback10_t callbacktouchMoved, SWIG_Callback11_t callbacktouchEnded, SWIG_Callback12_t callbackmouseHover, SWIG_Callback13_t callbacktwoFingersMove, SWIG_Callback14_t callbackisDrawingCommand, SWIG_Callback15_t callbackisFloatingCommand, SWIG_Callback16_t callbackdoContextAction, SWIG_Callback17_t callbackgetShapeType, SWIG_Callback18_t callbackgetMaxStep, SWIG_Callback19_t callbacksetStepPoint, SWIG_Callback20_t callbackisStepPointAccepted, SWIG_Callback21_t callbacksnapOptionsForStep) {
   swig_callbackrelease = callbackrelease;
   swig_callbackcancel = callbackcancel;
   swig_callbackinitialize = callbackinitialize;
@@ -4504,6 +4538,8 @@ void SwigDirector_MgCommandDraw::swig_connect_director(SWIG_Callback0_t callback
   swig_callbackgetShapeType = callbackgetShapeType;
   swig_callbackgetMaxStep = callbackgetMaxStep;
   swig_callbacksetStepPoint = callbacksetStepPoint;
+  swig_callbackisStepPointAccepted = callbackisStepPointAccepted;
+  swig_callbacksnapOptionsForStep = callbacksnapOptionsForStep;
 }
 
 void SwigDirector_MgCommandDraw::swig_init_callbacks() {
@@ -4527,6 +4563,8 @@ void SwigDirector_MgCommandDraw::swig_init_callbacks() {
   swig_callbackgetShapeType = 0;
   swig_callbackgetMaxStep = 0;
   swig_callbacksetStepPoint = 0;
+  swig_callbackisStepPointAccepted = 0;
+  swig_callbacksnapOptionsForStep = 0;
 }
 
 SwigDirector_MgCmdDrawRect::SwigDirector_MgCmdDrawRect(char const *name) : MgCmdDrawRect(name), Swig::Director() {
@@ -4833,6 +4871,40 @@ void SwigDirector_MgCmdDrawRect::setStepPoint(MgMotion const *sender, int step, 
   }
 }
 
+bool SwigDirector_MgCmdDrawRect::isStepPointAccepted(MgMotion const *sender, Point2d const &pt) {
+  bool c_result = SwigValueInit< bool >() ;
+  unsigned int jresult = 0 ;
+  void * jsender = 0 ;
+  void * jpt = 0 ;
+  
+  if (!swig_callbackisStepPointAccepted) {
+    return MgCommandDraw::isStepPointAccepted(sender,pt);
+  } else {
+    jsender = (void *) sender; 
+    jpt = (Point2d *) &pt; 
+    jresult = (unsigned int) swig_callbackisStepPointAccepted(jsender, jpt);
+    c_result = jresult ? true : false; 
+  }
+  return c_result;
+}
+
+int SwigDirector_MgCmdDrawRect::snapOptionsForStep(MgMotion const *sender, int step) {
+  int c_result = SwigValueInit< int >() ;
+  int jresult = 0 ;
+  void * jsender = 0 ;
+  int jstep  ;
+  
+  if (!swig_callbacksnapOptionsForStep) {
+    return MgCommandDraw::snapOptionsForStep(sender,step);
+  } else {
+    jsender = (void *) sender; 
+    jstep = step;
+    jresult = (int) swig_callbacksnapOptionsForStep(jsender, jstep);
+    c_result = (int)jresult; 
+  }
+  return c_result;
+}
+
 void SwigDirector_MgCmdDrawRect::addRectShape(MgMotion const *sender) {
   void * jsender = 0 ;
   
@@ -4845,7 +4917,7 @@ void SwigDirector_MgCmdDrawRect::addRectShape(MgMotion const *sender) {
   }
 }
 
-void SwigDirector_MgCmdDrawRect::swig_connect_director(SWIG_Callback0_t callbackrelease, SWIG_Callback1_t callbackcancel, SWIG_Callback2_t callbackinitialize, SWIG_Callback3_t callbackbackStep, SWIG_Callback4_t callbackdraw, SWIG_Callback5_t callbackgatherShapes, SWIG_Callback6_t callbackclick, SWIG_Callback7_t callbackdoubleClick, SWIG_Callback8_t callbacklongPress, SWIG_Callback9_t callbacktouchBegan, SWIG_Callback10_t callbacktouchMoved, SWIG_Callback11_t callbacktouchEnded, SWIG_Callback12_t callbackmouseHover, SWIG_Callback13_t callbacktwoFingersMove, SWIG_Callback14_t callbackisDrawingCommand, SWIG_Callback15_t callbackisFloatingCommand, SWIG_Callback16_t callbackdoContextAction, SWIG_Callback17_t callbackgetShapeType, SWIG_Callback18_t callbackgetMaxStep, SWIG_Callback19_t callbacksetStepPoint, SWIG_Callback20_t callbackaddRectShape) {
+void SwigDirector_MgCmdDrawRect::swig_connect_director(SWIG_Callback0_t callbackrelease, SWIG_Callback1_t callbackcancel, SWIG_Callback2_t callbackinitialize, SWIG_Callback3_t callbackbackStep, SWIG_Callback4_t callbackdraw, SWIG_Callback5_t callbackgatherShapes, SWIG_Callback6_t callbackclick, SWIG_Callback7_t callbackdoubleClick, SWIG_Callback8_t callbacklongPress, SWIG_Callback9_t callbacktouchBegan, SWIG_Callback10_t callbacktouchMoved, SWIG_Callback11_t callbacktouchEnded, SWIG_Callback12_t callbackmouseHover, SWIG_Callback13_t callbacktwoFingersMove, SWIG_Callback14_t callbackisDrawingCommand, SWIG_Callback15_t callbackisFloatingCommand, SWIG_Callback16_t callbackdoContextAction, SWIG_Callback17_t callbackgetShapeType, SWIG_Callback18_t callbackgetMaxStep, SWIG_Callback19_t callbacksetStepPoint, SWIG_Callback20_t callbackisStepPointAccepted, SWIG_Callback21_t callbacksnapOptionsForStep, SWIG_Callback22_t callbackaddRectShape) {
   swig_callbackrelease = callbackrelease;
   swig_callbackcancel = callbackcancel;
   swig_callbackinitialize = callbackinitialize;
@@ -4866,6 +4938,8 @@ void SwigDirector_MgCmdDrawRect::swig_connect_director(SWIG_Callback0_t callback
   swig_callbackgetShapeType = callbackgetShapeType;
   swig_callbackgetMaxStep = callbackgetMaxStep;
   swig_callbacksetStepPoint = callbacksetStepPoint;
+  swig_callbackisStepPointAccepted = callbackisStepPointAccepted;
+  swig_callbacksnapOptionsForStep = callbacksnapOptionsForStep;
   swig_callbackaddRectShape = callbackaddRectShape;
 }
 
@@ -4890,6 +4964,8 @@ void SwigDirector_MgCmdDrawRect::swig_init_callbacks() {
   swig_callbackgetShapeType = 0;
   swig_callbackgetMaxStep = 0;
   swig_callbacksetStepPoint = 0;
+  swig_callbackisStepPointAccepted = 0;
+  swig_callbacksnapOptionsForStep = 0;
   swig_callbackaddRectShape = 0;
 }
 
@@ -15015,6 +15091,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_GiGraphics_kAlignVCenter_get() {
   int result;
   
   result = (int)GiGraphics::kAlignVCenter;
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_GiGraphics_kAlignHVCenter_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)GiGraphics::kAlignHVCenter;
   jresult = (int)result; 
   return jresult;
 }
@@ -28165,6 +28251,32 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgSnap_drawPerpMark(void * jarg1, voi
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_MgSnap_getSnapOptions(void * jarg1, void * jarg2) {
+  int jresult ;
+  MgSnap *arg1 = (MgSnap *) 0 ;
+  MgView *arg2 = (MgView *) 0 ;
+  int result;
+  
+  arg1 = (MgSnap *)jarg1; 
+  arg2 = (MgView *)jarg2; 
+  result = (int)((MgSnap const *)arg1)->getSnapOptions(arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_MgSnap_setSnapOptions(void * jarg1, void * jarg2, int jarg3) {
+  MgSnap *arg1 = (MgSnap *) 0 ;
+  MgView *arg2 = (MgView *) 0 ;
+  int arg3 ;
+  
+  arg1 = (MgSnap *)jarg1; 
+  arg2 = (MgView *)jarg2; 
+  arg3 = (int)jarg3; 
+  (arg1)->setSnapOptions(arg2,arg3);
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_MgSnap_getSnappedType(void * jarg1) {
   int jresult ;
   MgSnap *arg1 = (MgSnap *) 0 ;
@@ -31993,6 +32105,86 @@ SWIGEXPORT void SWIGSTDCALL CSharp_MgCommandDraw_setStepPointSwigExplicitMgComma
 }
 
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgCommandDraw_isStepPointAccepted(void * jarg1, void * jarg2, void * jarg3) {
+  unsigned int jresult ;
+  MgCommandDraw *arg1 = (MgCommandDraw *) 0 ;
+  MgMotion *arg2 = (MgMotion *) 0 ;
+  Point2d *arg3 = 0 ;
+  SwigDirector_MgCommandDraw *darg = 0;
+  bool result;
+  
+  arg1 = (MgCommandDraw *)jarg1; 
+  arg2 = (MgMotion *)jarg2; 
+  arg3 = (Point2d *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
+    return 0;
+  } 
+  darg = dynamic_cast<SwigDirector_MgCommandDraw *>(arg1);
+  result = (bool)(darg)->isStepPointAccepted((MgMotion const *)arg2,(Point2d const &)*arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgCommandDraw_isStepPointAcceptedSwigExplicitMgCommandDraw(void * jarg1, void * jarg2, void * jarg3) {
+  unsigned int jresult ;
+  MgCommandDraw *arg1 = (MgCommandDraw *) 0 ;
+  MgMotion *arg2 = (MgMotion *) 0 ;
+  Point2d *arg3 = 0 ;
+  SwigDirector_MgCommandDraw *darg = 0;
+  bool result;
+  
+  arg1 = (MgCommandDraw *)jarg1; 
+  arg2 = (MgMotion *)jarg2; 
+  arg3 = (Point2d *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Point2d const & type is null", 0);
+    return 0;
+  } 
+  darg = dynamic_cast<SwigDirector_MgCommandDraw *>(arg1);
+  result = (bool)(darg)->isStepPointAcceptedSwigPublic((MgMotion const *)arg2,(Point2d const &)*arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_MgCommandDraw_snapOptionsForStep(void * jarg1, void * jarg2, int jarg3) {
+  int jresult ;
+  MgCommandDraw *arg1 = (MgCommandDraw *) 0 ;
+  MgMotion *arg2 = (MgMotion *) 0 ;
+  int arg3 ;
+  SwigDirector_MgCommandDraw *darg = 0;
+  int result;
+  
+  arg1 = (MgCommandDraw *)jarg1; 
+  arg2 = (MgMotion *)jarg2; 
+  arg3 = (int)jarg3; 
+  darg = dynamic_cast<SwigDirector_MgCommandDraw *>(arg1);
+  result = (int)(darg)->snapOptionsForStep((MgMotion const *)arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_MgCommandDraw_snapOptionsForStepSwigExplicitMgCommandDraw(void * jarg1, void * jarg2, int jarg3) {
+  int jresult ;
+  MgCommandDraw *arg1 = (MgCommandDraw *) 0 ;
+  MgMotion *arg2 = (MgMotion *) 0 ;
+  int arg3 ;
+  SwigDirector_MgCommandDraw *darg = 0;
+  int result;
+  
+  arg1 = (MgCommandDraw *)jarg1; 
+  arg2 = (MgMotion *)jarg2; 
+  arg3 = (int)jarg3; 
+  darg = dynamic_cast<SwigDirector_MgCommandDraw *>(arg1);
+  result = (int)(darg)->snapOptionsForStepSwigPublic((MgMotion const *)arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgCommandDraw_initialize(void * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   MgCommandDraw *arg1 = (MgCommandDraw *) 0 ;
@@ -32347,6 +32539,40 @@ SWIGEXPORT void SWIGSTDCALL CSharp_MgCommandDraw_setStep(void * jarg1, int jarg2
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgCommandDraw_snapPointWidhOptions__SWIG_0(void * jarg1, void * jarg2, int jarg3, unsigned int jarg4) {
+  void * jresult ;
+  MgCommandDraw *arg1 = (MgCommandDraw *) 0 ;
+  MgMotion *arg2 = (MgMotion *) 0 ;
+  int arg3 ;
+  bool arg4 ;
+  Point2d result;
+  
+  arg1 = (MgCommandDraw *)jarg1; 
+  arg2 = (MgMotion *)jarg2; 
+  arg3 = (int)jarg3; 
+  arg4 = jarg4 ? true : false; 
+  result = (arg1)->snapPointWidhOptions((MgMotion const *)arg2,arg3,arg4);
+  jresult = new Point2d((const Point2d &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgCommandDraw_snapPointWidhOptions__SWIG_1(void * jarg1, void * jarg2, int jarg3) {
+  void * jresult ;
+  MgCommandDraw *arg1 = (MgCommandDraw *) 0 ;
+  MgMotion *arg2 = (MgMotion *) 0 ;
+  int arg3 ;
+  Point2d result;
+  
+  arg1 = (MgCommandDraw *)jarg1; 
+  arg2 = (MgMotion *)jarg2; 
+  arg3 = (int)jarg3; 
+  result = (arg1)->snapPointWidhOptions((MgMotion const *)arg2,arg3);
+  jresult = new Point2d((const Point2d &)result); 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_MgCommandDraw_snapPoint__SWIG_0(void * jarg1, void * jarg2, unsigned int jarg3) {
   void * jresult ;
   MgCommandDraw *arg1 = (MgCommandDraw *) 0 ;
@@ -32443,11 +32669,11 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_MgCommandDraw_snapPoint__SWIG_4(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_MgCommandDraw_director_connect(void *objarg, SwigDirector_MgCommandDraw::SWIG_Callback0_t callback0, SwigDirector_MgCommandDraw::SWIG_Callback1_t callback1, SwigDirector_MgCommandDraw::SWIG_Callback2_t callback2, SwigDirector_MgCommandDraw::SWIG_Callback3_t callback3, SwigDirector_MgCommandDraw::SWIG_Callback4_t callback4, SwigDirector_MgCommandDraw::SWIG_Callback5_t callback5, SwigDirector_MgCommandDraw::SWIG_Callback6_t callback6, SwigDirector_MgCommandDraw::SWIG_Callback7_t callback7, SwigDirector_MgCommandDraw::SWIG_Callback8_t callback8, SwigDirector_MgCommandDraw::SWIG_Callback9_t callback9, SwigDirector_MgCommandDraw::SWIG_Callback10_t callback10, SwigDirector_MgCommandDraw::SWIG_Callback11_t callback11, SwigDirector_MgCommandDraw::SWIG_Callback12_t callback12, SwigDirector_MgCommandDraw::SWIG_Callback13_t callback13, SwigDirector_MgCommandDraw::SWIG_Callback14_t callback14, SwigDirector_MgCommandDraw::SWIG_Callback15_t callback15, SwigDirector_MgCommandDraw::SWIG_Callback16_t callback16, SwigDirector_MgCommandDraw::SWIG_Callback17_t callback17, SwigDirector_MgCommandDraw::SWIG_Callback18_t callback18, SwigDirector_MgCommandDraw::SWIG_Callback19_t callback19) {
+SWIGEXPORT void SWIGSTDCALL CSharp_MgCommandDraw_director_connect(void *objarg, SwigDirector_MgCommandDraw::SWIG_Callback0_t callback0, SwigDirector_MgCommandDraw::SWIG_Callback1_t callback1, SwigDirector_MgCommandDraw::SWIG_Callback2_t callback2, SwigDirector_MgCommandDraw::SWIG_Callback3_t callback3, SwigDirector_MgCommandDraw::SWIG_Callback4_t callback4, SwigDirector_MgCommandDraw::SWIG_Callback5_t callback5, SwigDirector_MgCommandDraw::SWIG_Callback6_t callback6, SwigDirector_MgCommandDraw::SWIG_Callback7_t callback7, SwigDirector_MgCommandDraw::SWIG_Callback8_t callback8, SwigDirector_MgCommandDraw::SWIG_Callback9_t callback9, SwigDirector_MgCommandDraw::SWIG_Callback10_t callback10, SwigDirector_MgCommandDraw::SWIG_Callback11_t callback11, SwigDirector_MgCommandDraw::SWIG_Callback12_t callback12, SwigDirector_MgCommandDraw::SWIG_Callback13_t callback13, SwigDirector_MgCommandDraw::SWIG_Callback14_t callback14, SwigDirector_MgCommandDraw::SWIG_Callback15_t callback15, SwigDirector_MgCommandDraw::SWIG_Callback16_t callback16, SwigDirector_MgCommandDraw::SWIG_Callback17_t callback17, SwigDirector_MgCommandDraw::SWIG_Callback18_t callback18, SwigDirector_MgCommandDraw::SWIG_Callback19_t callback19, SwigDirector_MgCommandDraw::SWIG_Callback20_t callback20, SwigDirector_MgCommandDraw::SWIG_Callback21_t callback21) {
   MgCommandDraw *obj = (MgCommandDraw *)objarg;
   SwigDirector_MgCommandDraw *director = dynamic_cast<SwigDirector_MgCommandDraw *>(obj);
   if (director) {
-    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback7, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19);
+    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback7, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21);
   }
 }
 
@@ -32900,11 +33126,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgCmdDrawRect(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_MgCmdDrawRect_director_connect(void *objarg, SwigDirector_MgCmdDrawRect::SWIG_Callback0_t callback0, SwigDirector_MgCmdDrawRect::SWIG_Callback1_t callback1, SwigDirector_MgCmdDrawRect::SWIG_Callback2_t callback2, SwigDirector_MgCmdDrawRect::SWIG_Callback3_t callback3, SwigDirector_MgCmdDrawRect::SWIG_Callback4_t callback4, SwigDirector_MgCmdDrawRect::SWIG_Callback5_t callback5, SwigDirector_MgCmdDrawRect::SWIG_Callback6_t callback6, SwigDirector_MgCmdDrawRect::SWIG_Callback7_t callback7, SwigDirector_MgCmdDrawRect::SWIG_Callback8_t callback8, SwigDirector_MgCmdDrawRect::SWIG_Callback9_t callback9, SwigDirector_MgCmdDrawRect::SWIG_Callback10_t callback10, SwigDirector_MgCmdDrawRect::SWIG_Callback11_t callback11, SwigDirector_MgCmdDrawRect::SWIG_Callback12_t callback12, SwigDirector_MgCmdDrawRect::SWIG_Callback13_t callback13, SwigDirector_MgCmdDrawRect::SWIG_Callback14_t callback14, SwigDirector_MgCmdDrawRect::SWIG_Callback15_t callback15, SwigDirector_MgCmdDrawRect::SWIG_Callback16_t callback16, SwigDirector_MgCmdDrawRect::SWIG_Callback17_t callback17, SwigDirector_MgCmdDrawRect::SWIG_Callback18_t callback18, SwigDirector_MgCmdDrawRect::SWIG_Callback19_t callback19, SwigDirector_MgCmdDrawRect::SWIG_Callback20_t callback20) {
+SWIGEXPORT void SWIGSTDCALL CSharp_MgCmdDrawRect_director_connect(void *objarg, SwigDirector_MgCmdDrawRect::SWIG_Callback0_t callback0, SwigDirector_MgCmdDrawRect::SWIG_Callback1_t callback1, SwigDirector_MgCmdDrawRect::SWIG_Callback2_t callback2, SwigDirector_MgCmdDrawRect::SWIG_Callback3_t callback3, SwigDirector_MgCmdDrawRect::SWIG_Callback4_t callback4, SwigDirector_MgCmdDrawRect::SWIG_Callback5_t callback5, SwigDirector_MgCmdDrawRect::SWIG_Callback6_t callback6, SwigDirector_MgCmdDrawRect::SWIG_Callback7_t callback7, SwigDirector_MgCmdDrawRect::SWIG_Callback8_t callback8, SwigDirector_MgCmdDrawRect::SWIG_Callback9_t callback9, SwigDirector_MgCmdDrawRect::SWIG_Callback10_t callback10, SwigDirector_MgCmdDrawRect::SWIG_Callback11_t callback11, SwigDirector_MgCmdDrawRect::SWIG_Callback12_t callback12, SwigDirector_MgCmdDrawRect::SWIG_Callback13_t callback13, SwigDirector_MgCmdDrawRect::SWIG_Callback14_t callback14, SwigDirector_MgCmdDrawRect::SWIG_Callback15_t callback15, SwigDirector_MgCmdDrawRect::SWIG_Callback16_t callback16, SwigDirector_MgCmdDrawRect::SWIG_Callback17_t callback17, SwigDirector_MgCmdDrawRect::SWIG_Callback18_t callback18, SwigDirector_MgCmdDrawRect::SWIG_Callback19_t callback19, SwigDirector_MgCmdDrawRect::SWIG_Callback20_t callback20, SwigDirector_MgCmdDrawRect::SWIG_Callback21_t callback21, SwigDirector_MgCmdDrawRect::SWIG_Callback22_t callback22) {
   MgCmdDrawRect *obj = (MgCmdDrawRect *)objarg;
   SwigDirector_MgCmdDrawRect *director = dynamic_cast<SwigDirector_MgCmdDrawRect *>(obj);
   if (director) {
-    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback7, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20);
+    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback7, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21, callback22);
   }
 }
 

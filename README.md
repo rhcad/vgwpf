@@ -1,8 +1,8 @@
 # TouchVG for WPF
 
-This is a lightweight 2D vector drawing framework using [TouchVGCore](https://github.com/touchvg/vgcore) for Windows (WPF).
+This is a lightweight 2D vector drawing framework using [vgcore](https://github.com/rhcad/vgcore) for Windows (WPF).
 
-Features described in [Online document](http://touchvg.github.io). Please visit [TouchVG Demo](https://github.com/touchvg/vgwpf-demo) to see more examples.
+Features described in [Online document](http://touchvg.github.io). Please visit [vgwpf-demo](https://github.com/rhcad/vgwpf-demo) to see more examples.
 
 ![arch](http://touchvg.github.io/images/arch.svg)
 
@@ -10,7 +10,7 @@ Features described in [Online document](http://touchvg.github.io). Please visit 
 
 This is an open source [LGPL 2.1](LICENSE.md) licensed project. It uses the following open source projects:
 
-- [TouchVGCore](https://github.com/touchvg/vgcore) (LGPL): Cross-platform vector drawing libraries using C++.
+- [vgcore](https://github.com/rhcad/vgcore) (LGPL): Cross-platform vector drawing libraries using C++.
 - [x3py](https://github.com/rhcad/x3py) (Apache): Compile script files.
 - [SWIG](https://github.com/swig/swig) (GPL): Use the tool to generate the glue code for Java and C#.
 
@@ -39,12 +39,12 @@ Welcome to the Chinese QQ group `192093613` to discuss and share.
 
 # Add more shapes and commands
 
-- You can use [newproj.py](https://github.com/touchvg/DemoCmds/blob/master/newproj.py) to create library project containing your own shapes and commands. So the TouchVG and TouchVGCore libraries does not require changes.
+- You can use [newproj.py](https://github.com/rhcad/DemoCmds/blob/master/newproj.py) to create library project containing your own shapes and commands. So the TouchVG and TouchVGCore libraries does not require changes.
 
-  - Checkout and enter [DemoCmds](https://github.com/touchvg/DemoCmds) directory, then type `python newproj.py YourCmds`:
+  - Checkout and enter [DemoCmds](https://github.com/rhcad/DemoCmds) directory, then type `python newproj.py YourCmds`:
 
      ```shell
-     git clone https://github.com/touchvg/DemoCmds.git
+     git clone https://github.com/rhcad/DemoCmds.git
      cd DemoCmds
      python newproj.py MyCmds
      ```

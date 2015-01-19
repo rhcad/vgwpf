@@ -53,6 +53,15 @@ public class MgSnap : global::System.IDisposable {
     return ret;
   }
 
+  public virtual int getSnapOptions(MgView view) {
+    int ret = touchvgPINVOKE.MgSnap_getSnapOptions(swigCPtr, MgView.getCPtr(view));
+    return ret;
+  }
+
+  public virtual void setSnapOptions(MgView view, int bits) {
+    touchvgPINVOKE.MgSnap_setSnapOptions(swigCPtr, MgView.getCPtr(view), bits);
+  }
+
   public virtual int getSnappedType() {
     int ret = touchvgPINVOKE.MgSnap_getSnappedType(swigCPtr);
     return ret;

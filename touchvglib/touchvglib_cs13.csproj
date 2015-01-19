@@ -147,6 +147,7 @@
     <Compile Include="core\MgShapes.cs" />
     <Compile Include="core\MgShapeType.cs" />
     <Compile Include="core\MgSnap.cs" />
+    <Compile Include="core\MgSnapOptions.cs" />
     <Compile Include="core\MgSnapType.cs" />
     <Compile Include="core\MgSplines.cs" />
     <Compile Include="core\MgStorage.cs" />

@@ -2067,6 +2067,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiGraphics_kAlignVCenter_get")]
   public static extern int GiGraphics_kAlignVCenter_get();
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiGraphics_kAlignHVCenter_get")]
+  public static extern int GiGraphics_kAlignHVCenter_get();
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiGraphics_copy")]
   public static extern void GiGraphics_copy(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
@@ -4833,6 +4836,12 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSnap_drawPerpMark")]
   public static extern bool MgSnap_drawPerpMark(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, global::System.Runtime.InteropServices.HandleRef jarg4, global::System.Runtime.InteropServices.HandleRef jarg5, global::System.Runtime.InteropServices.HandleRef jarg6, global::System.Runtime.InteropServices.HandleRef jarg7, float jarg8);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSnap_getSnapOptions")]
+  public static extern int MgSnap_getSnapOptions(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSnap_setSnapOptions")]
+  public static extern void MgSnap_setSnapOptions(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSnap_getSnappedType")]
   public static extern int MgSnap_getSnappedType(global::System.Runtime.InteropServices.HandleRef jarg1);
 
@@ -5694,6 +5703,18 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCommandDraw_setStepPointSwigExplicitMgCommandDraw")]
   public static extern void MgCommandDraw_setStepPointSwigExplicitMgCommandDraw(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3, global::System.Runtime.InteropServices.HandleRef jarg4);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCommandDraw_isStepPointAccepted")]
+  public static extern bool MgCommandDraw_isStepPointAccepted(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCommandDraw_isStepPointAcceptedSwigExplicitMgCommandDraw")]
+  public static extern bool MgCommandDraw_isStepPointAcceptedSwigExplicitMgCommandDraw(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCommandDraw_snapOptionsForStep")]
+  public static extern int MgCommandDraw_snapOptionsForStep(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCommandDraw_snapOptionsForStepSwigExplicitMgCommandDraw")]
+  public static extern int MgCommandDraw_snapOptionsForStepSwigExplicitMgCommandDraw(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCommandDraw_initialize")]
   public static extern bool MgCommandDraw_initialize(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
@@ -5769,6 +5790,12 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCommandDraw_setStep")]
   public static extern void MgCommandDraw_setStep(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCommandDraw_snapPointWidhOptions__SWIG_0")]
+  public static extern global::System.IntPtr MgCommandDraw_snapPointWidhOptions__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3, bool jarg4);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCommandDraw_snapPointWidhOptions__SWIG_1")]
+  public static extern global::System.IntPtr MgCommandDraw_snapPointWidhOptions__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCommandDraw_snapPoint__SWIG_0")]
   public static extern global::System.IntPtr MgCommandDraw_snapPoint__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, bool jarg3);
 
@@ -5785,7 +5812,7 @@ class touchvgPINVOKE {
   public static extern global::System.IntPtr MgCommandDraw_snapPoint__SWIG_4(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, bool jarg4, int jarg5);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCommandDraw_director_connect")]
-  public static extern void MgCommandDraw_director_connect(global::System.Runtime.InteropServices.HandleRef jarg1, MgCommandDraw.SwigDelegateMgCommandDraw_0 delegate0, MgCommandDraw.SwigDelegateMgCommandDraw_1 delegate1, MgCommandDraw.SwigDelegateMgCommandDraw_2 delegate2, MgCommandDraw.SwigDelegateMgCommandDraw_3 delegate3, MgCommandDraw.SwigDelegateMgCommandDraw_4 delegate4, MgCommandDraw.SwigDelegateMgCommandDraw_5 delegate5, MgCommandDraw.SwigDelegateMgCommandDraw_6 delegate6, MgCommandDraw.SwigDelegateMgCommandDraw_7 delegate7, MgCommandDraw.SwigDelegateMgCommandDraw_8 delegate8, MgCommandDraw.SwigDelegateMgCommandDraw_9 delegate9, MgCommandDraw.SwigDelegateMgCommandDraw_10 delegate10, MgCommandDraw.SwigDelegateMgCommandDraw_11 delegate11, MgCommandDraw.SwigDelegateMgCommandDraw_12 delegate12, MgCommandDraw.SwigDelegateMgCommandDraw_13 delegate13, MgCommandDraw.SwigDelegateMgCommandDraw_14 delegate14, MgCommandDraw.SwigDelegateMgCommandDraw_15 delegate15, MgCommandDraw.SwigDelegateMgCommandDraw_16 delegate16, MgCommandDraw.SwigDelegateMgCommandDraw_17 delegate17, MgCommandDraw.SwigDelegateMgCommandDraw_18 delegate18, MgCommandDraw.SwigDelegateMgCommandDraw_19 delegate19);
+  public static extern void MgCommandDraw_director_connect(global::System.Runtime.InteropServices.HandleRef jarg1, MgCommandDraw.SwigDelegateMgCommandDraw_0 delegate0, MgCommandDraw.SwigDelegateMgCommandDraw_1 delegate1, MgCommandDraw.SwigDelegateMgCommandDraw_2 delegate2, MgCommandDraw.SwigDelegateMgCommandDraw_3 delegate3, MgCommandDraw.SwigDelegateMgCommandDraw_4 delegate4, MgCommandDraw.SwigDelegateMgCommandDraw_5 delegate5, MgCommandDraw.SwigDelegateMgCommandDraw_6 delegate6, MgCommandDraw.SwigDelegateMgCommandDraw_7 delegate7, MgCommandDraw.SwigDelegateMgCommandDraw_8 delegate8, MgCommandDraw.SwigDelegateMgCommandDraw_9 delegate9, MgCommandDraw.SwigDelegateMgCommandDraw_10 delegate10, MgCommandDraw.SwigDelegateMgCommandDraw_11 delegate11, MgCommandDraw.SwigDelegateMgCommandDraw_12 delegate12, MgCommandDraw.SwigDelegateMgCommandDraw_13 delegate13, MgCommandDraw.SwigDelegateMgCommandDraw_14 delegate14, MgCommandDraw.SwigDelegateMgCommandDraw_15 delegate15, MgCommandDraw.SwigDelegateMgCommandDraw_16 delegate16, MgCommandDraw.SwigDelegateMgCommandDraw_17 delegate17, MgCommandDraw.SwigDelegateMgCommandDraw_18 delegate18, MgCommandDraw.SwigDelegateMgCommandDraw_19 delegate19, MgCommandDraw.SwigDelegateMgCommandDraw_20 delegate20, MgCommandDraw.SwigDelegateMgCommandDraw_21 delegate21);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_new_MgCmdArc3P__SWIG_0")]
   public static extern global::System.IntPtr new_MgCmdArc3P__SWIG_0(string jarg1);
@@ -5899,7 +5926,7 @@ class touchvgPINVOKE {
   public static extern void delete_MgCmdDrawRect(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCmdDrawRect_director_connect")]
-  public static extern void MgCmdDrawRect_director_connect(global::System.Runtime.InteropServices.HandleRef jarg1, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_0 delegate0, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_1 delegate1, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_2 delegate2, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_3 delegate3, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_4 delegate4, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_5 delegate5, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_6 delegate6, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_7 delegate7, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_8 delegate8, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_9 delegate9, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_10 delegate10, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_11 delegate11, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_12 delegate12, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_13 delegate13, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_14 delegate14, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_15 delegate15, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_16 delegate16, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_17 delegate17, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_18 delegate18, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_19 delegate19, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_20 delegate20);
+  public static extern void MgCmdDrawRect_director_connect(global::System.Runtime.InteropServices.HandleRef jarg1, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_0 delegate0, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_1 delegate1, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_2 delegate2, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_3 delegate3, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_4 delegate4, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_5 delegate5, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_6 delegate6, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_7 delegate7, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_8 delegate8, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_9 delegate9, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_10 delegate10, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_11 delegate11, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_12 delegate12, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_13 delegate13, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_14 delegate14, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_15 delegate15, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_16 delegate16, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_17 delegate17, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_18 delegate18, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_19 delegate19, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_20 delegate20, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_21 delegate21, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_22 delegate22);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCmdManager_release")]
   public static extern void MgCmdManager_release(global::System.Runtime.InteropServices.HandleRef jarg1);

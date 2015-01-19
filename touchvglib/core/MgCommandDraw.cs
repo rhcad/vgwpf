@@ -102,6 +102,17 @@ public class MgCommandDraw : MgCommand {
     if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
   }
 
+  protected virtual bool isStepPointAccepted(MgMotion sender, Point2d pt) {
+    bool ret = (SwigDerivedClassHasMethod("isStepPointAccepted", swigMethodTypes20) ? touchvgPINVOKE.MgCommandDraw_isStepPointAcceptedSwigExplicitMgCommandDraw(swigCPtr, MgMotion.getCPtr(sender), Point2d.getCPtr(pt)) : touchvgPINVOKE.MgCommandDraw_isStepPointAccepted(swigCPtr, MgMotion.getCPtr(sender), Point2d.getCPtr(pt)));
+    if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
+
+  protected virtual int snapOptionsForStep(MgMotion sender, int step) {
+    int ret = (SwigDerivedClassHasMethod("snapOptionsForStep", swigMethodTypes21) ? touchvgPINVOKE.MgCommandDraw_snapOptionsForStepSwigExplicitMgCommandDraw(swigCPtr, MgMotion.getCPtr(sender), step) : touchvgPINVOKE.MgCommandDraw_snapOptionsForStep(swigCPtr, MgMotion.getCPtr(sender), step));
+    return ret;
+  }
+
   public override bool initialize(MgMotion sender, MgStorage s) {
     bool ret = (SwigDerivedClassHasMethod("initialize", swigMethodTypes2) ? touchvgPINVOKE.MgCommandDraw_initializeSwigExplicitMgCommandDraw(swigCPtr, MgMotion.getCPtr(sender), MgStorage.getCPtr(s)) : touchvgPINVOKE.MgCommandDraw_initialize(swigCPtr, MgMotion.getCPtr(sender), MgStorage.getCPtr(s)));
     return ret;
@@ -170,6 +181,16 @@ public class MgCommandDraw : MgCommand {
 
   public void setStep(int step) {
     touchvgPINVOKE.MgCommandDraw_setStep(swigCPtr, step);
+  }
+
+  public Point2d snapPointWidhOptions(MgMotion sender, int options, bool firstStep) {
+    Point2d ret = new Point2d(touchvgPINVOKE.MgCommandDraw_snapPointWidhOptions__SWIG_0(swigCPtr, MgMotion.getCPtr(sender), options, firstStep), true);
+    return ret;
+  }
+
+  public Point2d snapPointWidhOptions(MgMotion sender, int options) {
+    Point2d ret = new Point2d(touchvgPINVOKE.MgCommandDraw_snapPointWidhOptions__SWIG_1(swigCPtr, MgMotion.getCPtr(sender), options), true);
+    return ret;
   }
 
   public Point2d snapPoint(MgMotion sender, bool firstStep) {
@@ -241,7 +262,11 @@ public class MgCommandDraw : MgCommand {
       swigDelegate18 = new SwigDelegateMgCommandDraw_18(SwigDirectorgetMaxStep);
     if (SwigDerivedClassHasMethod("setStepPoint", swigMethodTypes19))
       swigDelegate19 = new SwigDelegateMgCommandDraw_19(SwigDirectorsetStepPoint);
-    touchvgPINVOKE.MgCommandDraw_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19);
+    if (SwigDerivedClassHasMethod("isStepPointAccepted", swigMethodTypes20))
+      swigDelegate20 = new SwigDelegateMgCommandDraw_20(SwigDirectorisStepPointAccepted);
+    if (SwigDerivedClassHasMethod("snapOptionsForStep", swigMethodTypes21))
+      swigDelegate21 = new SwigDelegateMgCommandDraw_21(SwigDirectorsnapOptionsForStep);
+    touchvgPINVOKE.MgCommandDraw_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20, swigDelegate21);
   }
 
   private bool SwigDerivedClassHasMethod(string methodName, global::System.Type[] methodTypes) {
@@ -330,6 +355,14 @@ public class MgCommandDraw : MgCommand {
     setStepPoint((sender == global::System.IntPtr.Zero) ? null : new MgMotion(sender, false), step, new Point2d(pt, false));
   }
 
+  private bool SwigDirectorisStepPointAccepted(global::System.IntPtr sender, global::System.IntPtr pt) {
+    return isStepPointAccepted((sender == global::System.IntPtr.Zero) ? null : new MgMotion(sender, false), new Point2d(pt, false));
+  }
+
+  private int SwigDirectorsnapOptionsForStep(global::System.IntPtr sender, int step) {
+    return snapOptionsForStep((sender == global::System.IntPtr.Zero) ? null : new MgMotion(sender, false), step);
+  }
+
   public delegate void SwigDelegateMgCommandDraw_0();
   public delegate bool SwigDelegateMgCommandDraw_1(global::System.IntPtr sender);
   public delegate bool SwigDelegateMgCommandDraw_2(global::System.IntPtr sender, global::System.IntPtr s);
@@ -350,6 +383,8 @@ public class MgCommandDraw : MgCommand {
   public delegate int SwigDelegateMgCommandDraw_17();
   public delegate int SwigDelegateMgCommandDraw_18();
   public delegate void SwigDelegateMgCommandDraw_19(global::System.IntPtr sender, int step, global::System.IntPtr pt);
+  public delegate bool SwigDelegateMgCommandDraw_20(global::System.IntPtr sender, global::System.IntPtr pt);
+  public delegate int SwigDelegateMgCommandDraw_21(global::System.IntPtr sender, int step);
 
   private SwigDelegateMgCommandDraw_0 swigDelegate0;
   private SwigDelegateMgCommandDraw_1 swigDelegate1;
@@ -371,6 +406,8 @@ public class MgCommandDraw : MgCommand {
   private SwigDelegateMgCommandDraw_17 swigDelegate17;
   private SwigDelegateMgCommandDraw_18 swigDelegate18;
   private SwigDelegateMgCommandDraw_19 swigDelegate19;
+  private SwigDelegateMgCommandDraw_20 swigDelegate20;
+  private SwigDelegateMgCommandDraw_21 swigDelegate21;
 
   private static global::System.Type[] swigMethodTypes0 = new global::System.Type[] {  };
   private static global::System.Type[] swigMethodTypes1 = new global::System.Type[] { typeof(MgMotion) };
@@ -392,6 +429,8 @@ public class MgCommandDraw : MgCommand {
   private static global::System.Type[] swigMethodTypes17 = new global::System.Type[] {  };
   private static global::System.Type[] swigMethodTypes18 = new global::System.Type[] {  };
   private static global::System.Type[] swigMethodTypes19 = new global::System.Type[] { typeof(MgMotion), typeof(int), typeof(Point2d) };
+  private static global::System.Type[] swigMethodTypes20 = new global::System.Type[] { typeof(MgMotion), typeof(Point2d) };
+  private static global::System.Type[] swigMethodTypes21 = new global::System.Type[] { typeof(MgMotion), typeof(int) };
 }
 
 }

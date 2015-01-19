@@ -75,7 +75,7 @@ public class MgCmdDrawRect : MgCommandDraw {
   }
 
   protected virtual void addRectShape(MgMotion sender) {
-    if (SwigDerivedClassHasMethod("addRectShape", swigMethodTypes20)) touchvgPINVOKE.MgCmdDrawRect_addRectShapeSwigExplicitMgCmdDrawRect(swigCPtr, MgMotion.getCPtr(sender)); else touchvgPINVOKE.MgCmdDrawRect_addRectShape(swigCPtr, MgMotion.getCPtr(sender));
+    if (SwigDerivedClassHasMethod("addRectShape", swigMethodTypes22)) touchvgPINVOKE.MgCmdDrawRect_addRectShapeSwigExplicitMgCmdDrawRect(swigCPtr, MgMotion.getCPtr(sender)); else touchvgPINVOKE.MgCmdDrawRect_addRectShape(swigCPtr, MgMotion.getCPtr(sender));
   }
 
   private void SwigDirectorConnect() {
@@ -119,9 +119,13 @@ public class MgCmdDrawRect : MgCommandDraw {
       swigDelegate18 = new SwigDelegateMgCmdDrawRect_18(SwigDirectorgetMaxStep);
     if (SwigDerivedClassHasMethod("setStepPoint", swigMethodTypes19))
       swigDelegate19 = new SwigDelegateMgCmdDrawRect_19(SwigDirectorsetStepPoint);
-    if (SwigDerivedClassHasMethod("addRectShape", swigMethodTypes20))
-      swigDelegate20 = new SwigDelegateMgCmdDrawRect_20(SwigDirectoraddRectShape);
-    touchvgPINVOKE.MgCmdDrawRect_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20);
+    if (SwigDerivedClassHasMethod("isStepPointAccepted", swigMethodTypes20))
+      swigDelegate20 = new SwigDelegateMgCmdDrawRect_20(SwigDirectorisStepPointAccepted);
+    if (SwigDerivedClassHasMethod("snapOptionsForStep", swigMethodTypes21))
+      swigDelegate21 = new SwigDelegateMgCmdDrawRect_21(SwigDirectorsnapOptionsForStep);
+    if (SwigDerivedClassHasMethod("addRectShape", swigMethodTypes22))
+      swigDelegate22 = new SwigDelegateMgCmdDrawRect_22(SwigDirectoraddRectShape);
+    touchvgPINVOKE.MgCmdDrawRect_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20, swigDelegate21, swigDelegate22);
   }
 
   private bool SwigDerivedClassHasMethod(string methodName, global::System.Type[] methodTypes) {
@@ -210,6 +214,14 @@ public class MgCmdDrawRect : MgCommandDraw {
     setStepPoint((sender == global::System.IntPtr.Zero) ? null : new MgMotion(sender, false), step, new Point2d(pt, false));
   }
 
+  private bool SwigDirectorisStepPointAccepted(global::System.IntPtr sender, global::System.IntPtr pt) {
+    return isStepPointAccepted((sender == global::System.IntPtr.Zero) ? null : new MgMotion(sender, false), new Point2d(pt, false));
+  }
+
+  private int SwigDirectorsnapOptionsForStep(global::System.IntPtr sender, int step) {
+    return snapOptionsForStep((sender == global::System.IntPtr.Zero) ? null : new MgMotion(sender, false), step);
+  }
+
   private void SwigDirectoraddRectShape(global::System.IntPtr sender) {
     addRectShape((sender == global::System.IntPtr.Zero) ? null : new MgMotion(sender, false));
   }
@@ -234,7 +246,9 @@ public class MgCmdDrawRect : MgCommandDraw {
   public delegate int SwigDelegateMgCmdDrawRect_17();
   public delegate int SwigDelegateMgCmdDrawRect_18();
   public delegate void SwigDelegateMgCmdDrawRect_19(global::System.IntPtr sender, int step, global::System.IntPtr pt);
-  public delegate void SwigDelegateMgCmdDrawRect_20(global::System.IntPtr sender);
+  public delegate bool SwigDelegateMgCmdDrawRect_20(global::System.IntPtr sender, global::System.IntPtr pt);
+  public delegate int SwigDelegateMgCmdDrawRect_21(global::System.IntPtr sender, int step);
+  public delegate void SwigDelegateMgCmdDrawRect_22(global::System.IntPtr sender);
 
   private SwigDelegateMgCmdDrawRect_0 swigDelegate0;
   private SwigDelegateMgCmdDrawRect_1 swigDelegate1;
@@ -257,6 +271,8 @@ public class MgCmdDrawRect : MgCommandDraw {
   private SwigDelegateMgCmdDrawRect_18 swigDelegate18;
   private SwigDelegateMgCmdDrawRect_19 swigDelegate19;
   private SwigDelegateMgCmdDrawRect_20 swigDelegate20;
+  private SwigDelegateMgCmdDrawRect_21 swigDelegate21;
+  private SwigDelegateMgCmdDrawRect_22 swigDelegate22;
 
   private static global::System.Type[] swigMethodTypes0 = new global::System.Type[] {  };
   private static global::System.Type[] swigMethodTypes1 = new global::System.Type[] { typeof(MgMotion) };
@@ -278,7 +294,9 @@ public class MgCmdDrawRect : MgCommandDraw {
   private static global::System.Type[] swigMethodTypes17 = new global::System.Type[] {  };
   private static global::System.Type[] swigMethodTypes18 = new global::System.Type[] {  };
   private static global::System.Type[] swigMethodTypes19 = new global::System.Type[] { typeof(MgMotion), typeof(int), typeof(Point2d) };
-  private static global::System.Type[] swigMethodTypes20 = new global::System.Type[] { typeof(MgMotion) };
+  private static global::System.Type[] swigMethodTypes20 = new global::System.Type[] { typeof(MgMotion), typeof(Point2d) };
+  private static global::System.Type[] swigMethodTypes21 = new global::System.Type[] { typeof(MgMotion), typeof(int) };
+  private static global::System.Type[] swigMethodTypes22 = new global::System.Type[] { typeof(MgMotion) };
 }
 
 }

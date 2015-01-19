@@ -473,6 +473,7 @@ public class GiGraphics : global::System.IDisposable {
   public static readonly int kAlignTop = touchvgPINVOKE.GiGraphics_kAlignTop_get();
   public static readonly int kAlignBottom = touchvgPINVOKE.GiGraphics_kAlignBottom_get();
   public static readonly int kAlignVCenter = touchvgPINVOKE.GiGraphics_kAlignVCenter_get();
+  public static readonly int kAlignHVCenter = touchvgPINVOKE.GiGraphics_kAlignHVCenter_get();
 
 }
 

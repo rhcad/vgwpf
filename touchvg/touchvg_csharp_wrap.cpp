@@ -28773,6 +28773,26 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgSelection_isSelectedByType(void * j
 }
 
 
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgSelection_applyTransform(void * jarg1, void * jarg2, void * jarg3) {
+  unsigned int jresult ;
+  MgSelection *arg1 = (MgSelection *) 0 ;
+  MgMotion *arg2 = (MgMotion *) 0 ;
+  Matrix2d *arg3 = 0 ;
+  bool result;
+  
+  arg1 = (MgSelection *)jarg1; 
+  arg2 = (MgMotion *)jarg2; 
+  arg3 = (Matrix2d *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Matrix2d const & type is null", 0);
+    return 0;
+  } 
+  result = (bool)(arg1)->applyTransform((MgMotion const *)arg2,(Matrix2d const &)*arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgSelection(void * jarg1) {
   MgSelection *arg1 = (MgSelection *) 0 ;
   

@@ -169,6 +169,12 @@ public class MgSelection : global::System.IDisposable {
     return ret;
   }
 
+  public virtual bool applyTransform(MgMotion sender, Matrix2d xf) {
+    bool ret = touchvgPINVOKE.MgSelection_applyTransform(swigCPtr, MgMotion.getCPtr(sender), Matrix2d.getCPtr(xf));
+    if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
+
 }
 
 }

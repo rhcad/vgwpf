@@ -4938,6 +4938,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSelection_isSelectedByType")]
   public static extern bool MgSelection_isSelectedByType(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSelection_applyTransform")]
+  public static extern bool MgSelection_applyTransform(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgSelection")]
   public static extern void delete_MgSelection(global::System.Runtime.InteropServices.HandleRef jarg1);
 

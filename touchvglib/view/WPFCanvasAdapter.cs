@@ -262,11 +262,12 @@ namespace touchvg.view
                 text = WPFImageSourceHelper.Instance.GetLocalizedString(text.Substring(1));
             }
 
+            int horz = align & kAlignHorz;
             FormattedText textFormation = new FormattedText(text,
                 CultureInfo.CurrentCulture, FlowDirection.LeftToRight,
                 new Typeface("宋体"), h, _brush)
                 {
-                    TextAlignment = (TextAlignment)Enum.Parse(typeof(TextAlignment), align.ToString())
+                    TextAlignment = (TextAlignment)Enum.Parse(typeof(TextAlignment), horz.ToString())
                 };
             _dc.DrawText(textFormation, new Point(x, y));
             return (float)textFormation.Width;

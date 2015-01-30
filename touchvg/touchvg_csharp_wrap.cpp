@@ -36098,7 +36098,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgCoreView_getViewModelBox(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgCoreView_getModelBox(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgCoreView_getModelBox__SWIG_0(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   MgCoreView *arg1 = (MgCoreView *) 0 ;
   mgvector< float > *arg2 = 0 ;
@@ -36111,6 +36111,26 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgCoreView_getModelBox(void * jarg1, 
     return 0;
   } 
   result = (bool)(arg1)->getModelBox(*arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgCoreView_getModelBox__SWIG_1(void * jarg1, void * jarg2, int jarg3) {
+  unsigned int jresult ;
+  MgCoreView *arg1 = (MgCoreView *) 0 ;
+  mgvector< float > *arg2 = 0 ;
+  int arg3 ;
+  bool result;
+  
+  arg1 = (MgCoreView *)jarg1; 
+  arg2 = (mgvector< float > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "mgvector< float > & type is null", 0);
+    return 0;
+  } 
+  arg3 = (int)jarg3; 
+  result = (bool)(arg1)->getModelBox(*arg2,arg3);
   jresult = result; 
   return jresult;
 }

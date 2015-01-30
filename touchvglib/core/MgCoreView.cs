@@ -495,7 +495,13 @@ public class MgCoreView : global::System.IDisposable {
   }
 
   public virtual bool getModelBox(Floats box) {
-    bool ret = touchvgPINVOKE.MgCoreView_getModelBox(swigCPtr, Floats.getCPtr(box));
+    bool ret = touchvgPINVOKE.MgCoreView_getModelBox__SWIG_0(swigCPtr, Floats.getCPtr(box));
+    if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
+
+  public virtual bool getModelBox(Floats box, int shapeId) {
+    bool ret = touchvgPINVOKE.MgCoreView_getModelBox__SWIG_1(swigCPtr, Floats.getCPtr(box), shapeId);
     if (touchvgPINVOKE.SWIGPendingException.Pending) throw touchvgPINVOKE.SWIGPendingException.Retrieve();
     return ret;
   }

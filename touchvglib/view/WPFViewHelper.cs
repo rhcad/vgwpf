@@ -490,6 +490,13 @@ namespace touchvg.view
             return ToBox(box, CoreView.getBoundingBox(box, sid));
         }
 
+        //! 得到指定ID的图形的模型坐标范围
+        public Rect getModelBox(int sid)
+        {
+            Floats box = new Floats(4);
+            return ToBox(box, CoreView.getModelBox(box, sid));
+        }
+
         private Rect ToBox(Floats box, bool ret)
         {
             return !ret ? new Rect() : new Rect(box.get(0), box.get(1),

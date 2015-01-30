@@ -12,11 +12,22 @@ using touchvg.core;
 
 namespace touchvg.view
 {
+    public class ShapeClickEventArgs : EventArgs
+    {
+        public bool Handled;
+        public int ShapeType;
+        public int ID;
+        public int Tag;
+        public Point point;
+    }
+
     public delegate void CommandChangedEventHandler(object sender, EventArgs e);
     public delegate void SelectionChangedEventHandler(object sender, EventArgs e);
     public delegate void ContentChangedEventHandler(object sender, EventArgs e);
     public delegate void DynamicChangedEventHandler(object sender, EventArgs e);
     public delegate void ZoomChangedEventHandler(object sender, EventArgs e);
+    public delegate void ShapeClickEventHandler(object sender, ShapeClickEventArgs e);
+    public delegate void ShapeDblClickEventHandler(object sender,ShapeClickEventArgs e);
     public delegate void GiAction();
     public delegate void ShowMessageHandler(string text);
 
@@ -36,6 +47,9 @@ namespace touchvg.view
         public event ContentChangedEventHandler OnContentChanged;
         public event DynamicChangedEventHandler OnDynamicChanged;
         public event ZoomChangedEventHandler OnZoomChanged;
+        public event ShapeClickEventHandler OnShapeClicked;
+        public event ShapeClickEventHandler OnShapeDblClicked;
+        private ShapeClickEventArgs _clickArgs;
         public ShowMessageHandler ShowMessageHandler;
         private bool _contextActionEnabled = true;
 
@@ -239,6 +253,43 @@ namespace touchvg.view
             {
                 if (_owner.OnZoomChanged != null)
                     _owner.OnZoomChanged.Invoke(_owner, null);
+            }
+
+            public override bool shapeClicked(int type, int sid, int tag, float x, float y)
+            {
+                if (_owner._clickArgs == null)
+                {
+                    _owner._clickArgs = new ShapeClickEventArgs();
+                }
+                _owner._clickArgs.ShapeType = type;
+                _owner._clickArgs.ID = sid;
+                _owner._clickArgs.Tag = tag;
+                _owner._clickArgs.point = new Point(x, y);
+                _owner._clickArgs.Handled = false;
+
+                if (_owner.OnShapeClicked != null)
+                {
+                    _owner.OnShapeClicked.Invoke(_owner, _owner._clickArgs);
+                }
+                return _owner._clickArgs.Handled;
+            }
+
+            public override bool shapeDblClick(int type, int sid, int tag)
+            {
+                if (_owner._clickArgs == null)
+                {
+                    _owner._clickArgs = new ShapeClickEventArgs();
+                }
+                _owner._clickArgs.ShapeType = type;
+                _owner._clickArgs.ID = sid;
+                _owner._clickArgs.Tag = tag;
+                _owner._clickArgs.Handled = false;
+
+                if (_owner.OnShapeDblClicked != null)
+                {
+                    _owner.OnShapeDblClicked.Invoke(_owner, _owner._clickArgs);
+                }
+                return _owner._clickArgs.Handled;
             }
 
             public override void showMessage(string text)

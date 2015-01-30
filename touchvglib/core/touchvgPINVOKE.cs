@@ -6630,8 +6630,11 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_getViewModelBox")]
   public static extern bool MgCoreView_getViewModelBox(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_getModelBox")]
-  public static extern bool MgCoreView_getModelBox(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_getModelBox__SWIG_0")]
+  public static extern bool MgCoreView_getModelBox__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_getModelBox__SWIG_1")]
+  public static extern bool MgCoreView_getModelBox__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_getDisplayExtent__SWIG_0")]
   public static extern bool MgCoreView_getDisplayExtent__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);

@@ -51,6 +51,18 @@ public class MgImageShape : MgBaseRect {
     return ret;
   }
 
+  public static MgImageShape cast(MgBaseShape obj) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgImageShape_cast(MgBaseShape.getCPtr(obj));
+    MgImageShape ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgImageShape(cPtr, false);
+    return ret;
+  }
+
+  public static MgImageShape fromHandle(int h) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgImageShape_fromHandle(h);
+    MgImageShape ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgImageShape(cPtr, false);
+    return ret;
+  }
+
   public override MgObject clone() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgImageShape_clone(swigCPtr);
     MgObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgObject(cPtr, false);

@@ -51,6 +51,18 @@ public class MgGrid : MgBaseRect {
     return ret;
   }
 
+  public static MgGrid cast(MgBaseShape obj) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgGrid_cast(MgBaseShape.getCPtr(obj));
+    MgGrid ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgGrid(cPtr, false);
+    return ret;
+  }
+
+  public static MgGrid fromHandle(int h) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgGrid_fromHandle(h);
+    MgGrid ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgGrid(cPtr, false);
+    return ret;
+  }
+
   public override MgObject clone() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgGrid_clone(swigCPtr);
     MgObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgObject(cPtr, false);

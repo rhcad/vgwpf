@@ -51,6 +51,11 @@ public class MgBaseShape : MgObject {
     return ret;
   }
 
+  public int toHandle() {
+    int ret = touchvgPINVOKE.MgBaseShape_toHandle(swigCPtr);
+    return ret;
+  }
+
   public MgBaseShape cloneShape() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgBaseShape_cloneShape(swigCPtr);
     MgBaseShape ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgBaseShape(cPtr, false);

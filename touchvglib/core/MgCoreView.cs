@@ -384,8 +384,13 @@ public class MgCoreView : global::System.IDisposable {
     touchvgPINVOKE.MgCoreView_freeContent(swigCPtr);
   }
 
+  public virtual bool setContent(string content, bool readOnly) {
+    bool ret = touchvgPINVOKE.MgCoreView_setContent__SWIG_0(swigCPtr, content, readOnly);
+    return ret;
+  }
+
   public virtual bool setContent(string content) {
-    bool ret = touchvgPINVOKE.MgCoreView_setContent(swigCPtr, content);
+    bool ret = touchvgPINVOKE.MgCoreView_setContent__SWIG_1(swigCPtr, content);
     return ret;
   }
 

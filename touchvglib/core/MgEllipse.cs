@@ -51,6 +51,18 @@ public class MgEllipse : MgBaseRect {
     return ret;
   }
 
+  public static MgEllipse cast(MgBaseShape obj) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgEllipse_cast(MgBaseShape.getCPtr(obj));
+    MgEllipse ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgEllipse(cPtr, false);
+    return ret;
+  }
+
+  public static MgEllipse fromHandle(int h) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgEllipse_fromHandle(h);
+    MgEllipse ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgEllipse(cPtr, false);
+    return ret;
+  }
+
   public override MgObject clone() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgEllipse_clone(swigCPtr);
     MgObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgObject(cPtr, false);

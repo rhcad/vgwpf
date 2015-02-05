@@ -51,6 +51,18 @@ public class MgDiamond : MgBaseRect {
     return ret;
   }
 
+  public static MgDiamond cast(MgBaseShape obj) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgDiamond_cast(MgBaseShape.getCPtr(obj));
+    MgDiamond ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgDiamond(cPtr, false);
+    return ret;
+  }
+
+  public static MgDiamond fromHandle(int h) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgDiamond_fromHandle(h);
+    MgDiamond ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgDiamond(cPtr, false);
+    return ret;
+  }
+
   public override MgObject clone() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgDiamond_clone(swigCPtr);
     MgObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgObject(cPtr, false);

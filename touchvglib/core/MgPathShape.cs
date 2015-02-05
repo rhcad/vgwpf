@@ -51,6 +51,18 @@ public class MgPathShape : MgBaseShape {
     return ret;
   }
 
+  public static MgPathShape cast(MgBaseShape obj) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgPathShape_cast(MgBaseShape.getCPtr(obj));
+    MgPathShape ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgPathShape(cPtr, false);
+    return ret;
+  }
+
+  public static MgPathShape fromHandle(int h) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgPathShape_fromHandle(h);
+    MgPathShape ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgPathShape(cPtr, false);
+    return ret;
+  }
+
   public override MgObject clone() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgPathShape_clone(swigCPtr);
     MgObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgObject(cPtr, false);

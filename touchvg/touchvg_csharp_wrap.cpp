@@ -18219,6 +18219,18 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_MgBaseShape_minTol() {
 }
 
 
+SWIGEXPORT long SWIGSTDCALL CSharp_MgBaseShape_toHandle(void * jarg1) {
+  long jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  long result;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (long)((MgBaseShape const *)arg1)->toHandle();
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_MgBaseShape_cloneShape(void * jarg1) {
   void * jresult ;
   MgBaseShape *arg1 = (MgBaseShape *) 0 ;
@@ -19485,6 +19497,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgRect_Type() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgRect_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgRect *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgRect *)MgRect::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgRect_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgRect *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgRect *)MgRect::fromHandle(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_MgRect_clone(void * jarg1) {
   void * jresult ;
   MgRect *arg1 = (MgRect *) 0 ;
@@ -20130,6 +20166,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgLines_Type() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgLines_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgLines *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgLines *)MgLines::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgLines_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgLines *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgLines *)MgLines::fromHandle(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_MgLines_clone(void * jarg1) {
   void * jresult ;
   MgLines *arg1 = (MgLines *) 0 ;
@@ -20590,6 +20650,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgArc_Type() {
   
   result = (int)MgArc::Type();
   jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgArc_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgArc *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgArc *)MgArc::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgArc_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgArc *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgArc *)MgArc::fromHandle(arg1);
+  jresult = (void *)result; 
   return jresult;
 }
 
@@ -21284,6 +21368,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgDiamond_Type() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgDiamond_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgDiamond *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgDiamond *)MgDiamond::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgDiamond_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgDiamond *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgDiamond *)MgDiamond::fromHandle(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_MgDiamond_clone(void * jarg1) {
   void * jresult ;
   MgDiamond *arg1 = (MgDiamond *) 0 ;
@@ -21712,6 +21820,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgDot_Type() {
   
   result = (int)MgDot::Type();
   jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgDot_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgDot *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgDot *)MgDot::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgDot_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgDot *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgDot *)MgDot::fromHandle(arg1);
+  jresult = (void *)result; 
   return jresult;
 }
 
@@ -22166,6 +22298,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgEllipse_Type() {
   
   result = (int)MgEllipse::Type();
   jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgEllipse_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgEllipse *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgEllipse *)MgEllipse::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgEllipse_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgEllipse *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgEllipse *)MgEllipse::fromHandle(arg1);
+  jresult = (void *)result; 
   return jresult;
 }
 
@@ -22802,6 +22958,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgGrid_Type() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgGrid_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgGrid *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgGrid *)MgGrid::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgGrid_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgGrid *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgGrid *)MgGrid::fromHandle(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_MgGrid_clone(void * jarg1) {
   void * jresult ;
   MgGrid *arg1 = (MgGrid *) 0 ;
@@ -23280,6 +23460,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgLine_Type() {
   
   result = (int)MgLine::Type();
   jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgLine_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgLine *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgLine *)MgLine::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgLine_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgLine *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgLine *)MgLine::fromHandle(arg1);
+  jresult = (void *)result; 
   return jresult;
 }
 
@@ -23848,6 +24052,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgParallel_Type() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgParallel_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgParallel *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgParallel *)MgParallel::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgParallel_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgParallel *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgParallel *)MgParallel::fromHandle(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_MgParallel_clone(void * jarg1) {
   void * jresult ;
   MgParallel *arg1 = (MgParallel *) 0 ;
@@ -24350,6 +24578,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgPathShape_Type() {
   
   result = (int)MgPathShape::Type();
   jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgPathShape_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgPathShape *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgPathShape *)MgPathShape::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgPathShape_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgPathShape *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgPathShape *)MgPathShape::fromHandle(arg1);
+  jresult = (void *)result; 
   return jresult;
 }
 
@@ -24860,6 +25112,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgRoundRect_Type() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgRoundRect_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgRoundRect *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgRoundRect *)MgRoundRect::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgRoundRect_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgRoundRect *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgRoundRect *)MgRoundRect::fromHandle(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_MgRoundRect_clone(void * jarg1) {
   void * jresult ;
   MgRoundRect *arg1 = (MgRoundRect *) 0 ;
@@ -25334,6 +25610,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgSplines_Type() {
   
   result = (int)MgSplines::Type();
   jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgSplines_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgSplines *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgSplines *)MgSplines::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgSplines_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgSplines *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgSplines *)MgSplines::fromHandle(arg1);
+  jresult = (void *)result; 
   return jresult;
 }
 
@@ -27149,6 +27449,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgGroup_Type() {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgGroup_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgGroup *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgGroup *)MgGroup::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgGroup_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgGroup *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgGroup *)MgGroup::fromHandle(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_MgGroup_clone(void * jarg1) {
   void * jresult ;
   MgGroup *arg1 = (MgGroup *) 0 ;
@@ -27665,6 +27989,30 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgImageShape_Type() {
   
   result = (int)MgImageShape::Type();
   jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgImageShape_cast(void * jarg1) {
+  void * jresult ;
+  MgBaseShape *arg1 = (MgBaseShape *) 0 ;
+  MgImageShape *result = 0 ;
+  
+  arg1 = (MgBaseShape *)jarg1; 
+  result = (MgImageShape *)MgImageShape::cast(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_MgImageShape_fromHandle(long jarg1) {
+  void * jresult ;
+  long arg1 ;
+  MgImageShape *result = 0 ;
+  
+  arg1 = (long)jarg1; 
+  result = (MgImageShape *)MgImageShape::fromHandle(arg1);
+  jresult = (void *)result; 
   return jresult;
 }
 
@@ -35742,7 +36090,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_MgCoreView_freeContent(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgCoreView_setContent(void * jarg1, char * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgCoreView_setContent__SWIG_0(void * jarg1, char * jarg2, unsigned int jarg3) {
+  unsigned int jresult ;
+  MgCoreView *arg1 = (MgCoreView *) 0 ;
+  char *arg2 = (char *) 0 ;
+  bool arg3 ;
+  bool result;
+  
+  arg1 = (MgCoreView *)jarg1; 
+  arg2 = (char *)jarg2; 
+  arg3 = jarg3 ? true : false; 
+  result = (bool)(arg1)->setContent((char const *)arg2,arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgCoreView_setContent__SWIG_1(void * jarg1, char * jarg2) {
   unsigned int jresult ;
   MgCoreView *arg1 = (MgCoreView *) 0 ;
   char *arg2 = (char *) 0 ;

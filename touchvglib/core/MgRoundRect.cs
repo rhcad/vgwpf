@@ -51,6 +51,18 @@ public class MgRoundRect : MgBaseRect {
     return ret;
   }
 
+  public static MgRoundRect cast(MgBaseShape obj) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgRoundRect_cast(MgBaseShape.getCPtr(obj));
+    MgRoundRect ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgRoundRect(cPtr, false);
+    return ret;
+  }
+
+  public static MgRoundRect fromHandle(int h) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgRoundRect_fromHandle(h);
+    MgRoundRect ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgRoundRect(cPtr, false);
+    return ret;
+  }
+
   public override MgObject clone() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgRoundRect_clone(swigCPtr);
     MgObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgObject(cPtr, false);

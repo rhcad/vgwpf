@@ -51,6 +51,18 @@ public class MgGroup : MgComposite {
     return ret;
   }
 
+  public static MgGroup cast(MgBaseShape obj) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgGroup_cast(MgBaseShape.getCPtr(obj));
+    MgGroup ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgGroup(cPtr, false);
+    return ret;
+  }
+
+  public static MgGroup fromHandle(int h) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgGroup_fromHandle(h);
+    MgGroup ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgGroup(cPtr, false);
+    return ret;
+  }
+
   public override MgObject clone() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgGroup_clone(swigCPtr);
     MgObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgObject(cPtr, false);

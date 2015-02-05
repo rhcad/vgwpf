@@ -51,6 +51,18 @@ public class MgParallel : MgBaseShape {
     return ret;
   }
 
+  public static MgParallel cast(MgBaseShape obj) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgParallel_cast(MgBaseShape.getCPtr(obj));
+    MgParallel ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgParallel(cPtr, false);
+    return ret;
+  }
+
+  public static MgParallel fromHandle(int h) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgParallel_fromHandle(h);
+    MgParallel ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgParallel(cPtr, false);
+    return ret;
+  }
+
   public override MgObject clone() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgParallel_clone(swigCPtr);
     MgObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgObject(cPtr, false);

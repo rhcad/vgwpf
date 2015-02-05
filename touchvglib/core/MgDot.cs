@@ -51,6 +51,18 @@ public class MgDot : MgBaseShape {
     return ret;
   }
 
+  public static MgDot cast(MgBaseShape obj) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgDot_cast(MgBaseShape.getCPtr(obj));
+    MgDot ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgDot(cPtr, false);
+    return ret;
+  }
+
+  public static MgDot fromHandle(int h) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgDot_fromHandle(h);
+    MgDot ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgDot(cPtr, false);
+    return ret;
+  }
+
   public override MgObject clone() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgDot_clone(swigCPtr);
     MgObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgObject(cPtr, false);

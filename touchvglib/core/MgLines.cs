@@ -51,6 +51,18 @@ public class MgLines : MgBaseLines {
     return ret;
   }
 
+  public static MgLines cast(MgBaseShape obj) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgLines_cast(MgBaseShape.getCPtr(obj));
+    MgLines ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgLines(cPtr, false);
+    return ret;
+  }
+
+  public static MgLines fromHandle(int h) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgLines_fromHandle(h);
+    MgLines ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgLines(cPtr, false);
+    return ret;
+  }
+
   public override MgObject clone() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgLines_clone(swigCPtr);
     MgObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgObject(cPtr, false);

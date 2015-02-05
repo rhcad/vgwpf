@@ -51,6 +51,18 @@ public class MgArc : MgBaseShape {
     return ret;
   }
 
+  public static MgArc cast(MgBaseShape obj) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgArc_cast(MgBaseShape.getCPtr(obj));
+    MgArc ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgArc(cPtr, false);
+    return ret;
+  }
+
+  public static MgArc fromHandle(int h) {
+    global::System.IntPtr cPtr = touchvgPINVOKE.MgArc_fromHandle(h);
+    MgArc ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgArc(cPtr, false);
+    return ret;
+  }
+
   public override MgObject clone() {
     global::System.IntPtr cPtr = touchvgPINVOKE.MgArc_clone(swigCPtr);
     MgObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgObject(cPtr, false);

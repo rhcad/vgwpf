@@ -24,6 +24,7 @@ public enum GiHandleTypes {
   kGiHandleIntersect,
   kGiHandleNear,
   kGiHandlePivot,
+  kGiHandleOverturn,
   kGiHandleCustom = 20
 }
 

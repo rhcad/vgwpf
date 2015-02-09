@@ -144,6 +144,11 @@ public class GiColor : global::System.IDisposable {
     touchvgPINVOKE.GiColor_set__SWIG_1(swigCPtr, _r, _g, _b, _a);
   }
 
+  public GiColor withAlpha(int alpha) {
+    GiColor ret = new GiColor(touchvgPINVOKE.GiColor_withAlpha(swigCPtr, alpha), true);
+    return ret;
+  }
+
   public bool isInvalid() {
     bool ret = touchvgPINVOKE.GiColor_isInvalid(swigCPtr);
     return ret;

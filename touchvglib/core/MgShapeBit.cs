@@ -20,7 +20,8 @@ public enum MgShapeBit {
   kMgNoClone,
   kMgHideContent,
   kMgNoDel,
-  kMgCanSelLocked
+  kMgCanSelLocked,
+  kMgNotAddRel
 }
 
 }

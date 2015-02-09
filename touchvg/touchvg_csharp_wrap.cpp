@@ -12246,6 +12246,20 @@ SWIGEXPORT void SWIGSTDCALL CSharp_GiColor_set__SWIG_1(void * jarg1, int jarg2, 
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_GiColor_withAlpha(void * jarg1, int jarg2) {
+  void * jresult ;
+  GiColor *arg1 = (GiColor *) 0 ;
+  int arg2 ;
+  GiColor result;
+  
+  arg1 = (GiColor *)jarg1; 
+  arg2 = (int)jarg2; 
+  result = ((GiColor const *)arg1)->withAlpha(arg2);
+  jresult = new GiColor((const GiColor &)result); 
+  return jresult;
+}
+
+
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GiColor_isInvalid(void * jarg1) {
   unsigned int jresult ;
   GiColor *arg1 = (GiColor *) 0 ;

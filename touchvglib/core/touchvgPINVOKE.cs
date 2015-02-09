@@ -1464,6 +1464,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiColor_set__SWIG_1")]
   public static extern void GiColor_set__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3, int jarg4, int jarg5);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiColor_withAlpha")]
+  public static extern global::System.IntPtr GiColor_withAlpha(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiColor_isInvalid")]
   public static extern bool GiColor_isInvalid(global::System.Runtime.InteropServices.HandleRef jarg1);
 

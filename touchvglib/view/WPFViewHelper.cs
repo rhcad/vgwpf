@@ -19,7 +19,7 @@ namespace touchvg.view
      */
     public class WPFViewHelper : IDisposable
     {
-        private static int LIB_RELEASE = 7; // TODO: 在本工程接口变化后增加此数
+        private static int LIB_RELEASE = 8; // TODO: 在本工程接口变化后增加此数
         public delegate void GiAction();
         private WPFGraphView View;
         private GiCoreView CoreView { get { return View.CoreView; } }

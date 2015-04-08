@@ -621,6 +621,13 @@ namespace touchvg {
             }
         }
         
+        internal static System.Drawing.Bitmap vgparallel {
+            get {
+                object obj = ResourceManager.GetObject("vgparallel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap vgpivot {
             get {
                 object obj = ResourceManager.GetObject("vgpivot", resourceCulture);

@@ -22,7 +22,8 @@ public enum MgSnapOptions {
   kMgOptionSnapPerpOut = 1 << 9,
   kMgOptionSnapTangent = 1 << 10,
   kMgOptionSnapNear = 1 << 11,
-  kMgOptionSnapExtend = 1 << 12
+  kMgOptionSnapExtend = 1 << 12,
+  kMgOptionSnapParallel = 1 << 13
 }
 
 }

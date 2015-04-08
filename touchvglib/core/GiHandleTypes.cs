@@ -24,6 +24,7 @@ public enum GiHandleTypes {
   kGiHandleQuadrant,
   kGiHandleTangent,
   kGiHandleIntersect,
+  kGiHandleParallel,
   kGiHandleNear,
   kGiHandlePivot,
   kGiHandleOverturn,

@@ -24,7 +24,8 @@ public enum MgShapeBit {
   kMgNoDel,
   kMgCanSelLocked,
   kMgNotAddRel,
-  kMgNotShowSnap
+  kMgNotShowSnap,
+  kMgCanAddVertex
 }
 
 }

@@ -313,6 +313,15 @@ namespace touchvg {
         }
         
         /// <summary>
+        ///   查找类似 平行 的本地化字符串。
+        /// </summary>
+        internal static string parallelpt {
+            get {
+                return ResourceManager.GetString("parallelpt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 路径块 的本地化字符串。
         /// </summary>
         internal static string pathshape {

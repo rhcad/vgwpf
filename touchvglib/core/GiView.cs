@@ -118,8 +118,8 @@ public class GiView : global::System.IDisposable {
     if (SwigDerivedClassHasMethod("showMessage", swigMethodTypes17)) touchvgPINVOKE.GiView_showMessageSwigExplicitGiView(swigCPtr, text); else touchvgPINVOKE.GiView_showMessage(swigCPtr, text);
   }
 
-  public virtual void getLocalizedString(string name, MgStringCallback result) {
-    if (SwigDerivedClassHasMethod("getLocalizedString", swigMethodTypes18)) touchvgPINVOKE.GiView_getLocalizedStringSwigExplicitGiView(swigCPtr, name, MgStringCallback.getCPtr(result)); else touchvgPINVOKE.GiView_getLocalizedString(swigCPtr, name, MgStringCallback.getCPtr(result));
+  public virtual void getLocalizedString(string name, MgStringCallback c) {
+    if (SwigDerivedClassHasMethod("getLocalizedString", swigMethodTypes18)) touchvgPINVOKE.GiView_getLocalizedStringSwigExplicitGiView(swigCPtr, name, MgStringCallback.getCPtr(c)); else touchvgPINVOKE.GiView_getLocalizedString(swigCPtr, name, MgStringCallback.getCPtr(c));
   }
 
   public GiView() : this(touchvgPINVOKE.new_GiView(), true) {
@@ -246,8 +246,8 @@ public class GiView : global::System.IDisposable {
     showMessage(text);
   }
 
-  private void SwigDirectorgetLocalizedString(string name, global::System.IntPtr result) {
-    getLocalizedString(name, (result == global::System.IntPtr.Zero) ? null : new MgStringCallback(result, false));
+  private void SwigDirectorgetLocalizedString(string name, global::System.IntPtr c) {
+    getLocalizedString(name, (c == global::System.IntPtr.Zero) ? null : new MgStringCallback(c, false));
   }
 
   public delegate void SwigDelegateGiView_0(bool changed);
@@ -268,7 +268,7 @@ public class GiView : global::System.IDisposable {
   public delegate bool SwigDelegateGiView_15(int type, int sid, int tag);
   public delegate bool SwigDelegateGiView_16(int type, int sid, int tag, float x, float y);
   public delegate void SwigDelegateGiView_17(string text);
-  public delegate void SwigDelegateGiView_18(string name, global::System.IntPtr result);
+  public delegate void SwigDelegateGiView_18(string name, global::System.IntPtr c);
 
   private SwigDelegateGiView_0 swigDelegate0;
   private SwigDelegateGiView_1 swigDelegate1;

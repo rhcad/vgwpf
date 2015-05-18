@@ -5211,17 +5211,17 @@ void SwigDirector_GiView::showMessage(char const *text) {
   }
 }
 
-void SwigDirector_GiView::getLocalizedString(char const *name, MgStringCallback *result) {
+void SwigDirector_GiView::getLocalizedString(char const *name, MgStringCallback *c) {
   char * jname = 0 ;
-  void * jresult = 0 ;
+  void * jc = 0 ;
   
   if (!swig_callbackgetLocalizedString) {
-    GiView::getLocalizedString(name,result);
+    GiView::getLocalizedString(name,c);
     return;
   } else {
     jname = SWIG_csharp_string_callback((const char *)name); 
-    jresult = (void *) result; 
-    swig_callbackgetLocalizedString(jname, jresult);
+    jc = (void *) c; 
+    swig_callbackgetLocalizedString(jname, jc);
   }
 }
 
@@ -17478,6 +17478,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Shapes_set__SWIG_1(void * jarg1, int jarg2, v
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgStorage(void * jarg1) {
+  MgStorage *arg1 = (MgStorage *) 0 ;
+  
+  arg1 = (MgStorage *)jarg1; 
+  delete arg1;
+}
+
+
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgStorage_readNode(void * jarg1, char * jarg2, int jarg3, unsigned int jarg4) {
   unsigned int jresult ;
   MgStorage *arg1 = (MgStorage *) 0 ;
@@ -17703,14 +17711,6 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgStorage_setError(void * jarg1, char
   result = (bool)(arg1)->setError((char const *)arg2);
   jresult = result; 
   return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgStorage(void * jarg1) {
-  MgStorage *arg1 = (MgStorage *) 0 ;
-  
-  arg1 = (MgStorage *)jarg1; 
-  delete arg1;
 }
 
 
@@ -26580,6 +26580,14 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgShape_getHandleType(void * jarg1, int jarg2)
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgShapeFactory(void * jarg1) {
+  MgShapeFactory *arg1 = (MgShapeFactory *) 0 ;
+  
+  arg1 = (MgShapeFactory *)jarg1; 
+  delete arg1;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_MgShapeFactory_createShape(void * jarg1, int jarg2) {
   void * jresult ;
   MgShapeFactory *arg1 = (MgShapeFactory *) 0 ;
@@ -26591,14 +26599,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_MgShapeFactory_createShape(void * jarg1, in
   result = (MgShape *)(arg1)->createShape(arg2);
   jresult = (void *)result; 
   return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgShapeFactory(void * jarg1) {
-  MgShapeFactory *arg1 = (MgShapeFactory *) 0 ;
-  
-  arg1 = (MgShapeFactory *)jarg1; 
-  delete arg1;
 }
 
 
@@ -28577,6 +28577,14 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_MgImageShape_findShapeByImageID(void * jarg
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgActionDispatcher(void * jarg1) {
+  MgActionDispatcher *arg1 = (MgActionDispatcher *) 0 ;
+  
+  arg1 = (MgActionDispatcher *)jarg1; 
+  delete arg1;
+}
+
+
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgActionDispatcher_showInSelect(void * jarg1, void * jarg2, int jarg3, void * jarg4, void * jarg5) {
   unsigned int jresult ;
   MgActionDispatcher *arg1 = (MgActionDispatcher *) 0 ;
@@ -28633,10 +28641,10 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgActionDispatcher_doAction(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgActionDispatcher(void * jarg1) {
-  MgActionDispatcher *arg1 = (MgActionDispatcher *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgSnap(void * jarg1) {
+  MgSnap *arg1 = (MgSnap *) 0 ;
   
-  arg1 = (MgActionDispatcher *)jarg1; 
+  arg1 = (MgSnap *)jarg1; 
   delete arg1;
 }
 
@@ -28845,10 +28853,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_MgSnap_snapPoint(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgSnap(void * jarg1) {
-  MgSnap *arg1 = (MgSnap *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgSelection(void * jarg1) {
+  MgSelection *arg1 = (MgSelection *) 0 ;
   
-  arg1 = (MgSnap *)jarg1; 
+  arg1 = (MgSelection *)jarg1; 
   delete arg1;
 }
 
@@ -29252,14 +29260,6 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MgSelection_applyTransform(void * jar
   result = (bool)(arg1)->applyTransform((MgMotion const *)arg2,(Matrix2d const &)*arg3);
   jresult = result; 
   return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgSelection(void * jarg1) {
-  MgSelection *arg1 = (MgSelection *) 0 ;
-  
-  arg1 = (MgSelection *)jarg1; 
-  delete arg1;
 }
 
 
@@ -30014,26 +30014,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_MgView_setOptionString(void * jarg1, char * j
   arg2 = (char *)jarg2; 
   arg3 = (char *)jarg3; 
   (arg1)->setOptionString((char const *)arg2,(char const *)arg3);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_MgRegenLocker(void * jarg1) {
-  void * jresult ;
-  MgView *arg1 = (MgView *) 0 ;
-  MgRegenLocker *result = 0 ;
-  
-  arg1 = (MgView *)jarg1; 
-  result = (MgRegenLocker *)new MgRegenLocker(arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgRegenLocker(void * jarg1) {
-  MgRegenLocker *arg1 = (MgRegenLocker *) 0 ;
-  
-  arg1 = (MgRegenLocker *)jarg1; 
-  delete arg1;
 }
 
 
@@ -33617,6 +33597,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_MgCmdDrawRect_director_connect(void *objarg, 
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgCmdManager(void * jarg1) {
+  MgCmdManager *arg1 = (MgCmdManager *) 0 ;
+  
+  arg1 = (MgCmdManager *)jarg1; 
+  delete arg1;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_MgCmdManager_release(void * jarg1) {
   MgCmdManager *arg1 = (MgCmdManager *) 0 ;
   
@@ -33898,14 +33886,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_MgCmdManager_getBoundingBox(void * jarg1, voi
   } 
   arg3 = (MgMotion *)jarg3; 
   (arg1)->getBoundingBox(*arg2,(MgMotion const *)arg3);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgCmdManager(void * jarg1) {
-  MgCmdManager *arg1 = (MgCmdManager *) 0 ;
-  
-  arg1 = (MgCmdManager *)jarg1; 
-  delete arg1;
 }
 
 
@@ -35325,6 +35305,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MgCoreView_kMgNotShowSnap_get() {
   int result;
   
   result = (int)MgCoreView::kMgNotShowSnap;
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_MgCoreView_kMgCanAddVertex_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)MgCoreView::kMgCanAddVertex;
   jresult = (int)result; 
   return jresult;
 }
@@ -36904,6 +36894,26 @@ SWIGEXPORT void SWIGSTDCALL CSharp_MgOptionCallback_director_connect(void *objar
   if (director) {
     director->swig_connect_director(callback0, callback1, callback2, callback3);
   }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_MgRegenLocker(void * jarg1) {
+  void * jresult ;
+  MgView *arg1 = (MgView *) 0 ;
+  MgRegenLocker *result = 0 ;
+  
+  arg1 = (MgView *)jarg1; 
+  result = (MgRegenLocker *)new MgRegenLocker(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_MgRegenLocker(void * jarg1) {
+  MgRegenLocker *arg1 = (MgRegenLocker *) 0 ;
+  
+  arg1 = (MgRegenLocker *)jarg1; 
+  delete arg1;
 }
 
 

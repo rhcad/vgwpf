@@ -2495,6 +2495,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_Shapes_set__SWIG_1")]
   public static extern void Shapes_set__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3, global::System.Runtime.InteropServices.HandleRef jarg4);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgStorage")]
+  public static extern void delete_MgStorage(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgStorage_readNode")]
   public static extern bool MgStorage_readNode(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2, int jarg3, bool jarg4);
 
@@ -2542,9 +2545,6 @@ class touchvgPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgStorage_setError")]
   public static extern bool MgStorage_setError(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgStorage")]
-  public static extern void delete_MgStorage(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_new_MgJsonFile")]
   public static extern global::System.IntPtr new_MgJsonFile(string jarg1, bool jarg2);
@@ -4472,11 +4472,11 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgShape_getHandleType")]
   public static extern int MgShape_getHandleType(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgShapeFactory_createShape")]
-  public static extern global::System.IntPtr MgShapeFactory_createShape(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
-
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgShapeFactory")]
   public static extern void delete_MgShapeFactory(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgShapeFactory_createShape")]
+  public static extern global::System.IntPtr MgShapeFactory_createShape(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgShapes_Type")]
   public static extern int MgShapes_Type();
@@ -4916,6 +4916,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgImageShape_findShapeByImageID")]
   public static extern global::System.IntPtr MgImageShape_findShapeByImageID(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgActionDispatcher")]
+  public static extern void delete_MgActionDispatcher(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgActionDispatcher_showInSelect")]
   public static extern bool MgActionDispatcher_showInSelect(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3, global::System.Runtime.InteropServices.HandleRef jarg4, global::System.Runtime.InteropServices.HandleRef jarg5);
 
@@ -4925,8 +4928,8 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgActionDispatcher_doAction")]
   public static extern bool MgActionDispatcher_doAction(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, int jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgActionDispatcher")]
-  public static extern void delete_MgActionDispatcher(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgSnap")]
+  public static extern void delete_MgSnap(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSnap_clearSnap")]
   public static extern void MgSnap_clearSnap(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
@@ -4958,8 +4961,8 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSnap_snapPoint")]
   public static extern global::System.IntPtr MgSnap_snapPoint(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgSnap")]
-  public static extern void delete_MgSnap(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgSelection")]
+  public static extern void delete_MgSelection(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSelection_getSelection")]
   public static extern int MgSelection_getSelection(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
@@ -5041,9 +5044,6 @@ class touchvgPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgSelection_applyTransform")]
   public static extern bool MgSelection_applyTransform(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgSelection")]
-  public static extern void delete_MgSelection(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgView")]
   public static extern void delete_MgView(global::System.Runtime.InteropServices.HandleRef jarg1);
@@ -5227,12 +5227,6 @@ class touchvgPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgView_setOptionString")]
   public static extern void MgView_setOptionString(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2, string jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_new_MgRegenLocker")]
-  public static extern global::System.IntPtr new_MgRegenLocker(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgRegenLocker")]
-  public static extern void delete_MgRegenLocker(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgMotion_view_set")]
   public static extern void MgMotion_view_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
@@ -6032,6 +6026,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCmdDrawRect_director_connect")]
   public static extern void MgCmdDrawRect_director_connect(global::System.Runtime.InteropServices.HandleRef jarg1, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_0 delegate0, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_1 delegate1, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_2 delegate2, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_3 delegate3, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_4 delegate4, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_5 delegate5, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_6 delegate6, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_7 delegate7, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_8 delegate8, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_9 delegate9, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_10 delegate10, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_11 delegate11, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_12 delegate12, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_13 delegate13, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_14 delegate14, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_15 delegate15, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_16 delegate16, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_17 delegate17, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_18 delegate18, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_19 delegate19, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_20 delegate20, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_21 delegate21, MgCmdDrawRect.SwigDelegateMgCmdDrawRect_22 delegate22);
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgCmdManager")]
+  public static extern void delete_MgCmdManager(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCmdManager_release")]
   public static extern void MgCmdManager_release(global::System.Runtime.InteropServices.HandleRef jarg1);
 
@@ -6091,9 +6088,6 @@ class touchvgPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCmdManager_getBoundingBox")]
   public static extern void MgCmdManager_getBoundingBox(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
-
-  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgCmdManager")]
-  public static extern void delete_MgCmdManager(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCmdManagerFactory_create")]
   public static extern global::System.IntPtr MgCmdManagerFactory_create();
@@ -6455,6 +6449,9 @@ class touchvgPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_kMgNotShowSnap_get")]
   public static extern int MgCoreView_kMgNotShowSnap_get();
 
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgCoreView_kMgCanAddVertex_get")]
+  public static extern int MgCoreView_kMgCanAddVertex_get();
+
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgCoreView")]
   public static extern void delete_MgCoreView(global::System.Runtime.InteropServices.HandleRef jarg1);
 
@@ -6796,6 +6793,12 @@ class touchvgPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_MgOptionCallback_director_connect")]
   public static extern void MgOptionCallback_director_connect(global::System.Runtime.InteropServices.HandleRef jarg1, MgOptionCallback.SwigDelegateMgOptionCallback_0 delegate0, MgOptionCallback.SwigDelegateMgOptionCallback_1 delegate1, MgOptionCallback.SwigDelegateMgOptionCallback_2 delegate2, MgOptionCallback.SwigDelegateMgOptionCallback_3 delegate3);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_new_MgRegenLocker")]
+  public static extern global::System.IntPtr new_MgRegenLocker(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_delete_MgRegenLocker")]
+  public static extern void delete_MgRegenLocker(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("touchvg", EntryPoint="CSharp_GiCoreView_kNoCmdType_get")]
   public static extern int GiCoreView_kNoCmdType_get();

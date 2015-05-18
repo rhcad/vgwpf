@@ -584,6 +584,7 @@ public class MgCoreView : global::System.IDisposable {
   public static readonly int kMgCanSelLocked = touchvgPINVOKE.MgCoreView_kMgCanSelLocked_get();
   public static readonly int kMgNotAddRel = touchvgPINVOKE.MgCoreView_kMgNotAddRel_get();
   public static readonly int kMgNotShowSnap = touchvgPINVOKE.MgCoreView_kMgNotShowSnap_get();
+  public static readonly int kMgCanAddVertex = touchvgPINVOKE.MgCoreView_kMgCanAddVertex_get();
 
 }
 

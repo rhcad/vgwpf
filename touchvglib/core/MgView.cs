@@ -293,8 +293,8 @@ public class MgView : global::System.IDisposable {
     touchvgPINVOKE.MgView_showMessage(swigCPtr, text);
   }
 
-  public virtual void getLocalizedString(string name, MgStringCallback result) {
-    touchvgPINVOKE.MgView_getLocalizedString(swigCPtr, name, MgStringCallback.getCPtr(result));
+  public virtual void getLocalizedString(string name, MgStringCallback c) {
+    touchvgPINVOKE.MgView_getLocalizedString(swigCPtr, name, MgStringCallback.getCPtr(c));
   }
 
   public virtual bool isContextActionsVisible() {

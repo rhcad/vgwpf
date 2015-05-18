@@ -982,7 +982,7 @@ public:
     virtual bool shapeDblClick(int type, int sid, int tag);
     virtual bool shapeClicked(int type, int sid, int tag, float x, float y);
     virtual void showMessage(char const *text);
-    virtual void getLocalizedString(char const *name, MgStringCallback *result);
+    virtual void getLocalizedString(char const *name, MgStringCallback *c);
 
     typedef void (SWIGSTDCALL* SWIG_Callback0_t)(unsigned int);
     typedef void (SWIGSTDCALL* SWIG_Callback1_t)(int, long);

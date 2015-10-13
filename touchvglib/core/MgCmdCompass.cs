@@ -10,18 +10,18 @@
 
 namespace touchvg.core {
 
-public class MgCmdArcCSE : MgCmdArc3P {
+public class MgCmdCompass : MgCmdArc3P {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
-  internal MgCmdArcCSE(global::System.IntPtr cPtr, bool cMemoryOwn) : base(touchvgPINVOKE.MgCmdArcCSE_SWIGUpcast(cPtr), cMemoryOwn) {
+  internal MgCmdCompass(global::System.IntPtr cPtr, bool cMemoryOwn) : base(touchvgPINVOKE.MgCmdCompass_SWIGUpcast(cPtr), cMemoryOwn) {
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(MgCmdArcCSE obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(MgCmdCompass obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 
-  ~MgCmdArcCSE() {
+  ~MgCmdCompass() {
     Dispose();
   }
 
@@ -30,7 +30,7 @@ public class MgCmdArcCSE : MgCmdArc3P {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          touchvgPINVOKE.delete_MgCmdArcCSE(swigCPtr);
+          touchvgPINVOKE.delete_MgCmdCompass(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
@@ -39,18 +39,28 @@ public class MgCmdArcCSE : MgCmdArc3P {
     }
   }
 
-  public MgCmdArcCSE(string name) : this(touchvgPINVOKE.new_MgCmdArcCSE__SWIG_0(name), true) {
+  public MgCmdCompass(string name) : this(touchvgPINVOKE.new_MgCmdCompass__SWIG_0(name), true) {
   }
 
-  public MgCmdArcCSE() : this(touchvgPINVOKE.new_MgCmdArcCSE__SWIG_1(), true) {
+  public MgCmdCompass() : this(touchvgPINVOKE.new_MgCmdCompass__SWIG_1(), true) {
   }
 
   public override void release() {
-    touchvgPINVOKE.MgCmdArcCSE_release(swigCPtr);
+    touchvgPINVOKE.MgCmdCompass_release(swigCPtr);
+  }
+
+  public override bool initialize(MgMotion sender, MgStorage s) {
+    bool ret = touchvgPINVOKE.MgCmdCompass_initialize(swigCPtr, MgMotion.getCPtr(sender), MgStorage.getCPtr(s));
+    return ret;
   }
 
   public override bool draw(MgMotion sender, GiGraphics gs) {
-    bool ret = touchvgPINVOKE.MgCmdArcCSE_draw(swigCPtr, MgMotion.getCPtr(sender), GiGraphics.getCPtr(gs));
+    bool ret = touchvgPINVOKE.MgCmdCompass_draw(swigCPtr, MgMotion.getCPtr(sender), GiGraphics.getCPtr(gs));
+    return ret;
+  }
+
+  public override bool click(MgMotion sender) {
+    bool ret = touchvgPINVOKE.MgCmdCompass_click(swigCPtr, MgMotion.getCPtr(sender));
     return ret;
   }
 

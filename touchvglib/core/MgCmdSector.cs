@@ -10,43 +10,44 @@
 
 namespace touchvg.core {
 
-public class MgCmdManagerFactory : global::System.IDisposable {
+public class MgCmdSector : MgCmdArcCSE {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
 
-  internal MgCmdManagerFactory(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
+  internal MgCmdSector(global::System.IntPtr cPtr, bool cMemoryOwn) : base(touchvgPINVOKE.MgCmdSector_SWIGUpcast(cPtr), cMemoryOwn) {
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(MgCmdManagerFactory obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(MgCmdSector obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 
-  ~MgCmdManagerFactory() {
+  ~MgCmdSector() {
     Dispose();
   }
 
-  public virtual void Dispose() {
+  public override void Dispose() {
     lock(this) {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          touchvgPINVOKE.delete_MgCmdManagerFactory(swigCPtr);
+          touchvgPINVOKE.delete_MgCmdSector(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
       global::System.GC.SuppressFinalize(this);
+      base.Dispose();
     }
   }
 
-  public static MgCmdManager create() {
-    global::System.IntPtr cPtr = touchvgPINVOKE.MgCmdManagerFactory_create();
-    MgCmdManager ret = (cPtr == global::System.IntPtr.Zero) ? null : new MgCmdManager(cPtr, false);
-    return ret;
+  public MgCmdSector(string name) : this(touchvgPINVOKE.new_MgCmdSector__SWIG_0(name), true) {
   }
 
-  public MgCmdManagerFactory() : this(touchvgPINVOKE.new_MgCmdManagerFactory(), true) {
+  public MgCmdSector() : this(touchvgPINVOKE.new_MgCmdSector__SWIG_1(), true) {
+  }
+
+  public override bool initialize(MgMotion sender, MgStorage s) {
+    bool ret = touchvgPINVOKE.MgCmdSector_initialize(swigCPtr, MgMotion.getCPtr(sender), MgStorage.getCPtr(s));
+    return ret;
   }
 
 }
